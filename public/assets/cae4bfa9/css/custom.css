@@ -1,0 +1,317 @@
+.reveal-overlay #modal-signup3 {
+    width: 570px; }
+.reveal-overlay #modal-signup3 .choice-type {
+    /* One radio button per line */
+    /* the basic, unchecked style */
+    /* the checked style using the :checked pseudo class */ }
+.reveal-overlay #modal-signup3 .choice-type fieldset .have-acc {
+    float: left; }
+.reveal-overlay #modal-signup3 .choice-type fieldset .no-acc {
+    float: right; }
+.reveal-overlay #modal-signup3 .choice-type fieldset .text {
+    font-family: "Segoe UI";
+    font-size: 16px; }
+.reveal-overlay #modal-signup3 .choice-type [type="radio"] {
+    border: 0;
+    clip: rect(0 0 0 0);
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    padding: 0;
+    position: absolute;
+    width: 1px; }
+.reveal-overlay #modal-signup3 .choice-type label {
+    cursor: pointer; }
+.reveal-overlay #modal-signup3 .choice-type [type="radio"] + span {
+    display: inline-block; }
+.reveal-overlay #modal-signup3 .choice-type [type="radio"] + span:before {
+    content: '';
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    vertical-align: -0.25em;
+    border-radius: 1em;
+    border: 0.125em solid white;
+    box-shadow: 0 0 0 0.09em #dcdcdc;
+    margin-right: 0.75em;
+    transition: 0.5s ease all; }
+.reveal-overlay #modal-signup3 .choice-type [type="radio"]:checked + span:before {
+    background: #55c20c; }
+.reveal-overlay #modal-signup3 .signup3 {
+    border-top: 1px solid #e8e7e7;
+    margin-top: 25px;
+    padding-top: 25px; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form {
+    position: relative; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .input-label {
+    font-size: 12px;
+    margin-bottom: 4px; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .input-label .label-name {
+    font-weight: 600;
+    color: #93959a;
+    text-transform: uppercase; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .input-label .message {
+    font-size: 15px;
+    color: #ee422b;
+    padding-left: 2px; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form input {
+    box-shadow: none;
+    font-size: 18px;
+    padding-right: 34px;
+    padding-left: 13px;
+    border-radius: 2px; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form input:focus {
+    box-shadow: none;
+    outline: none;
+    border: 1px solid #cacaca; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form input::-webkit-input-placeholder {
+    font-size: 16px;
+    font-weight: normal;
+    padding-top: 2px; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .input-name {
+    width: 100%;
+    height: 40px; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .success {
+    position: absolute;
+    top: 40px;
+    right: 8px; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .success .fa {
+    font-size: 21px;
+    color: #05b679; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .success .nb-check {
+    background: url("../img/check.png") no-repeat;
+    width: 20px;
+    height: 14px;
+    cursor: pointer; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .input-phone {
+    width: 230px;
+    height: 40px;
+    display: inline-block; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .success-phone {
+    position: absolute;
+    top: 41px;
+    right: 154px; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .success-phone .fa {
+    font-size: 21px;
+    color: #05b679; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .success-phone .nb-check {
+    background: url("../img/check.png") no-repeat;
+    width: 20px;
+    height: 14px;
+    cursor: pointer; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .btn-get-verify {
+    width: 135px;
+    height: 40px;
+    background-color: #9aa3b2;
+    float: right;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 40px;
+    border-radius: 2px; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .forgot-pass {
+    float: right;
+    font-size: 13px;
+    color: #2b45c9;
+    margin-top: -12px;
+    border-bottom: 1px solid #2b45c9; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .input-code {
+    width: 230px;
+    height: 40px;
+    display: inline-block; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .success-code {
+    position: absolute;
+    top: 41px;
+    right: 154px; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .success-code .fa {
+    font-size: 21px;
+    color: #05b679; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .success-code .nb-check {
+    background: url("../img/check.png") no-repeat;
+    width: 20px;
+    height: 14px;
+    cursor: pointer; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .input-pass {
+    width: 100%;
+    height: 40px; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .show-pass {
+    position: absolute;
+    top: 127px;
+    right: 8px; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .show-pass .fa {
+    font-size: 21px;
+    color: #a3a2a2; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .show-pass .nb-eye {
+    background: url("../img/eye.png") no-repeat;
+    width: 20px;
+    height: 14px;
+    cursor: pointer; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .check-box {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    float: left;
+    margin-top: 4px;
+    margin-right: 11px; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .check-ok {
+    display: block;
+    font-size: 13px;
+    font-weight: 500; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .check-ok .rule {
+    color: #2b45c9; }
+.reveal-overlay #modal-signup3 .signup3 .signup3-form .btn-submit {
+    width: 132px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #c8331f;
+    float: right;
+    color: white;
+    margin-top: 25px;
+    margin-bottom: 57px; }
+
+
+
+
+.reveal-overlay #modal-signup3 {
+    width: 570px; }
+.reveal-overlay #modal-signup3 .form-signup .row-input {
+    position: relative; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .input-label {
+    font-size: 12px;
+    margin-bottom: 4px; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .input-label .label-name {
+    font-weight: 600;
+    color: #93959a;
+    text-transform: uppercase; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .input-label .message {
+    font-size: 15px;
+    color: #ee422b;
+    padding-left: 2px; }
+.reveal-overlay #modal-signup3 .form-signup .row-input input {
+    box-shadow: none;
+    font-size: 18px;
+    padding-right: 34px;
+    padding-left: 13px;
+    border-radius: 2px; }
+.reveal-overlay #modal-signup3 .form-signup .row-input input:focus {
+    box-shadow: none;
+    outline: none;
+    border: 1px solid #cacaca; }
+.reveal-overlay #modal-signup3 .form-signup .row-input input::-webkit-input-placeholder {
+    font-size: 16px;
+    font-weight: normal;
+    padding-top: 2px; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .input-name {
+    width: 100%;
+    height: 40px; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .success {
+    position: absolute;
+    top: 40px;
+    right: 8px; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .success .fa {
+    font-size: 21px;
+    color: #05b679; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .success .nb-check {
+    background: url("../img/check.png") no-repeat;
+    width: 20px;
+    height: 14px;
+    cursor: pointer; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .input-phone {
+    width: 230px;
+    height: 40px;
+    display: inline-block; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .success-phone {
+    position: absolute;
+    top: 41px;
+    right: 154px; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .success-phone .fa {
+    font-size: 21px;
+    color: #05b679; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .success-phone .nb-check {
+    background: url("../img/check.png") no-repeat;
+    width: 20px;
+    height: 14px;
+    cursor: pointer; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .btn-get-verify {
+    width: 135px;
+    height: 40px;
+    background-color: #9aa3b2;
+    float: right;
+    text-transform: uppercase;
+    text-align: center;
+    color: white;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 40px;
+    border-radius: 2px; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .forgot-pass {
+    float: right;
+    font-size: 13px;
+    color: #2b45c9;
+    margin-top: -9px;
+    border-bottom: 2px solid #c2c7ec; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .input-code {
+    width: 230px;
+    height: 40px;
+    display: inline-block; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .success-code {
+    position: absolute;
+    top: 41px;
+    right: 154px; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .success-code .fa {
+    font-size: 21px;
+    color: #05b679; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .success-code .nb-check {
+    background: url("../img/check.png") no-repeat;
+    width: 20px;
+    height: 14px;
+    cursor: pointer; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .input-pass {
+    width: 100%;
+    height: 40px; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .show-pass {
+    position: absolute;
+    top: 40px;
+    right: 8px; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .show-pass .fa {
+    font-size: 21px;
+    color: #a3a2a2; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .show-pass .nb-eye {
+    background: url("../img/eye.png") no-repeat;
+    width: 20px;
+    height: 14px;
+    cursor: pointer; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .check-box {
+    width: 16px;
+    height: 16px;
+    display: inline-block;
+    float: left;
+    margin-top: 4px;
+    margin-right: 11px; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .check-ok {
+    display: block;
+    font-size: 13px;
+    font-weight: 500; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .check-ok .rule {
+    color: #2b45c9; }
+.reveal-overlay #modal-signup3 .form-signup .row-input .btn-submit {
+    width: 132px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    text-transform: uppercase;
+    background-color: #c8331f;
+    float: right;
+    color: white;
+    margin-top: 10px;
+    margin-bottom: 50px; }
+.reveal-overlay #modal-signup3 .form-signup .end-form {
+    border-bottom: 1px solid #d6d6d6;
+    padding-top: 13px;
+    margin-bottom: 25px; }
+
+

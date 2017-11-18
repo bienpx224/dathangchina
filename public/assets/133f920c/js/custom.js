@@ -1,0 +1,1 @@
+vex.defaultOptions.className = 'vex-theme-plain';

@@ -1,0 +1,900 @@
+.row,.top-header,.top-navigation-container,.nh-description,.home-slide,.homepage-divide,.order-step,.footer-block,.blog-page {
+    min-width: 997px;
+}
+.table-border {
+    width: 100% !important;
+}
+.account-name {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    width: 125px;
+    display: inline-block;
+    overflow: hidden;
+}
+.nh-popup {
+    margin: 0 auto;
+    min-height: 0px;
+    height: auto;
+}
+@media screen and (max-width: 63.125em){
+    .search-box {
+        width: 335px;
+        margin: 0px 20px;
+    }
+    .header-search {
+        width: 198px;
+    }
+    .step-create-order {
+        padding-left: 59px;
+        margin-right: 10px;
+        min-width: 155px;
+    }
+    .step-send-order {
+        padding-left: 68px;
+        margin-right: 10px;
+        min-width: 155px;
+    }
+    .step-check-order {
+        padding-left: 62px;
+        margin-right: 10px;
+        min-width: 155px;
+    }
+    .step-make-payment-order {
+        padding-left: 54px;
+        margin-right: 10px;
+        min-width: 155px;
+    }
+    .step-confirm-order {
+        padding-left: 53px;
+        margin-right: 10px;
+        min-width: 155px;
+    }
+    .step-delivery-order {
+        padding-left: 59px;
+        margin-right: 10px;
+        min-width: 155px;
+    }
+    .origin-block {
+        min-width: 995px;
+    }
+    .list-category li {
+        margin-right: 20px;
+    }
+    .footer-block .footer-container .footer-block-contact{
+        padding-right: 20px;
+        max-width: 30%;
+    }
+    .footer-block .footer-container .footer-block-account-info{
+        padding-right: 20px;
+        max-width: 30%;
+    }
+    .footer-block .footer-container .footer-block-blog{
+        padding-right: 20px;
+        max-width: 25%;
+    }
+    .footer-block .footer-container .footer-block-cert{
+        max-width: 140px;
+    }
+    .user-pages-left {
+        max-width: 225px;
+    }
+    .user-pages-right {
+        max-width: 760px;
+    }
+    .user-pages-right .item-table-content-last,.user-pages-right .item-table-content {
+        min-width: 695px;
+    }
+    .user-pages-right .item-table-content-last {
+        border-bottom: 1px solid #dfdfdf !important;
+    }
+    .user-pages-right .order-header {
+        min-width: 705px;
+    }
+    .user-pages-right .z-custom {
+        max-width: 695px;
+    }
+    .user-pages-right .list-order-header a {
+        margin-left: 18px !important;
+    }
+    .pagination li {
+        display: inline-block;
+    }
+    .user-pages-right {
+        min-width: 760px;
+    }
+    .user-info {
+        min-width: 704px !important;
+    }
+    .list-info {
+        min-width: 497px;
+    }
+    .user-pages {
+        min-width: 997px !important;
+    }
+    .blog-pages-left {
+        max-width: 270px;
+    }
+    .blog-pages-right {
+        max-width: 700px;
+    }
+    .blog-quick {
+        display: none;
+    }
+    .order-status-bar {
+        min-width: 997px;
+    }
+    .step-number {
+        padding-right: 5px !important;
+    }
+    .order-float-bar-block {
+        min-width: 990px;
+    }
+    .block-get-info .input-link {
+        max-width: 285px;
+    }
+    .button-block {
+        min-width: 465px;
+        padding-left: 85px;
+    }
+    .order-page-tabs .x-custom {
+        min-width: 957px;
+    }
+    .order-page-tabs .item-table-content {
+        max-width: 957px;
+    }
+    .order-page-tabs .product-img img {
+        width: 75px;
+        height: 75px;
+    }
+    .order-page-tabs .column-serial {
+        width: 30px;
+    }
+    .order-page-tabs .column-product-name {
+        width: 280px;
+    }
+    .order-page-tabs .column-product-attribute {
+        width: 140px;
+    }
+    .order-page-tabs .column-quantity {
+        width: 120px;
+    }
+    .order-page-tabs .package-item-name {
+        width: 200px;
+    }
+    .order-page-tabs .column-product-name {
+        max-width: 280px;
+    }
+    .shop-detail-container {
+        padding: 23px 5px 20px 5px;
+    }
+    .order-scroll-bar {
+        display: none !important;
+    }
+    .order-summary {
+        min-width: 997px;
+    }
+    .summary-right {
+        max-width: 318px;
+    }
+    .tab-product-info .main-product-image {
+        max-width: 310px;
+    }
+    .tab-product-info .product-thumbnails-carousel-container {
+        max-width: 310px;
+    }
+    .tab-product-info .block-left {
+        max-width: 310px;
+    }
+    .tab-product-info .product-thumbnails-carousel {
+        max-width: 270px;
+    }
+    .tab-product-info .block-right {
+        max-width: 650px;
+        padding-right: 10px;
+    }
+    .tab-product-info .product-detail {
+        padding: 10px 5px 58px;
+    }
+
+}
+@media screen and (max-width: 70em){
+    .step-number {
+        padding-right: 3px !important;
+    }
+}
+
+@media screen and (min-width: 63.125em){
+    .footer-block .footer-container .footer-block-cert {
+        width: 170px;
+        margin-left: 30px;
+    }
+    .list-order-header a {
+        margin-left: 20px !important;
+    }
+}
+.quick-order-list-origin {
+    z-index: 10;
+}
+.ui-pnotify {
+    top:200px !important;
+}
+.ui-pnotify-container {
+
+}
+.brighttheme-icon-sticker {
+    display: none;
+}
+.footer-logo-2 {
+    float: left;
+    margin-top: -5px;
+    width: 150px;
+    height: 38px;
+    background: url('http://www.nhaphang247.com/logo.png') no-repeat;
+    display: block;
+}
+@media screen and (min-width: 78.125em){
+    .create-order{
+        margin-left: 14px !important;
+    }
+}
+.create-order{
+    margin-top: 0px !important;
+    height: 28px !important;
+}
+.create-order-link{
+    line-height: 25px;
+    height: 28px;
+    display: block;
+    float: left;
+    border: 1px solid #dcdcdc;
+    border-radius: 20px;
+    background: #f6f7f7;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+.create-order-link:hover{
+    color: #2199e8 !important;
+}
+.address-list{
+    padding-left: 15px;
+}
+.address-list li{
+    display: inline-block;
+}
+p.hot-line{
+    font-weight: 500;
+    color: #4f4f4f;
+    padding-bottom: 10px;
+    font-size: 15px;
+    border-bottom: 1px solid #EAEAEA;
+}
+p.hot-line span{
+    font-weight: bold;
+    color: #C44853;
+    text-transform: uppercase;
+}
+p.hot-line span.email{
+    display: inline-block;
+    font-weight: 500;
+    text-transform: none;
+    font-size: 14px;
+    color: #696969;
+}
+.footer-container .company-name{
+    float: left;
+    clear: both;
+    text-transform: uppercase;
+    font-size: 13px;
+    margin-top: 5px;
+    font-weight: 600;
+    color: #565656;
+}
+
+.top-navigation .menu-item a {
+    width: 100%;
+    height: 100%;
+    display: inline-block;
+}
+.list-notice .notice-item {
+    cursor: pointer;
+}
+.dropDisplay {
+    display: block !important;
+}
+
+
+@keyframes nhvex-fadein {
+    /* line 9, ../sass/_keyframes.sass */
+    0% {
+        opacity: 0;
+    }
+
+    /* line 11, ../sass/_keyframes.sass */
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes nhvex-fadein {
+    /* line 9, ../sass/_keyframes.sass */
+    0% {
+        opacity: 0;
+    }
+
+    /* line 11, ../sass/_keyframes.sass */
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes nhvex-fadein {
+    /* line 9, ../sass/_keyframes.sass */
+    0% {
+        opacity: 0;
+    }
+
+    /* line 11, ../sass/_keyframes.sass */
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes nhvex-fadein {
+    /* line 9, ../sass/_keyframes.sass */
+    0% {
+        opacity: 0;
+    }
+
+    /* line 11, ../sass/_keyframes.sass */
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes nhvex-fadein {
+    /* line 9, ../sass/_keyframes.sass */
+    0% {
+        opacity: 0;
+    }
+
+    /* line 11, ../sass/_keyframes.sass */
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes nhvex-fadeout {
+    /* line 16, ../sass/_keyframes.sass */
+    0% {
+        opacity: 1;
+    }
+
+    /* line 18, ../sass/_keyframes.sass */
+    100% {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes nhvex-fadeout {
+    /* line 16, ../sass/_keyframes.sass */
+    0% {
+        opacity: 1;
+    }
+
+    /* line 18, ../sass/_keyframes.sass */
+    100% {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes nhvex-fadeout {
+    /* line 16, ../sass/_keyframes.sass */
+    0% {
+        opacity: 1;
+    }
+
+    /* line 18, ../sass/_keyframes.sass */
+    100% {
+        opacity: 0;
+    }
+}
+
+@-ms-keyframes nhvex-fadeout {
+    /* line 16, ../sass/_keyframes.sass */
+    0% {
+        opacity: 1;
+    }
+
+    /* line 18, ../sass/_keyframes.sass */
+    100% {
+        opacity: 0;
+    }
+}
+
+@-o-keyframes nhvex-fadeout {
+    /* line 16, ../sass/_keyframes.sass */
+    0% {
+        opacity: 1;
+    }
+
+    /* line 18, ../sass/_keyframes.sass */
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes nhvex-rotation {
+    /* line 127, ../sass/_keyframes.sass */
+    0% {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
+
+    /* line 129, ../sass/_keyframes.sass */
+    100% {
+        transform: rotate(359deg);
+        -webkit-transform: rotate(359deg);
+        -moz-transform: rotate(359deg);
+        -ms-transform: rotate(359deg);
+        -o-transform: rotate(359deg);
+    }
+}
+
+@-webkit-keyframes nhvex-rotation {
+    /* line 127, ../sass/_keyframes.sass */
+    0% {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
+
+    /* line 129, ../sass/_keyframes.sass */
+    100% {
+        transform: rotate(359deg);
+        -webkit-transform: rotate(359deg);
+        -moz-transform: rotate(359deg);
+        -ms-transform: rotate(359deg);
+        -o-transform: rotate(359deg);
+    }
+}
+
+@-moz-keyframes nhvex-rotation {
+    /* line 127, ../sass/_keyframes.sass */
+    0% {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
+
+    /* line 129, ../sass/_keyframes.sass */
+    100% {
+        transform: rotate(359deg);
+        -webkit-transform: rotate(359deg);
+        -moz-transform: rotate(359deg);
+        -ms-transform: rotate(359deg);
+        -o-transform: rotate(359deg);
+    }
+}
+
+@-ms-keyframes nhvex-rotation {
+    /* line 127, ../sass/_keyframes.sass */
+    0% {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
+
+    /* line 129, ../sass/_keyframes.sass */
+    100% {
+        transform: rotate(359deg);
+        -webkit-transform: rotate(359deg);
+        -moz-transform: rotate(359deg);
+        -ms-transform: rotate(359deg);
+        -o-transform: rotate(359deg);
+    }
+}
+
+@-o-keyframes nhvex-rotation {
+    /* line 127, ../sass/_keyframes.sass */
+    0% {
+        transform: rotate(0deg);
+        -webkit-transform: rotate(0deg);
+        -moz-transform: rotate(0deg);
+        -ms-transform: rotate(0deg);
+        -o-transform: rotate(0deg);
+    }
+
+    /* line 129, ../sass/_keyframes.sass */
+    100% {
+        transform: rotate(359deg);
+        -webkit-transform: rotate(359deg);
+        -moz-transform: rotate(359deg);
+        -ms-transform: rotate(359deg);
+        -o-transform: rotate(359deg);
+    }
+}
+
+/* line 11, ../sass/nhvex.sass */
+.nhvex, .nhvex *, .nhvex *:before, .nhvex *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* line 14, ../sass/nhvex.sass */
+.nhvex {
+    position: fixed;
+    overflow: auto;
+    -webkit-overflow-scrolling: touch;
+    z-index: 1111;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+
+/* line 25, ../sass/nhvex.sass */
+.nhvex-overlay {
+    background: black;
+    filter: alpha(opacity=40);
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=40)";
+}
+
+/* line 30, ../sass/nhvex.sass */
+.nhvex-overlay {
+    animation: nhvex-fadein 0.5s;
+    -webkit-animation: nhvex-fadein 0.5s;
+    -moz-animation: nhvex-fadein 0.5s;
+    -ms-animation: nhvex-fadein 0.5s;
+    -o-animation: nhvex-fadein 0.5s;
+    -webkit-backface-visibility: hidden;
+    position: fixed;
+    background: rgba(0, 0, 0, 0.4);
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+}
+/* line 39, ../sass/nhvex.sass */
+.nhvex.nhvex-closing .nhvex-overlay {
+    animation: nhvex-fadeout 0.5s;
+    -webkit-animation: nhvex-fadeout 0.5s;
+    -moz-animation: nhvex-fadeout 0.5s;
+    -ms-animation: nhvex-fadeout 0.5s;
+    -o-animation: nhvex-fadeout 0.5s;
+    -webkit-backface-visibility: hidden;
+}
+
+/* line 42, ../sass/nhvex.sass */
+.nhvex-content {
+    animation: nhvex-fadein 0.5s;
+    -webkit-animation: nhvex-fadein 0.5s;
+    -moz-animation: nhvex-fadein 0.5s;
+    -ms-animation: nhvex-fadein 0.5s;
+    -o-animation: nhvex-fadein 0.5s;
+    -webkit-backface-visibility: hidden;
+    background: white;
+}
+/* line 46, ../sass/nhvex.sass */
+.nhvex.nhvex-closing .nhvex-content {
+    animation: nhvex-fadeout 0.5s;
+    -webkit-animation: nhvex-fadeout 0.5s;
+    -moz-animation: nhvex-fadeout 0.5s;
+    -ms-animation: nhvex-fadeout 0.5s;
+    -o-animation: nhvex-fadeout 0.5s;
+    -webkit-backface-visibility: hidden;
+}
+
+/* line 49, ../sass/nhvex.sass */
+.nhvex-close:before {
+    font-family: Arial, sans-serif;
+    content: "\00D7";
+}
+
+/* line 53, ../sass/nhvex.sass */
+.nhvex-dialog-form {
+    margin: 0;
+}
+
+/* line 56, ../sass/nhvex.sass */
+.nhvex-dialog-button {
+    -webkit-appearance: none;
+    cursor: pointer;
+}
+
+/* line 60, ../sass/nhvex.sass */
+.nhvex-loading-spinner {
+    animation: nhvex-rotation 0.7s linear infinite;
+    -webkit-animation: nhvex-rotation 0.7s linear infinite;
+    -moz-animation: nhvex-rotation 0.7s linear infinite;
+    -ms-animation: nhvex-rotation 0.7s linear infinite;
+    -o-animation: nhvex-rotation 0.7s linear infinite;
+    -webkit-backface-visibility: hidden;
+    -webkit-box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+    -moz-box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 1em rgba(0, 0, 0, 0.1);
+    position: fixed;
+    z-index: 1112;
+    margin: auto;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    height: 2em;
+    width: 2em;
+    background: white;
+}
+
+/* line 76, ../sass/nhvex.sass */
+body.nhvex-open {
+    overflow: hidden;
+}
+@keyframes nhvex-pulse {
+    /* line 136, ../sass/_keyframes.sass */
+    0% {
+        -webkit-box-shadow: inset 0 0 0 300px transparent;
+        -moz-box-shadow: inset 0 0 0 300px transparent;
+        box-shadow: inset 0 0 0 300px transparent;
+    }
+
+    /* line 138, ../sass/_keyframes.sass */
+    70% {
+        -webkit-box-shadow: inset 0 0 0 300px rgba(255, 255, 255, 0.25);
+        -moz-box-shadow: inset 0 0 0 300px rgba(255, 255, 255, 0.25);
+        box-shadow: inset 0 0 0 300px rgba(255, 255, 255, 0.25);
+    }
+
+    /* line 140, ../sass/_keyframes.sass */
+    100% {
+        -webkit-box-shadow: inset 0 0 0 300px transparent;
+        -moz-box-shadow: inset 0 0 0 300px transparent;
+        box-shadow: inset 0 0 0 300px transparent;
+    }
+}
+
+@-webkit-keyframes nhvex-pulse {
+    /* line 136, ../sass/_keyframes.sass */
+    0% {
+        -webkit-box-shadow: inset 0 0 0 300px transparent;
+        -moz-box-shadow: inset 0 0 0 300px transparent;
+        box-shadow: inset 0 0 0 300px transparent;
+    }
+
+    /* line 138, ../sass/_keyframes.sass */
+    70% {
+        -webkit-box-shadow: inset 0 0 0 300px rgba(255, 255, 255, 0.25);
+        -moz-box-shadow: inset 0 0 0 300px rgba(255, 255, 255, 0.25);
+        box-shadow: inset 0 0 0 300px rgba(255, 255, 255, 0.25);
+    }
+
+    /* line 140, ../sass/_keyframes.sass */
+    100% {
+        -webkit-box-shadow: inset 0 0 0 300px transparent;
+        -moz-box-shadow: inset 0 0 0 300px transparent;
+        box-shadow: inset 0 0 0 300px transparent;
+    }
+}
+
+@-moz-keyframes nhvex-pulse {
+    /* line 136, ../sass/_keyframes.sass */
+    0% {
+        -webkit-box-shadow: inset 0 0 0 300px transparent;
+        -moz-box-shadow: inset 0 0 0 300px transparent;
+        box-shadow: inset 0 0 0 300px transparent;
+    }
+
+    /* line 138, ../sass/_keyframes.sass */
+    70% {
+        -webkit-box-shadow: inset 0 0 0 300px rgba(255, 255, 255, 0.25);
+        -moz-box-shadow: inset 0 0 0 300px rgba(255, 255, 255, 0.25);
+        box-shadow: inset 0 0 0 300px rgba(255, 255, 255, 0.25);
+    }
+
+    /* line 140, ../sass/_keyframes.sass */
+    100% {
+        -webkit-box-shadow: inset 0 0 0 300px transparent;
+        -moz-box-shadow: inset 0 0 0 300px transparent;
+        box-shadow: inset 0 0 0 300px transparent;
+    }
+}
+
+@-ms-keyframes nhvex-pulse {
+    /* line 136, ../sass/_keyframes.sass */
+    0% {
+        -webkit-box-shadow: inset 0 0 0 300px transparent;
+        -moz-box-shadow: inset 0 0 0 300px transparent;
+        box-shadow: inset 0 0 0 300px transparent;
+    }
+
+    /* line 138, ../sass/_keyframes.sass */
+    70% {
+        -webkit-box-shadow: inset 0 0 0 300px rgba(255, 255, 255, 0.25);
+        -moz-box-shadow: inset 0 0 0 300px rgba(255, 255, 255, 0.25);
+        box-shadow: inset 0 0 0 300px rgba(255, 255, 255, 0.25);
+    }
+
+    /* line 140, ../sass/_keyframes.sass */
+    100% {
+        -webkit-box-shadow: inset 0 0 0 300px transparent;
+        -moz-box-shadow: inset 0 0 0 300px transparent;
+        box-shadow: inset 0 0 0 300px transparent;
+    }
+}
+
+@-o-keyframes nhvex-pulse {
+    /* line 136, ../sass/_keyframes.sass */
+    0% {
+        -webkit-box-shadow: inset 0 0 0 300px transparent;
+        -moz-box-shadow: inset 0 0 0 300px transparent;
+        box-shadow: inset 0 0 0 300px transparent;
+    }
+
+    /* line 138, ../sass/_keyframes.sass */
+    70% {
+        -webkit-box-shadow: inset 0 0 0 300px rgba(255, 255, 255, 0.25);
+        -moz-box-shadow: inset 0 0 0 300px rgba(255, 255, 255, 0.25);
+        box-shadow: inset 0 0 0 300px rgba(255, 255, 255, 0.25);
+    }
+
+    /* line 140, ../sass/_keyframes.sass */
+    100% {
+        -webkit-box-shadow: inset 0 0 0 300px transparent;
+        -moz-box-shadow: inset 0 0 0 300px transparent;
+        box-shadow: inset 0 0 0 300px transparent;
+    }
+}
+
+/* line 11, ../sass/nhvex-theme-plain.sass */
+.nhvex.nhvex-theme-plain {
+    padding-top: 160px;
+    padding-bottom: 160px;
+}
+/* line 15, ../sass/nhvex-theme-plain.sass */
+.nhvex.nhvex-theme-plain .nhvex-content {
+    font-family: "Helvetica Neue", sans-serif;
+    background: white;
+    color: #444444;
+    padding: 1em;
+    position: relative;
+    margin: 0 auto;
+    max-width: 100%;
+    width: 450px;
+    font-size: 1.1em;
+    line-height: 1.5em;
+}
+/* line 27, ../sass/nhvex-theme-plain.sass */
+.nhvex.nhvex-theme-plain .nhvex-content h1, .nhvex.nhvex-theme-plain .nhvex-content h2, .nhvex.nhvex-theme-plain .nhvex-content h3, .nhvex.nhvex-theme-plain .nhvex-content h4, .nhvex.nhvex-theme-plain .nhvex-content h5, .nhvex.nhvex-theme-plain .nhvex-content h6, .nhvex.nhvex-theme-plain .nhvex-content p, .nhvex.nhvex-theme-plain .nhvex-content ul, .nhvex.nhvex-theme-plain .nhvex-content li {
+    color: inherit;
+}
+/* line 30, ../sass/nhvex-theme-plain.sass */
+.nhvex.nhvex-theme-plain .nhvex-close {
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+}
+/* line 36, ../sass/nhvex-theme-plain.sass */
+.nhvex.nhvex-theme-plain .nhvex-close:before {
+    position: absolute;
+    content: "\00D7";
+    font-size: 26px;
+    font-weight: normal;
+    line-height: 31px;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    top: 3px;
+    right: 3px;
+    color: #bbbbbb;
+    background: transparent;
+}
+/* line 50, ../sass/nhvex-theme-plain.sass */
+.nhvex.nhvex-theme-plain .nhvex-close:hover:before, .nhvex.nhvex-theme-plain .nhvex-close:active:before {
+    color: #777777;
+    background: #e0e0e0;
+}
+/* line 56, ../sass/nhvex-theme-plain.sass */
+.nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-message {
+    margin-bottom: 0.5em;
+}
+/* line 59, ../sass/nhvex-theme-plain.sass */
+.nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input {
+    margin-bottom: 1em;
+}
+/* line 62, ../sass/nhvex-theme-plain.sass */
+.nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input textarea, .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="date"], .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="datetime"], .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="datetime-local"], .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="email"], .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="month"], .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="number"], .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="password"], .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="search"], .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="tel"], .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="text"], .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="time"], .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="url"], .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="week"] {
+    background: #f0f0f0;
+    width: 100%;
+    padding: 0.25em 0.67em;
+    border: 0;
+    font-family: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    min-height: 2.5em;
+    margin: 0 0 0.25em;
+}
+/* line 73, ../sass/nhvex-theme-plain.sass */
+.nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input textarea:focus, .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="date"]:focus, .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="datetime"]:focus, .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="datetime-local"]:focus, .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="email"]:focus, .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="month"]:focus, .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="number"]:focus, .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="password"]:focus, .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="search"]:focus, .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="tel"]:focus, .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="text"]:focus, .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="time"]:focus, .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="url"]:focus, .nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-input input[type="week"]:focus {
+    -webkit-box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2);
+    -moz-box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2);
+    box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.2);
+    outline: none;
+}
+/* line 77, ../sass/nhvex-theme-plain.sass */
+.nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-buttons {
+    *zoom: 1;
+}
+/* line 38, ../../../../../.rvm/gems/ruby-1.9.3-p194/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/utilities/general/_clearfix.scss */
+.nhvex.nhvex-theme-plain .nhvex-dialog-form .nhvex-dialog-buttons:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+/* line 80, ../sass/nhvex-theme-plain.sass */
+.nhvex.nhvex-theme-plain .nhvex-dialog-button {
+    -webkit-border-radius: 0;
+    -moz-border-radius: 0;
+    -ms-border-radius: 0;
+    -o-border-radius: 0;
+    border-radius: 0;
+    border: 0;
+    float: right;
+    margin: 0 0 0 0.5em;
+    font-family: inherit;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+    font-size: 0.8em;
+    line-height: 1em;
+    padding: 0.75em 2em;
+}
+/* line 92, ../sass/nhvex-theme-plain.sass */
+.nhvex.nhvex-theme-plain .nhvex-dialog-button.nhvex-last {
+    margin-left: 0;
+}
+/* line 95, ../sass/nhvex-theme-plain.sass */
+.nhvex.nhvex-theme-plain .nhvex-dialog-button:focus {
+    animation: nhvex-pulse 1.1s infinite;
+    -webkit-animation: nhvex-pulse 1.1s infinite;
+    -moz-animation: nhvex-pulse 1.1s infinite;
+    -ms-animation: nhvex-pulse 1.1s infinite;
+    -o-animation: nhvex-pulse 1.1s infinite;
+    -webkit-backface-visibility: hidden;
+    outline: none;
+}
+@media (max-width: 568px) {
+    /* line 95, ../sass/nhvex-theme-plain.sass */
+    .nhvex.nhvex-theme-plain .nhvex-dialog-button:focus {
+        animation: none;
+        -webkit-animation: none;
+        -moz-animation: none;
+        -ms-animation: none;
+        -o-animation: none;
+        -webkit-backface-visibility: hidden;
+    }
+}
+/* line 104, ../sass/nhvex-theme-plain.sass */
+.nhvex.nhvex-theme-plain .nhvex-dialog-button.nhvex-dialog-button-primary {
+    background: #3288e6;
+    color: white;
+}
+/* line 108, ../sass/nhvex-theme-plain.sass */
+.nhvex.nhvex-theme-plain .nhvex-dialog-button.nhvex-dialog-button-secondary {
+    background: #e0e0e0;
+    color: #777777;
+}
+
+/* line 112, ../sass/nhvex-theme-plain.sass */
+.nhvex-loading-spinner.nhvex-theme-plain {
+    height: 2.5em;
+    width: 2.5em;
+}
+
