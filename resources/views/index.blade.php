@@ -6,8 +6,9 @@
         <meta name="renderer" content="webkit"/>
         <meta http-equiv="X-UA-Compatible" content="IE=Edge"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="csrf-token" content="{{ csrf_token() }}" />
         <title>@yield('title')</title>
-        <link rel="icon" type="image/jpg" href="http://stickersocial.net/wp-content/uploads/2014/11/NuaNia2.png">
+        <link rel="icon" type="image/png" href="{{ asset('public/img/logo.png') }}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
@@ -37,13 +38,15 @@
     <body id="body">
         <div class="top-header" id="topHead">
             <div class="row top-header-container">
-                <a href="http://www.dathangchina.com" class="logo-top"></a>
+                <a href="http://www.dathangchina.com" class="logo-top"
+                 style="background: url('public/img/logo.png') no-repeat; height: 55px; margin-top:-15px; "></a>
                 <div class="search-box">
                     <div class="select-site-container">
                         <div id="dd" class="list-site-container" tabindex="1">
-                            <select class="selected-site">
-                                <option>Tao Bao</option>
-                                <option>1688(TQ)</option>
+                            <select id="select" class="selected-site">
+                                <option name="Tao Bao">Tao Bao</option>
+                                <option name="1688">1688</option>
+                                <option name="Tmall">Tmall</option>
                             </select>
                             <!-- <span class="selected-site">Taobao</span>
                             <ul class="list-site notranslate">
@@ -55,8 +58,8 @@
                             </ul> -->
                         </div>
                     </div>
-                    <input type="text" class="search-input header-search" placeholder="Nhập tên sản phẩm tiếng Việt" name="search">
-                    <a href="javascript:;" class="btn-search"></a>
+                    <input type="text" id="search-input" class="search-input header-search" placeholder="Nhập tên sản phẩm tiếng Việt" name="search">
+                    <a href="javascript:;" class="btn-search" id="btn-search"></a>
                 </div>
                 <span class="create-order" data-dropdown=".create-order-detail">
                     <a href="javascript:;" class="create-order-link" title="Tạo đơn hàng">Tạo đơn hàng</a>
@@ -123,7 +126,7 @@
             <div class="row">
                 <ul class="top-navigation">
                     <li class="menu-item"><a href="{!! url('/') !!}">Trang chủ</a></li>
-                    <li class="menu-item"><a href="http://www.nhaphang247.com/blog">Đặt hàng qua Google Docs</a></li>
+                    <li class="menu-item"><a href="https://docs.google.com/forms/d/e/1FAIpQLSdDM98Wvx3o5LWUrUh2sPEhnmCMiMY4SrO0F6bzapGWb680Sw/viewform?fbzx=-5026310265268122000">Đặt hàng qua Google Docs</a></li>
                     <li class="menu-item"><a href="{!! url('/huong-dan-dat-hang') !!}">Hướng Dẫn Đặt Hàng</a></li>
                     <li class="menu-item"><a href="{!! url('/quy-dinh-dat-hang') !!}">Quy Định Đặt Hàng</a></li>
                     <li class="menu-item"><a href="{!! url('/bang-gia') !!}">Bảng Giá</a></li>
@@ -161,4 +164,29 @@
             @yield('content')
             @include('footer')
         </body>
+        <script type="text/javascript">
+            $(document).ready( ()=>{
+                var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+                $("#btn-search").click( ()=>{
+                    let text = $("#search-input").val();
+                    let option = $("#select").val();
+                    $.ajax({
+                        type: "POST",
+                        url: "{!! url('translate') !!}",
+                        data: {text: text, _token: CSRF_TOKEN},
+                        success: function(data) {
+                            if(option === "Tao Bao")
+                            window.open("https://world.taobao.com/search/search.htm?_input_charset=utf-8&q="+data+"");
+                            if(option === "1688")
+                            window.open("https://s.1688.com/selloffer/offer_search.htm?keywords="+data+"");
+                            if(option === "Tmall")
+                            window.open("https://list.tmall.com/search_product.htm?q="+data+"");
+                        },
+                        failure: function(data){
+                            alert("fail");
+                        }
+                    });
+                })
+            })
+        </script>
     </html>

@@ -66,32 +66,29 @@
                 </div>
                 <div class="nh-row"></div>
                 <div class="article-content">
-                    <p><strong>NhapHang247</strong> sử dụng&nbsp;tổng đài liên hệ và địa chỉ chính thức như sau:</p>
+                    <p><strong>Dathangchina</strong> sử dụng&nbsp;tổng đài liên hệ và địa chỉ chính thức như sau:</p>
                     <p><strong>1. Điện thoại liên hệ</strong></p>
-                    <p><strong><em>Tổng đài:</em></strong> 0247.3000.247</p>
+                    <p><strong><em>Tổng đài:</em></strong> 0246.3261.808</p>
                     <p>Thời gian hoạt động:</p>
                     <p>8.00 - 12.00, 13.30 - 17.30, 19.00 - 22.30 (Thứ 2 - Thứ 6)</p>
                     <p>8.00 - 12.00, 13.30 - 17.30 (Thứ 7)</p>
-                    <p><em><strong>Hotline:</strong></em>&nbsp;0941.077.333&nbsp;</p>
+                    <p><em><strong>Hotline:</strong></em>&nbsp;0965.761.888&nbsp;</p>
+                    <p><em><strong>Hotline:</strong></em>&nbsp;0948.449.444&nbsp;</p>
                     <p>Lưu ý: Hotline chỉ tiếp nhận <strong>phản ánh về chất lượng dịch vụ của Đặt hàng China</strong>, các trường hợp liên quan tới thắc mắc hàng hoá, kiểm tra đơn hàng, thời gian hàng về,... quý khách hàng vui lòng liên hệ qua số tổng đài, chúng tôi không giải đáp qua số hotline.</p>
                     <p>&nbsp;</p>
                     <p><strong>2. Danh sách văn phòng giao dịch</strong></p>
-                    <p><em><strong>Chi nhánh Hà Nội:</strong></em></p>
-                    <p>Số 12 - Ngõ 171 Minh Khai – Hai Bà Trưng – Hà Nội</p>
-                    <p>Số 5 – Ngõ 282 Nguyễn Huy Tưởng – Thanh Xuân – Hà Nội</p>
-                    <p><em><strong>Chi nhánh Hồ Chí Minh:</strong></em><br>
-                    Số 19, Đường số 2, Cư Xá&nbsp;Đô Thành (đối diện VP cũ)&nbsp;-&nbsp;&nbsp;P4 -&nbsp;Q3 - HCM</p>
+                    <p><em><strong>Chi nhánh Thăng Long:</strong></em></p>
+                    <p>Vietcombank trần văn sơn</p>
+                    <p>STK: 0491000035204</p>
+                    <p><em><strong>Chi nhánh Thăng Long:</strong></em></p>
+                    <p>Techcombank trần văn sơn</p>
+                    <p>STK: 19031121128881</p>
                     <p>*Lưu ý: Địa chỉ trên là văn phòng giao dịch, quý khách hàng muốn tới nhận hàng tại kho vui lòng liên hệ trực tiếp để được hướng dẫn.</p>
                     <p><em><strong>Chi nhánh Trung Quốc:</strong></em></p>
-                    <p>Công ty TNHH Vận tải Trác Tiệp Bằng Tường</p>
+                    <p>广东省 广州市 越秀区 白云街道 越秀南路5号 双启物流</p>
                     <p><em>Số điện thoại:&nbsp;</em></p>
-                    <p>+86-18775946520</p>
-                    <p>+86-15678951926</p>
-                    <p><em>Địa chỉ:</em> 319 đường Bắc Đại - Thị Xã Bằng Tường - Tỉnh Quảng Tây</p>
-                    <p>凭祥卓捷市物流有限公司电话:</p>
-                    <p>+86-18775946520</p>
-                    <p>+86-15678951926</p>
-                    <p>地址：广西凭祥市北大路319号</p>
+                    <p>0965.761.888</p>
+                    <p>0948.449.444</p>
                     <p><em><strong>Cảm ơn Quý khách!</strong></em></p>
                 </div>
                 <div class="article-footer">

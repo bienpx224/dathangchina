@@ -12,13 +12,13 @@
     <!-- Wrapper for slides -->
     <div class="carousel-inner">
       <div class="item active">
-        <img src="{{asset('public/img/new_banner1.png')}}" alt="Los Angeles" style="width:100%;">
+        <img src="{{asset('public/img/new_banner4.png')}}" alt="Los Angeles" style="width:100%;height: 420px;">
       </div>
       <div class="item">
-        <img src="{{asset('public/img/new_banner2.png')}}" alt="Chicago" style="width:100%;">
+        <img src="{{asset('public/img/new_banner1.png')}}" alt="Chicago" style="width:100%;height: 420px;">
       </div>
       <div class="item">
-        <img src="{{asset('public/img/new_banner3.png')}}" alt="New york" style="width:100%;">
+        <img src="{{asset('public/img/new_banner3.png')}}" alt="New york" style="width:100%;height: 420px;">
       </div>
     </div>
   </div>
@@ -58,11 +58,11 @@
       </div> -->
 
     <div class="quick-order-box" style="top:-70px;cursor: pointer;">
-      <a href="http://google.com.vn">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdDM98Wvx3o5LWUrUh2sPEhnmCMiMY4SrO0F6bzapGWb680Sw/viewform?fbzx=-5026310265268122000" target="_blank">
         <input type="hidden" name="_token" value="{!! csrf_token() !!}"/>
         <input type="text" class="input-link" name="linksanpham" disabled="true" placeholder="Đặt hàng bằng Google docs -> Click ->">
         <div class="quick-order-btn-block">
-          <button href="http://google.com.vn" class="quick-order-btn" type="button">Đặt hàng Trung Quốc</button>
+          <button class="quick-order-btn" type="button">Đặt hàng Trung Quốc</button>
         </div>
       </a>
   </div>
