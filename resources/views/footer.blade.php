@@ -5,26 +5,23 @@
             <div class="footer-block-content">
                 <p class="hot-line">
                     <span>Hotline: </span>0246.3261.808
-                    <span class="email">Email hỗ trợ: mr.tuananh.222@gmail.com</span>
-                    <span class="email">Email hỗ trợ: bienpx224@gmail.com</span>
+                    <span class="email">Email hỗ trợ: dathangchina88@gmail.com</span>
                 </p>
                 <div  class="block-address">
-                    <span class="address-title">Hà Nội</span>
                     <ul class="address-list">
                         <li>
                             <span class="address"> Minh Khai - Hai Bà Trưng - Hà Nội</span><br>
                             <span class="hotline">SĐT:  0948.449.444</span><br>
-                            <span class="hotline">STK Vietcombank:  0948.449.444</span>
+                            <span class="hotline">STK Vietcombank:  0491.0000.35204</span>
                         </li>
                     </ul>
                 </div>
                 <div  class="block-address">
-                    <span class="address-title">Hà Nội</span>
                     <ul class="address-list">
                         <li>
                             <span class="address"> Nguyễn Trãi - Thanh Xuân - Hà Nội</span><br>
                             <span class="hotline">SĐT:  0965761888</span><br>
-                            <span class="hotline">STK Techcombank:  19031121128881 </span>
+                            <span class="hotline">STK Techcombank:  1903.112112.8881 </span>
                         </li>
                     </ul>
                 </div>
