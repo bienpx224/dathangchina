@@ -1,4 +1,4 @@
-<?php echo "haha"; print_r(get_loaded_extensions()); ?>
+<?php echo "haha"; print_r(phpinfo()); ?>
 <?php
 /**
  * Craw html
