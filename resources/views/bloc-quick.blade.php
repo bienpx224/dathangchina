@@ -62,7 +62,7 @@ margin-top: 5px;
     <div class="footer-block-blog">
       <div class="footer-block-content">
         <div class="block-post">
-          <span class="post-title"><a href="/p121/huong-dan-tinh-nang-ho-tro-dat-hang-tren-nh247">Hướng dẫn tính năng hỗ trợ đặt hàng trên Đặt hàng China</a></span>
+          <span class="post-title"><a href="/p121/huong-dan-tinh-nang-ho-tro-dat-hang-tren-dathangchina">Hướng dẫn tính năng hỗ trợ đặt hàng trên Đặt hàng China</a></span>
         </div><div class="block-post">
         <span class="post-title"><a href="/p97/nhung-san-pham-nhap-tu-han-quoc-duoc-ua-chuong-nhat">Những sản phẩm nhập từ Trung Quốc được ưa chuộng nhất</a></span>
       </div><div class="block-post">

@@ -78,7 +78,7 @@
         <span class="step-text text-below">Đơn hàng</span>
       </li>
       <li class="step-check-order">
-        <span class="step-text text-above">NH247</span>
+        <span class="step-text text-above">Chúng tôi</span>
         <span class="step-text text-below">Báo giá</span>
       </li>
       <li class="step-make-payment-order">
@@ -149,8 +149,8 @@
         </li>
       </ul>
       <div class="search-block">
-        <input type="text" class="origin-keyword" placeholder="Nhập tên sản phẩm tiếng Việt để tìm kiếm từ Taobao.com">
-        <a href="javascript:;" class="origin-search-btn" web-name="Taobao"><i class="fa fa-search"></i></a>
+        <input id="search_taobao" type="text" class="origin-keyword" placeholder="Nhập tên sản phẩm tiếng Việt để tìm kiếm từ Taobao.com">
+        <a href="javascript:;" id="search_taobao_btn" class="origin-search-btn" web-name="Taobao"><i class="fa fa-search"></i></a>
       </div>
     </div>
     <div class="origin-block">
@@ -205,8 +205,8 @@
         </li>
       </ul>
       <div class="search-block">
-        <input type="text" class="origin-keyword" placeholder="Nhập tên sản phẩm tiếng Việt để tìm kiếm từ 1688.com">
-        <a href="javascript:;" class="origin-search-btn" web-name="1688"><i class="fa fa-search"></i></a>
+        <input id="search_1688" type="text" class="origin-keyword" placeholder="Nhập tên sản phẩm tiếng Việt để tìm kiếm từ 1688.com">
+        <a href="javascript:;" id="search_1688_btn" class="origin-search-btn" web-name="1688"><i class="fa fa-search"></i></a>
       </div>
     </div>
     <div class="reveal nh-popup" id="modal-guide" data-reveal data-close-on-click="true" data-options="closeOnClick:false;closeOnEsc:false;" style="width: 853px;">
@@ -233,4 +233,38 @@
       </div>
     </div>
   </div>
+  <script type="text/javascript">
+    $(document).ready( ()=>{
+      var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+      $("#search_taobao_btn").click( ()=>{
+          let text = $("#search_taobao").val();
+          $.ajax({
+              type: "POST",
+              url: "{!! url('translate') !!}",
+              data: {text: text, _token: CSRF_TOKEN},
+              success: function(data) {
+                  window.open("https://world.taobao.com/search/search.htm?_input_charset=utf-8&q="+data+"");
+              },
+              failure: function(data){
+                  alert("fail");
+              }
+          });
+      })
+
+      $("#search_1688_btn").click( ()=>{
+          let text = $("#search_1688").val();
+          $.ajax({
+              type: "POST",
+              url: "{!! url('translate') !!}",
+              data: {text: text, _token: CSRF_TOKEN},
+              success: function(data) {
+                  window.open("https://s.1688.com/selloffer/offer_search.htm?keywords="+data+"");
+              },
+              failure: function(data){
+                  alert("fail");
+              }
+          });
+      })
+    })
+  </script>
   @endsection

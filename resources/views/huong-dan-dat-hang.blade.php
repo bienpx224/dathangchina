@@ -112,7 +112,7 @@
                     <p style="margin-left:400px"><em>Lọc dư nợ đơn ngày 3/5</em></p>
                     <p>Theo dõi trên hệ thống, giá trị đơn hàng, tiền phí vận chuyển, các khoản đã thanh toán đều được cập nhật tương ứng theo ngày. Cột dư nợ thể hiện số tiền của khách, số âm tức là khách đang nợ, số dương tức là khách đang dư tiền trên hệ thống.</p>
                     <p>&nbsp;</p>
-                    <p>Mọi thông tin thắc mắc về đơn hàng, bạn vui lòng liên hệ qua tổng đài duy nhất <em><strong>0246.3261.808</strong></em> hoặc liên hệ trực tiếp trên website NhapHang247 để được tư vấn thêm.</p>
+                    <p>Mọi thông tin thắc mắc về đơn hàng, bạn vui lòng liên hệ qua tổng đài duy nhất <em><strong>0948.449.444  or  0965.761.888</strong></em> hoặc liên hệ trực tiếp trên website DatHangChina để được tư vấn thêm.</p>
                     <p><em>Cám ơn Quý khách!</em></p>
                     <p>&nbsp;</p>
                 </div>
@@ -168,29 +168,7 @@
             margin-top: 5px;
             }
             </style>
-            <div class="blog-quick">
-                <div class="block-neo" style="height: 587px;">
-                    <div class="create-order-quick">TẠO ĐƠN HÀNG NHANH</div>
-                    <a href="/tao-don-hang-trung-quoc" class="btn-blog-order order-china" title="Đặt hàng Trung Quốc">Đặt hàng Trung Quốc</a>
-                    <a href="/tao-don-hang-han-quoc" class="btn-blog-order order-korea" title="Đặt hàng Hàn Quốc">Đặt hàng Hàn Quốc</a>
-                    <span class="more-option-text">Hoặc</span>
-                    <a href="javascript:;" class="install-extension-btn" title="Cài đặt công cụ đặt hàng">Cài đặt công cụ đặt hàng</a>
-                    <div class="create-order-quick">TỶ GIÁ HIỆN TẠI:</div>
-                    <span style="display: block">Trung Quốc: <span style="color: #C44853;font-weight: 500">3,489.00</span></span>
-                    <span style="display: block">Hàn Quốc: <span style="color: #C44853;font-weight: 500">21.20</span></span>
-                    <div class="create-order-quick">BÀI VIẾT</div>
-                    <div class="footer-block-blog">
-                        <div class="footer-block-content">
-                            <div class="block-post">
-                                <span class="post-title"><a href="/p121/huong-dan-tinh-nang-ho-tro-dat-hang-tren-nh247">Hướng dẫn tính năng hỗ trợ đặt hàng trên NH247</a></span>
-                            </div><div class="block-post">
-                            <span class="post-title"><a href="/p97/nhung-san-pham-nhap-tu-han-quoc-duoc-ua-chuong-nhat">Những sản phẩm nhập từ Hàn Quốc được ưa chuộng nhất</a></span>
-                        </div><div class="block-post">
-                        <span class="post-title"><a href="/p87/loi-ich-khi-dat-mua-hang-trung-quoc-tren-taobao-tmall-coupang">Lợi ích khi đặt mua hàng trung quốc trên TAOBAO, TMALL, COUPANG </a></span>
-                    </div><div class="block-post">
-                    <span class="post-title"><a href="/p85/luu-y-khi-dat-hang-tren-taobaocom-1688com">Lưu ý khi đặt hàng trên taobao.com, 1688.com.</a></span>
-                </div>                    </div>
-            </div>
+            @include('bloc-quick')
         </div>
     </div>
 </div>

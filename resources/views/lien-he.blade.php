@@ -1,5 +1,5 @@
 @extends('index')
-@section('title','Quy định đặt hàng - Nhập hàng china')
+@section('title','Liên hệ - Nhập hàng china')
 @section('content')
 <div class="row main-content" id="main-content">
     <style>
@@ -48,19 +48,19 @@
     <span class="nh-divide"></span>
     <div style="clear: both"></div>
     <div class="blog-pages">
-        <div class="blog-pages-left" id="quang-cao" style=" height: 1550px; background-image:url('public/img/quang-cao.png');">
+        <!-- <div class="blog-pages-left" id="quang-cao" style=" height: 1550px; background-image:url('public/img/quang-cao.png');">
 
             <div style="clear: both"></div>
-        </div>
-        <div class="blog-pages-right blog-page" style="margin-left: -30px;">
-            <div class="blog-detail">
+        </div> -->
+        <div class="blog-pages-right blog-page" style="margin-left: 0px;margin-right: 0px;">
+            <div class="blog-detail" style="width: 84%;">
                 <h1 class="article-title">Liên hệ</h1>
                 <div class="block-date-time">
                     <span class="date">24-11-2017</span>
                     <ul class="share">
-                        <li class="facebook"><div id="fb-root" class=" fb_reset"><div class="fb-like fb_iframe_widget" data-href="http://www.nhaphang247.com/lien-he?title=lien-he" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false" fb-xfbml-state="rendered" fb-iframe-plugin-query="action=like&amp;app_id=199344773551690&amp;container_width=0&amp;href=http%3A%2F%2Fwww.nhaphang247.com%2Flien-he%3Ftitle%3Dlien-he&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey&amp;share=false&amp;show_faces=true"><span style="vertical-align: bottom; width: 84px; height: 20px;"><iframe name="f15811d8d78395c" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:like Facebook Social Plugin" src="https://www.facebook.com/v2.3/plugins/like.php?action=like&amp;app_id=199344773551690&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FlY4eZXm_YWu.js%3Fversion%3D42%23cb%3Df1988129d81eec%26domain%3Dwww.nhaphang247.com%26origin%3Dhttp%253A%252F%252Fwww.nhaphang247.com%252Ff15899cb2ed794c%26relation%3Dparent.parent&amp;container_width=0&amp;href=http%3A%2F%2Fwww.nhaphang247.com%2Flien-he%3Ftitle%3Dlien-he&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey&amp;share=false&amp;show_faces=true" style="border: none; visibility: visible; width: 84px; height: 20px;" class=""></iframe></span></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div><iframe name="fb_xdm_frame_http" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_http" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="http://staticxx.facebook.com/connect/xd_arbiter/r/lY4eZXm_YWu.js?version=42#channel=f15899cb2ed794c&amp;origin=http%3A%2F%2Fwww.nhaphang247.com" style="border: none;"></iframe><iframe name="fb_xdm_frame_https" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" id="fb_xdm_frame_https" aria-hidden="true" title="Facebook Cross Domain Communication Frame" tabindex="-1" src="https://staticxx.facebook.com/connect/xd_arbiter/r/lY4eZXm_YWu.js?version=42#channel=f15899cb2ed794c&amp;origin=http%3A%2F%2Fwww.nhaphang247.com" style="border: none;"></iframe></div></div><div style="position: absolute; top: -10000px; height: 0px; width: 0px;"><div></div></div></div></li>
-                        <li class="facebook-share"><div id="fb-root"><div class="fb-share-button fb_iframe_widget" data-href="http://www.nhaphang247.com/lien-he?title=lien-he" data-layout="button_count" fb-xfbml-state="rendered" fb-iframe-plugin-query="app_id=199344773551690&amp;container_width=0&amp;href=http%3A%2F%2Fwww.nhaphang247.com%2Flien-he%3Ftitle%3Dlien-he&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey"><span style="vertical-align: bottom; width: 94px; height: 20px;"><iframe name="f34a91f9d76b0e8" width="1000px" height="1000px" frameborder="0" allowtransparency="true" allowfullscreen="true" scrolling="no" title="fb:share_button Facebook Social Plugin" src="https://www.facebook.com/v2.3/plugins/share_button.php?app_id=199344773551690&amp;channel=http%3A%2F%2Fstaticxx.facebook.com%2Fconnect%2Fxd_arbiter%2Fr%2FlY4eZXm_YWu.js%3Fversion%3D42%23cb%3Df1dc2040442f654%26domain%3Dwww.nhaphang247.com%26origin%3Dhttp%253A%252F%252Fwww.nhaphang247.com%252Ff15899cb2ed794c%26relation%3Dparent.parent&amp;container_width=0&amp;href=http%3A%2F%2Fwww.nhaphang247.com%2Flien-he%3Ftitle%3Dlien-he&amp;layout=button_count&amp;locale=vi_VN&amp;sdk=joey" style="border: none; visibility: visible; width: 94px; height: 20px;" class=""></iframe></span></div></div></li>
-                        <li class="google"><div id="___plusone_0" style="text-indent: 0px; margin: 0px; padding: 0px; background: transparent; border-style: none; float: none; line-height: normal; font-size: 1px; vertical-align: baseline; display: inline-block; width: 32px; height: 20px;"><iframe ng-non-bindable="" frameborder="0" hspace="0" marginheight="0" marginwidth="0" scrolling="no" style="position: static; top: 0px; width: 32px; margin: 0px; border-style: none; left: 0px; visibility: visible; height: 20px;" tabindex="0" vspace="0" width="100%" id="I0_1511667764951" name="I0_1511667764951" src="https://apis.google.com/u/0/se/0/_/+1/fastbutton?usegapi=1&amp;size=medium&amp;annotation=inline&amp;width=200&amp;origin=http%3A%2F%2Fwww.nhaphang247.com&amp;url=http%3A%2F%2Fwww.nhaphang247.com%2Flien-he%3Ftitle%3Dlien-he&amp;gsrc=3p&amp;ic=1&amp;jsh=m%3B%2F_%2Fscs%2Fapps-static%2F_%2Fjs%2Fk%3Doz.gapi.vi.CRWqul2f0Vw.O%2Fm%3D__features__%2Fam%3DAQ%2Frt%3Dj%2Fd%3D1%2Frs%3DAGLTcCOByQQ-ItN9B1zHg98WYPcl7VNBuQ#_methods=onPlusOne%2C_ready%2C_close%2C_open%2C_resizeMe%2C_renderstart%2Concircled%2Cdrefresh%2Cerefresh%2Conload&amp;id=I0_1511667764951&amp;_gfid=I0_1511667764951&amp;parent=http%3A%2F%2Fwww.nhaphang247.com&amp;pfname=&amp;rpctoken=14304587" data-gapiattached="true" title="G+"></iframe></div></li>
+                        <li class="facebook">
+                            <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fdathangchina88%2F&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId=168504457034504" width="450" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                        </li>
                     </ul>
                     <div style="clear: both"></div>
                 </div>
@@ -94,7 +94,7 @@
                 <div class="article-footer">
                     <div class="prev-post">
                         <a href="/p75/tong-hop-link-order-hang-han-quoc" class="icon-prev"><i class="fa fa-chevron-left"></i> Bài trước</a>
-                        <a href="/p75/tong-hop-link-order-hang-han-quoc" class="name-prev" alt="Tổng hợp link order hàng Hàn Quốc" title="Tổng hợp link order hàng Hàn Quốc">Tổng hợp link order hàng Trung Quốc</a>
+                        <a href="/p75/tong-hop-link-order-hang-han-quoc" class="name-prev" alt="Tổng hợp link order hàng Hàn Quốc" title="Tổng hợp link order hàng Trung Quốc">Tổng hợp link order hàng Trung Quốc</a>
                     </div>
                     <div class="next-post">
                         <a href="/gioi-thieu?title=gioi-thieu" class="icon-next">Bài sau <i class="fa fa-chevron-right"></i></a>

@@ -35,6 +35,9 @@ Route::get('/gioi-thieu', function () {
 Route::get('/get-link', function () {
     return view('tao-don-hang');
 });
+Route::get('/tuyen-dung', function () {
+    return view('tuyen-dung');
+});
 Route::get('/gethtml', function () {
     return view('gethtml');
 });

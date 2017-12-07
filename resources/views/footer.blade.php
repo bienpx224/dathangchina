@@ -10,21 +10,19 @@
                 <div  class="block-address">
                     <ul class="address-list">
                         <li>
-                            <span class="address"> Minh Khai - Hai Bà Trưng - Hà Nội</span><br>
+                            <span class="address"> Ngõ 6 Phố Đặng Văn Ngữ, Phương Liên, Đống Đa, Hà Nội</span><br>
+                            <br>
+                            <br>
                             <span class="hotline">SĐT:  0948.449.444</span><br>
                             <span class="hotline">STK Vietcombank:  0491.0000.35204</span>
-                        </li>
-                    </ul>
-                </div>
-                <div  class="block-address">
-                    <ul class="address-list">
-                        <li>
-                            <span class="address"> Nguyễn Trãi - Thanh Xuân - Hà Nội</span><br>
-                            <span class="hotline">SĐT:  0965761888</span><br>
+                            <br><br>
+
+                            <span class="hotline">SĐT:  0965.761.888</span><br>
                             <span class="hotline">STK Techcombank:  1903.112112.8881 </span>
                         </li>
                     </ul>
                 </div>
+
             </div>
         </div>
         <div class="footer-block-account-info">
@@ -65,18 +63,16 @@
             <!--                </div>-->
         </div>
         <div class="footer-block-blog">
-            <span class="footer-block-title">Blog</span>
+            <span class="footer-block-title">Fan page facebook</span>
             <div class="footer-block-content">
-                <div class="block-post">
-                    <span class="post-title"><a href="/p121/huong-dan-tinh-nang-ho-tro-dat-hang-tren-nh247">Hướng dẫn tính năng hỗ trợ đặt hàng trên Đặt hàng China</a></span>
-                </div><div class="block-post">
-                <span class="post-title"><a href="/p97/nhung-san-pham-nhap-tu-han-quoc-duoc-ua-chuong-nhat">Những sản phẩm nhập từ Trung Quốc được ưa chuộng nhất</a></span>
-            </div><div class="block-post">
-            <span class="post-title"><a href="/p87/loi-ich-khi-dat-mua-hang-trung-quoc-tren-taobao-tmall-coupang">Lợi ích khi đặt mua hàng trung quốc trên TAOBAO, 1688 </a></span>
-        </div><div class="block-post">
-        <span class="post-title"><a href="/p85/luu-y-khi-dat-hang-tren-taobaocom-1688com">Lưu ý khi đặt hàng trên taobao.com, 1688.com.</a></span>
-    </div>                </div>
-</div>
+                <a href="https://www.facebook.com/dathangchina88/"><p class="hot-line">
+                    <span>Page: </span>DatHangChina
+                </p></a>
+                            <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fdathangchina88%2F&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId=168504457034504" width="450" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+
+            </div>
+        </div>
+
 <div class="footer-block-cert">
     <span class="footer-block-title">Được chứng nhận</span>
     <div class="footer-block-content">
