@@ -1,55 +1,8 @@
-@extends('index')
-@section('title','Quy định đặt hàng - Nhập hàng china')
-@section('content')
-<div class="row main-content" id="main-content">
-    <style>
-    .pagination {
-    margin-top: 20px;
-    text-align: right;
-    }
-    .pagination li {
-    border: 1px solid #CFD1D2 !important;
-    }
-    .pagination .active {
-    background-color: #EDF0F4;
-    }
-    .blog-pages-right {
-    min-height: 750px;
-    min-width: 997px;
-    }
-    .blog-quick {
-    display: inline-block !important;
-    }
-    .blog-pages .blog-pages-right {
-    float: none !important;
-    width: 100% !important;
-    }
-    .blog-list {
-    width: 100% !important;
-    padding-right: 246px !important;
-    min-height: 750px;
-    }
-    .blog-list:after{
-    right: 203px !important;
-    }
-    </style>
-    <!-- Begin Breadcrumb -->
-    <div class="nh-breadcrumb">
-        <ul class="nh-breadcrumb-list">
-            <li class="nh-breadcrumb-item">
-                <a href="">Trang chủ</a>
-            </li>
-            <li class="nh-breadcrumb-item">
-                <span>Huong dan đat hang qua DatHangChina.com</span>
-            </li>
-        </ul>
-    </div>
-    <!-- End Breadcrumb -->
-    <span class="nh-divide"></span>
-    <div style="clear: both"></div>
-    <div class="blog-pages">
-        <div class="blog-pages-right blog-page">
-            <div class="blog-list">
+@extends('layout')
+@section('page','Hướng dẫn đặt hàng')
+@section('title','Hướng dẫn đặt hàng - Nhập hàng china')
+@section('content-page')
+ <div class="blog-list">
                 <h1 style="text-align: center;margin:0 10px 15px 10px;">Hướng dẫn cách đặt hàng trên hệ thống DatHangChina</h1>
                 <div class="contentx">
                     <p style="text-align:start">Chào mừng bạn đến với <strong>DatHangChina</strong>&nbsp;- Website cung cấp dịch vụ đặt hàng, thanh toán và vận chuyển hàng hoá Trung Quốc, Hàn Quốc. Vượt qua rào cản về ngôn ngữ, thanh toán, vận chuyển, chúng tôi mang đến khách hàng&nbsp;nguồn hàng đa dạng, phong phú với giá cả và chi phí thấp nhất phục vụ tối đa nhu cầu kinh doanh cũng như nhu cầu mua sắm cá nhân.&nbsp;<a href="http://www.dathangchina.com/" style="box-sizing: inherit; color: rgb(33, 153, 232); text-decoration: none; line-height: inherit; cursor: pointer; background-color: transparent;">Order hàng Taobao</a>, <a href="http://www.dathangchina.com/" style="box-sizing: inherit; color: rgb(33, 153, 232); text-decoration: none; line-height: inherit; cursor: pointer; background-color: transparent;">order hàng Hàn Quốc</a> đã giúp ích nhiều shop, doanh nghiệp tìm kiếm nguồn hàng giá rẻ, độc,&nbsp;lạ mà thị trường trong nước chưa đáp ứng được.</p>
@@ -168,14 +121,4 @@
             margin-top: 5px;
             }
             </style>
-            @include('bloc-quick')
-        </div>
-    </div>
-</div>
-<div style="clear: both"></div>
-</div>
-</div>
-<div style="clear: both"></div>
-</div>
-</div>
 @endsection

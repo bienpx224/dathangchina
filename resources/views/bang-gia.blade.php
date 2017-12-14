@@ -1,55 +1,8 @@
-@extends('index')
-@section('title','Quy định đặt hàng - Nhập hàng china')
-@section('content')
-<div class="row main-content" id="main-content">
-    <style>
-    .pagination {
-    margin-top: 20px;
-    text-align: right;
-    }
-    .pagination li {
-    border: 1px solid #CFD1D2 !important;
-    }
-    .pagination .active {
-    background-color: #EDF0F4;
-    }
-    .blog-pages-right {
-    min-height: 750px;
-    min-width: 997px;
-    }
-    .blog-quick {
-    display: inline-block !important;
-    }
-    .blog-pages .blog-pages-right {
-    float: none !important;
-    width: 100% !important;
-    }
-    .blog-list {
-    width: 100% !important;
-    padding-right: 246px !important;
-    min-height: 750px;
-    }
-    .blog-list:after{
-    right: 203px !important;
-    }
-    </style>
-    <!-- Begin Breadcrumb -->
-    <div class="nh-breadcrumb">
-        <ul class="nh-breadcrumb-list">
-            <li class="nh-breadcrumb-item">
-                <a href="">Trang chủ</a>
-            </li>
-            <li class="nh-breadcrumb-item">
-                <span>Bảng giá</span>
-            </li>
-        </ul>
-    </div>
-    <!-- End Breadcrumb -->
-    <span class="nh-divide"></span>
-    <div style="clear: both"></div>
-    <div class="blog-pages">
-        <div class="blog-pages-right blog-page">
-            <div class="blog-list">
+@extends('layout')
+@section('page','Bảng giá')
+@section('title','Bảng giá - Nhập hàng china')
+@section('content-page')
+<div class="blog-list">
                 <h1 style="text-align: center;margin:0 10px 15px 10px;">Bảng giá dịch vụ đặt hàng và vận chuyển</h1>
                 <div class="contentx">
                     <div class="col-md-10 col-md-offset-1">
@@ -209,11 +162,4 @@
                     </div>
                 </div>
             </div>
-            @include('bloc-quick')
-        </div>
-    </div>
-</div>
-<div style="clear: both"></div>
-</div>
-</div>
 @endsection

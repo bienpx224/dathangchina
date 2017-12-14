@@ -53,6 +53,19 @@ return [
             'strict' => true,
             'engine' => null,
         ],
+        // 'mysql' => [
+        //     'driver' => 'mysql',
+        //     'host' => 'mysql.hostinger.vn',
+        //     'port' => env('DB_PORT', '3306'),   // notice
+        //     'database' => 'u109907030_root',
+        //     'username' => 'u109907030_bien',
+        //     'password' => 'entertainment',
+        //     'charset' => 'utf8',
+        //     'collation' => 'utf8_unicode_ci',
+        //     'prefix' => '',
+        //     'strict' => true,
+        //     'engine' => null,
+        // ],
 
         'pgsql' => [
             'driver' => 'pgsql',

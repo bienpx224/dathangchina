@@ -1,5 +1,5 @@
 .selected-site{height: 20px;padding: 0px 5px; font-size: 14px; border:0;}
-.top-navigation-container{width: 100%; position: fixed; top: 52px; z-index: 99999;}
+.top-navigation-container{width: 100%; position: fixed; top: 52px;}
 .nh-description{margin-top: 40px;}
 .modal{z-index: 999999;}
 .blog-pages-left{background-image: url("/img/quang-cao.png");}

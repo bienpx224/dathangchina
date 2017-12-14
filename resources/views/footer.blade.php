@@ -13,12 +13,6 @@
                             <span class="address"> Ngõ 6 Phố Đặng Văn Ngữ, Phương Liên, Đống Đa, Hà Nội</span><br>
                             <br>
                             <br>
-                            <span class="hotline">SĐT:  0948.449.444</span><br>
-                            <span class="hotline">STK Vietcombank:  0491.0000.35204</span>
-                            <br><br>
-
-                            <span class="hotline">SĐT:  0965.761.888</span><br>
-                            <span class="hotline">STK Techcombank:  1903.112112.8881 </span>
                         </li>
                     </ul>
                 </div>

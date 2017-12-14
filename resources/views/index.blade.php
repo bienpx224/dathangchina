@@ -9,9 +9,10 @@
         <meta name="csrf-token" content="{{ csrf_token() }}" />
         <title>@yield('title')</title>
         <link rel="icon" type="image/png" href="{{ asset('public/img/logo.png') }}">
+
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
         <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&amp;subset=latin,vietnamese" rel="stylesheet">
 
         <link href="{{asset('public/assets/cae4bfa9/css/nh247.css?v=1477467569') }}" rel="stylesheet">
@@ -24,16 +25,37 @@
         <link href="{{asset('public/assets/133f920c/css/vex-theme-plain.css?v=1477465296') }}" rel="stylesheet">
         <link href="{{asset('public/assets/c6f829cd/Loading.css?v=1474536219') }}" rel="stylesheet">
         <link href="{{asset('public/assets/bb9e61ec/css/pnotify.custom.min.css?v=1474536216') }}" rel="stylesheet">
+        <link href="{{asset('public/assets/account.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('public/css/mycss.css') }}" media="all" type="text/css">
+
+
+
         <script type="text/javascript" src="{{asset('public/js/jquery-3.1.1.min.js') }}"></script>
         <script type="text/javascript" src="{{asset('public/socket.io/socket.io.js') }}"></script>
-        <script type="text/javascript" src="{{asset('public/js/myjs.js"></script>
-
+        <script type="text/javascript" src="{{asset('public/js/myjs.js"')}}"></script>
         <script type="text/javascript" src="http://cdn.howcode.org/content/static/javascript/jquery.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-        <script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
         <!-- Latest compiled JavaScript -->
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        @if(Session::has('loginfailed'))
+          <script>
+          $(function() {
+              $('#LogInModal').modal('show');
+          });
+          </script>
+        @endif
+        @if(count($errors) > 0)
+          <script>
+          $(function() {
+              $('#SignUpModal').modal('show');
+          });
+          </script>
+        @endif
+        @if (Session::has('signupsuccess'))
+          <script type="text/javascript">
+            alert('{{Session::get('signupsuccess')}}')
+          </script>
+
+        @endif
     </head>
     <body id="body">
         <div class="top-header" id="topHead">
@@ -72,7 +94,7 @@
                 </span>
                 <div class="notification-block">
                     <div class="notification-block-message">
-                        <a href="#" class="notification-block-message-link fa fa-comments" data-dropdown=".notification-message-details" title="Tin nhắn"></a>
+                        <a href="#" class="notification-block-message-link " data-dropdown=".notification-message-details" title="Tin nhắn"></a>
                         <span id="count-chat-notify" class="alert badge" style="display: none;"></span>
                         <div class="notification-message-details">
                             <div class="details-popup-header">
@@ -89,7 +111,7 @@
                         <a href="javascript:;" id="link-modal-login" data-reveal-id="modal-signup2" class="modal-signup2 notification-block-notice-link" title="Thông báo"></a>
                     </div>
                     <div class="notification-block-message">
-                        <a href="#" class="notification-block-feedback-link fa fa-envelope" title="Góp ý"></a>
+                        <a href="#" class="notification-block-feedback-link " title="Góp ý"></a>
                         <div class="notification-message-details feedback-form" style="right: -12px !important;">
                             <div class="details-popup-header">
                                 <span class="title">Góp ý</span>
@@ -116,13 +138,66 @@
                         </div>
                     </div>
                 </div>
-                <a href="javascript:;" id="link-modal-sign-up"  data-reveal-id="modal-signup" class="modal-signup nb-signup">Đăng ký</a>
-                <div class="reveal nh-popup" id="modal-signup" data-reveal data-close-on-click="true"></div>
-                <a href="javascript:;" id="link-modal-login" data-reveal-id="modal-signup2" class="modal-signup2 nb-signup">Đăng nhập</a>
-                <div class="reveal nh-popup" id="modal-signup2" data-reveal data-close-on-click="true"></div>
-            </div>
+{{--THUONG--}}
+              @if (Auth::check())
+                  <ul class="nav navbar-nav navbar-right" style=" margin-top:-10px;">
+                        <li class="dropdown" >
+                            <a class="dropdown-toggle" data-toggle="dropdown" id="menu1">
+                                <span class="glyphicon glyphicon-user" ></span>
+                                <strong>{{ Auth::user()->name }}</strong>
+                                <span class="glyphicon glyphicon-chevron-down" ></span>
+                            </a>
+                            <ul class="dropdown-menu" role="menu" aria-labelledby="menu1" style="width: 307px; z-index: 99999;">
+                                <li>
+                                    <a href="{{route('user-information')}}">
+                                        Thông tin cá nhân
+                                        <span class="glyphicon glyphicon-list-alt pull-right"></span>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="{{route('user-information')}}">
+                                        Danh sách đơn hàng
+                                        <span class="glyphicon glyphicon-shopping-cart pull-right"></span>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="{{route('user-information')}}">
+                                        Chi tiết giao dịch
+                                        <span class="glyphicon glyphicon-folder-open pull-right"></span>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="{{route('change-password')}}">
+                                        Thay đổi mật khẩu
+                                        <span class="glyphicon glyphicon-retweet pull-right"></span>
+                                    </a>
+                                </li>
+                                <li class="divider"></li>
+                                <li>
+                                    <a href="{{ url('/logout') }}">Sign Out
+                                        <span class="glyphicon glyphicon-log-out pull-right"></span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+              @else
+                <a data-toggle="modal" href="#LogInModal">Đăng nhập</a>
+                <div class="modal fade" id="LogInModal" role="dialog">
+                  @include('auth/login')
+                </div>
+                <a data-toggle="modal" href="#SignUpModal">Đăng ký</a>
+                <div class="modal fade" id="SignUpModal" role="dialog">
+                  @include('auth/signup')
+                </div>
+              @endif
+{{--END THUONG--}}
         </div>
-        <div class="top-navigation-container">
+    </div>
+        <div class="top-navigation-container" style="z-index: 9;">
             <div class="row">
                 <ul class="top-navigation">
                     <li class="menu-item"><a href="{!! url('/') !!}">Trang chủ</a></li>
@@ -161,6 +236,7 @@
                 </ul>
             </div>
         </div>
+      </div>
             @yield('content')
             @include('footer')
         </body>

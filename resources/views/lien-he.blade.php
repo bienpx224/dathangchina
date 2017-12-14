@@ -1,59 +1,8 @@
-@extends('index')
+@extends('layout')
+@section('page','Liên hệ')
 @section('title','Liên hệ - Nhập hàng china')
-@section('content')
-<div class="row main-content" id="main-content">
-    <style>
-    .pagination {
-    margin-top: 20px;
-    text-align: right;
-    }
-    .pagination li {
-    border: 1px solid #CFD1D2 !important;
-    }
-    .pagination .active {
-    background-color: #EDF0F4;
-    }
-    .blog-pages-right {
-    min-height: 750px;
-    min-width: 997px;
-    }
-    .blog-quick {
-    display: inline-block !important;
-    }
-    .blog-pages .blog-pages-right {
-    float: none !important;
-    width: 100% !important;
-    }
-    .blog-list {
-    width: 100% !important;
-    padding-right: 246px !important;
-    min-height: 750px;
-    }
-    .blog-list:after{
-    right: 203px !important;
-    }
-    </style>
-    <!-- Begin Breadcrumb -->
-    <div class="nh-breadcrumb">
-        <ul class="nh-breadcrumb-list">
-            <li class="nh-breadcrumb-item">
-                <a href="">Trang chủ</a>
-            </li>
-            <li class="nh-breadcrumb-item">
-                <span>Liên hệ </span>
-            </li>
-        </ul>
-    </div>
-    <!-- End Breadcrumb -->
-    <span class="nh-divide"></span>
-    <div style="clear: both"></div>
-    <div class="blog-pages">
-        <!-- <div class="blog-pages-left" id="quang-cao" style=" height: 1550px; background-image:url('public/img/quang-cao.png');">
-
-            <div style="clear: both"></div>
-        </div> -->
-        <div class="blog-pages-right blog-page" style="margin-left: 0px;margin-right: 0px;">
-            <div class="blog-detail" style="width: 84%;">
+@section('content-page')
+<div class="blog-detail" style="width: 84%;">
                 <h1 class="article-title">Liên hệ</h1>
                 <div class="block-date-time">
                     <span class="date">24-11-2017</span>
@@ -119,12 +68,4 @@
                 </div>
                 <div class="end-post"></div>
             </div>
-            @include('bloc-quick')
-        </div>
-    </div>
-</div>
-<div style="clear: both"></div>
-</div>
-</div>
-
 @endsection

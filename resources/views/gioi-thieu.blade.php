@@ -1,64 +1,14 @@
-@extends('index')
+@extends('layout')
 @section('title','Giới thiệu - Nhập hàng china')
-@section('content')
-<div class="row main-content" id="main-content">
-    <style>
-    .pagination {
-    margin-top: 20px;
-    text-align: right;
-    }
-    .pagination li {
-    border: 1px solid #CFD1D2 !important;
-    }
-    .pagination .active {
-    background-color: #EDF0F4;
-    }
-    .blog-pages-right {
-    min-height: 750px;
-    min-width: 997px;
-    }
-    .blog-quick {
-    display: inline-block !important;
-    }
-    .blog-pages .blog-pages-right {
-    float: none !important;
-    width: 100% !important;
-    }
-    .blog-list {
-    width: 100% !important;
-    padding-right: 246px !important;
-    min-height: 750px;
-    }
-    .blog-list:after{
-    right: 203px !important;
-    }
-    </style>
-    <!-- Begin Breadcrumb -->
-    <div class="nh-breadcrumb">
-        <ul class="nh-breadcrumb-list">
-            <li class="nh-breadcrumb-item">
-                <a href="">Trang chủ</a>
-            </li>
-            <li class="nh-breadcrumb-item">
-                <span>Giới thiệu </span>
-            </li>
-        </ul>
-    </div>
-    <!-- End Breadcrumb -->
-    <span class="nh-divide"></span>
-    <div style="clear: both"></div>
-    <div class="blog-pages">
-        <!-- <div class="blog-pages-left" id="quang-cao" style=" height: 1550px; background-image:url('public/img/quang-cao.png');">
-            <div style="clear: both"></div>
-        </div> -->
-        <div class="blog-pages-right blog-page" style="margin-left: 0px;margin-right: 0px;">
+@section('page','Giới thiệu')
+@section('content-page')
             <div class="blog-detail" style="width: 84%;">
                 <h1 class="article-title">Giới thiệu</h1>
                 <div class="block-date-time">
                     <span class="date">24-11-2017</span>
                     <ul class="share">
                         <li class="facebook">
-                            <iframe src="https://www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fdathangchina88%2F&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId=168504457034504" width="450" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
+                            <iframe src="https:/www.facebook.com/plugins/like.php?href=https%3A%2F%2Fwww.facebook.com%2Fdathangchina88%2F&width=450&layout=standard&action=like&size=small&show_faces=true&share=true&height=80&appId=168504457034504" width="450" height="80" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true"></iframe>
                         </li>
                     </ul>
                     <div style="clear: both"></div>
@@ -98,11 +48,4 @@
 
 
             </div>
-            @include('bloc-quick')
-        </div>
-    </div>
-</div>
-<div style="clear: both"></div>
-</div>
-</div>
 @endsection
