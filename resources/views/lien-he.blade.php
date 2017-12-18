@@ -43,7 +43,7 @@
                 <div class="article-footer">
                     <div class="prev-post">
                         <a href="/p75/tong-hop-link-order-hang-han-quoc" class="icon-prev"><i class="fa fa-chevron-left"></i> Bài trước</a>
-                        <a href="/p75/tong-hop-link-order-hang-han-quoc" class="name-prev" alt="Tổng hợp link order hàng Hàn Quốc" title="Tổng hợp link order hàng Trung Quốc">Tổng hợp link order hàng Trung Quốc</a>
+                        <a href="/p75/tong-hop-link-order-hang-han-quoc" class="name-prev" alt="Tổng hợp link order hàng Trung Quốc" title="Tổng hợp link order hàng Trung Quốc">Tổng hợp link order hàng Trung Quốc</a>
                     </div>
                     <div class="next-post">
                         <a href="/gioi-thieu?title=gioi-thieu" class="icon-next">Bài sau <i class="fa fa-chevron-right"></i></a>
@@ -53,8 +53,8 @@
                 </div>
                 <div class="rela-post">
                     <div class="rela-item ">
-                        <a href="/p100/7-xu-huong-duong-da-moi-cua-han-quoc-khong-the-bo-qua" alt="7 xu hướng dưỡng da mới của Hàn Quốc không thể bỏ qua" title="7 xu hướng dưỡng da mới của Hàn Quốc không thể bỏ qua"><img src="/upload/6813b5c7ce3f920487e5ffcd5f799feb_01-07-2016_23-33.jpg" class="rela-img" alt="7 xu hướng dưỡng da mới của Hàn Quốc không thể bỏ qua"></a>
-                        <a href="/p100/7-xu-huong-duong-da-moi-cua-han-quoc-khong-the-bo-qua" class="rela-title" alt="7 xu hướng dưỡng da mới của Hàn Quốc không thể bỏ qua" title="7 xu hướng dưỡng da mới của Hàn Quốc không thể bỏ qua">7 xu hướng dưỡng da mới của Trung Quốc không thể bỏ qua</a>
+                        <a href="/p100/7-xu-huong-duong-da-moi-cua-han-quoc-khong-the-bo-qua" alt="7 xu hướng dưỡng da mới của Trung Quốc không thể bỏ qua" title="7 xu hướng dưỡng da mới của Trung Quốc không thể bỏ qua"><img src="/upload/6813b5c7ce3f920487e5ffcd5f799feb_01-07-2016_23-33.jpg" class="rela-img" alt="7 xu hướng dưỡng da mới của Trung Quốc không thể bỏ qua"></a>
+                        <a href="/p100/7-xu-huong-duong-da-moi-cua-han-quoc-khong-the-bo-qua" class="rela-title" alt="7 xu hướng dưỡng da mới của Trung Quốc không thể bỏ qua" title="7 xu hướng dưỡng da mới của Trung Quốc không thể bỏ qua">7 xu hướng dưỡng da mới của Trung Quốc không thể bỏ qua</a>
                     </div>
                     <div class="rela-item ">
                         <a href="/p27/he-thong-cac-shop-tren-taobaocom-tmallcom-1688" alt="Hệ thống các shop trên taobao.com, tmall.com, 1688" title="Hệ thống các shop trên taobao.com, tmall.com, 1688"><img src="/upload/d39bab7388c07dadd7cea5e195fa9693_17-09-2015_23-44.jpg" class="rela-img" alt="Hệ thống các shop trên taobao.com, tmall.com, 1688"></a>

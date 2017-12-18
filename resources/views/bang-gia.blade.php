@@ -6,7 +6,7 @@
                 <h1 style="text-align: center;margin:0 10px 15px 10px;">Bảng giá dịch vụ đặt hàng và vận chuyển</h1>
                 <div class="contentx">
                     <div class="col-md-10 col-md-offset-1">
-                        <p style="text-align:justify">Bảng giá dịch vụ đặt hàng của&nbsp;<strong>Đặt hàng China</strong>&nbsp;được tính dựa trên tổng giá trị đơn hàng, mỗi mốc giá trị khác nhau sẽ có mức phí dịch vụ khác nhau, áp dụng cho cả đơn đặt hàng Trung Quốc và Hàn Quốc. Cụ thể như sau:</p>
+                        <p style="text-align:justify">Bảng giá dịch vụ đặt hàng của&nbsp;<strong>Đặt hàng China</strong>&nbsp;được tính dựa trên tổng giá trị đơn hàng, mỗi mốc giá trị khác nhau sẽ có mức phí dịch vụ khác nhau, áp dụng cho cả đơn đặt hàng Trung Quốc. Cụ thể như sau:</p>
                         <p><strong>Giá (về tận nhà HN hoặc SG) =&nbsp;(Giá sản phẩm + Giá VC nội địa) * Tỉ giá tệ/won + % Phí dịch vụ đặt hàng + Phí VC</strong><br>
                             Trong đó:<br>
                             - Giá sản phẩm, tiền vận chuyển (VC)&nbsp;nội địa: Thanh toán trực tiếp cho shop TQ/HQ, giá VC nội địa dao động và do các shop quy định, cũng có shop miễn phí VC.<br>
@@ -156,7 +156,7 @@
                         <p>Có 2 hình thức chuyển phát nhanh và chuyển phát chậm: Tùy từng mặt hàng nhân viên chúng tôi sẽ tư vấn để quý khách lựa chọn hình thức phù hợp hơn. Phí VC được thanh toán trước và tính theo biểu phí hàng hoá của Viettel Post.</p>
                         <p>Đối với hình thức chuyển xe: Chúng tôi chỉ áp dụng chuyển xe đối với các nhà xe do khách hàng cung cấp và không đảm bảo hàng hóa toàn vẹn và không mất mát&nbsp;trong quá trình chuyển.&nbsp;Phí vào bến 20,000/lần chuyển.&nbsp;</p>
                         <p><em><strong>5. Thời gian chuyển hàng</strong></em></p>
-                        <p>- Các đơn hàng thông thường sẽ tới HN sau 7 – 10 ngày, tới TP. Hồ Chí Minh sau 9 – 12 ngày. Tuy nhiên với các mặt hàng chứa pin, hoá chất, nước,… do không chuyển theo đường nhanh nên sẽ tới HCM chậm trễ hơn từ 2 – 5 ngày.&nbsp;Thời gian chuyển chậm áp dụng với hàng Hàn Quốc là 30 - 35 ngày (mỗi tháng chỉ có 2 đợt chuyển hàng chậm).</p>
+                        <p>- Các đơn hàng thông thường sẽ tới HN sau 7 – 10 ngày, tới TP. Hồ Chí Minh sau 9 – 12 ngày. Tuy nhiên với các mặt hàng chứa pin, hoá chất, nước,… do không chuyển theo đường nhanh nên sẽ tới HCM chậm trễ hơn từ 2 – 5 ngày.&nbsp;Thời gian chuyển chậm áp dụng với hàng Trung Quốc là 30 - 35 ngày (mỗi tháng chỉ có 2 đợt chuyển hàng chậm).</p>
                         <p>- Trường hợp hàng về chậm do thiên tai, thất lạc, thủ tục hải quan....: Đây là lý do khách quan công ty chúng tôi không hề mong muốn. Nhưng với tinh thần hỗ trợ khách hàng tối đa có thể, nếu quá 30 ngày quy định quý khách chưa nhận được hàng hóa chúng tôi sẽ bồi hoàn 100% giá trị hàng hóa (nếu khách không nhận hàng) hoặc giảm giá từ 20-50% giá trị hàng hóa (nếu khách nhận hàng).</p>
                         <p style="text-align:justify">&nbsp;</p>
                     </div>

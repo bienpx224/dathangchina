@@ -16,6 +16,7 @@ class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
 
+
     public function indexAction(){
       return view('home');
     }
@@ -28,5 +29,15 @@ class Controller extends BaseController
       $result = $trans->translate($source, $target, $text);
       Log::info('Result: '.$result);
       return $result;
+    }
+    public function postGetLink(Request $req){
+      require "simple_html_dom.php";
+      $url = "https://detail.tmall.com/item.htm?spm=a230r.1.14.13.1d76d49b9TSv9u&id=538504605056&cm_id=140105335569ed55e27b&abbucket=6";
+      $linksp = $req->linksanpham;
+      $html = file_get_html($url);
+      $tins = $html->find('div.tm-clear',0);
+      $title = $tins->find('h1',0);
+      Log::info('Title: '.$title);
+      return $html;
     }
 }

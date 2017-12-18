@@ -140,7 +140,7 @@
                 </div>
 {{--THUONG--}}
               @if (Auth::check())
-                  <ul class="nav navbar-nav navbar-right" style=" margin-top:-10px;">
+                  <ul class="nav navbar-nav navbar-right" style=" margin-top:-35px;">
                         <li class="dropdown" >
                             <a class="dropdown-toggle" data-toggle="dropdown" id="menu1">
                                 <span class="glyphicon glyphicon-user" ></span>
