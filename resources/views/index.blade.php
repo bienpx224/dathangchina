@@ -140,14 +140,23 @@
                 </div>
 {{--THUONG--}}
               @if (Auth::check())
-                  <ul class="nav navbar-nav navbar-right" style=" margin-top:-35px;">
+                  <ul class="nav navbar-nav navbar-right" style="position:  relative;margin: -10px 0px 0px 0px;">
                         <li class="dropdown" >
                             <a class="dropdown-toggle" data-toggle="dropdown" id="menu1">
                                 <span class="glyphicon glyphicon-user" ></span>
-                                <strong>{{ Auth::user()->name }}</strong>
+                                <strong>{{ Auth::user()->phonenumber }}</strong>
                                 <span class="glyphicon glyphicon-chevron-down" ></span>
                             </a>
                             <ul class="dropdown-menu" role="menu" aria-labelledby="menu1" style="width: 307px; z-index: 99999;">
+                                @if(Auth::user()->authority > 1)
+                                <li>
+                                <a href="{{route('admin.index')}}">
+                                    Trang quản lý
+                                    <span class="glyphicon glyphicon-list-alt pull-right"></span>
+                                </a>
+                                </li>
+                                <li class="divider"></li>
+                                @endif
                                 <li>
                                     <a href="{{route('user-information')}}">
                                         Thông tin cá nhân

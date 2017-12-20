@@ -19,7 +19,7 @@
                     <p><strong>1. &nbsp;&nbsp;&nbsp; &nbsp;Tạo tài khoản mới</strong></p>
                     <p>Để đặt được hàng, trước tiên bạn cần tạo một tài khoản mới gồm thông tin cá nhân: Tên, Số điện thoại.</p>
                     <p><em><strong>Lưu ý:</strong></em> Số điện thoại này cần chính xác vì không thay đổi được và sẽ là thông tin gốc để xác thực và đăng nhập tài khoản của bạn trong suốt quá trình giao dịch và đặt hàng.&nbsp;Nếu đã có tài khoản, bạn chỉ cần điền số điện thoại và mật khẩu để đăng nhập.</p>
-                    <p style="margin-left:80px"><img src="http://www.nhaphang247.com/images/huong-dan/dang-ky-tai-khoan.png" style="border:none; height:584px; transform:rotate(0rad); width:575px"></p>
+                    <p style="margin-left:80px"><img src="{!! asset('public/img/dang-ky-tai-khoan.png') !!}" style="border:none; height:584px; transform:rotate(0rad); width:575px"></p>
                     <p>&nbsp;</p>
                     <p><strong>2. &nbsp;&nbsp;&nbsp; &nbsp;Tạo và gửi đơn hàng</strong></p>
                     <p>Đặt hàng China cho phép khách hàng trực tiếp tìm kiếm sản phẩm với từ khóa bằng tiếng Việt. Bạn chỉ cần gõ từ khóa mặt hàng cần tìm, lựa chọn trang chủ Taobao.com, 1688.com, Tmall.com hoặc các trang web từ Trung Quốc, trình duyệt sẽ tự động mở 1 tab mới và hiển thị kết quả link tổng hợp từ khóa bạn tìm kiếm.</p>
@@ -42,7 +42,7 @@
                     <p style="margin-left:80px"><img src="http://www.nhaphang247.com/images/huong-dan/thanh-trang-thai.png" style="border:none; height:50px; transform:rotate(0rad); width:800px"></p>
                     <p><u><em><strong>c. Nhận báo giá &nbsp;và thanh toán đơn hàng</strong></em></u></p>
                     <p>Sau khi gửi đơn hàng thành công, CSKH Đặt hàng China sẽ báo giá cho bạn trong thời gian sớm nhất.</p>
-                    <p style="margin-left:120px"><img src="http://www.nhaphang247.com/images/huong-dan/giao-dien-da-bao-gia.png" style="border:none; height:811px; transform:rotate(0rad); width:900px"></p>
+                    <p style="margin-left:120px"><img src="{!! asset('public/img/giao-dien-da-bao-gia.png') !!}" style="border:none; height:811px; transform:rotate(0rad); width:900px"></p>
                     <p style="margin-left:240px"><em>Giao diện đơn hàng đã báo giá</em></p>
                     <p>Trên đây&nbsp;là giao diện đơn hàng đã được báo giá, có cập nhật đầy đủ tỷ giá, phí dịch vụ&nbsp;và tính riêng ship nội địa.&nbsp;Sau khi đã báo giá, hệ thông sẽ gửi thông báo cho bạn. Với đơn hàng đầu tiên, chúng tôi sẽ gửi tin nhắn thông báo cho bạn khi đơn hàng được báo giá.&nbsp;Với các đơn hàng tiếp theo, chúng tôi sẽ thông báo qua hệ thống Thông báo trên Đặt hàng China, bạn nên truy cập hệ thống thường xuyên để nhận thông tin đơn hàng.</p>
                     <p>Để thanh toán đơn hàng, &nbsp;bạn chỉ ấn nút&nbsp;<em><strong>Thanh toán </strong></em>và lựa chọn hình thức thanh toán phù hợp,&nbsp;số tiền cọc đơn hàng,&nbsp;nội dung chuyển khoản cụ thể đều được hướng dẫn chi tiết. Sau khi bạn thanh toán, đơn hàng sẽ được tiến hành đặt trong vòng 24 giờ.</p>
