@@ -30,14 +30,50 @@ class Controller extends BaseController
       Log::info('Result: '.$result);
       return $result;
     }
-    public function postGetLink(Request $req){
+    public function postLink(Request $req){
+      $link = $req->link;
+      Log::info('Link: '.$link);
+      $link = "https://detail.tmall.com/item.htm?spm=a230r.1.14.13.1d76d49b9TSv9u&id=538504605056&cm_id=140105335569ed55e27b&abbucket=6";
+
+      // require "simple_html_dom.php";
+      // $html = file_get_contents($link);
+      // $html = mb_convert_encoding($html, 'utf-8', "gb18030");
+      // $html = str_get_html($html);
+
+      // $tins = $html->find('div.tb-gallery',0);
+      return redirect()->route('get-link');
+      // return $tins;
+    }
+
+    public function getLink(){
+      $link = "https://detail.tmall.com/item.htm?spm=a230r.1.14.13.1d76d49b9TSv9u&id=538504605056&cm_id=140105335569ed55e27b&abbucket=6";
       require "simple_html_dom.php";
-      $url = "https://detail.tmall.com/item.htm?spm=a230r.1.14.13.1d76d49b9TSv9u&id=538504605056&cm_id=140105335569ed55e27b&abbucket=6";
-      $linksp = $req->linksanpham;
-      $html = file_get_html($url);
-      $tins = $html->find('div.tm-clear',0);
-      $title = $tins->find('h1',0);
-      Log::info('Title: '.$title);
-      return $html;
+      $html = file_get_contents($link);
+      $html = mb_convert_encoding($html, 'utf-8', "gb18030");
+      $html = str_get_html($html);
+
+      // DATA
+      $images = [];
+      ////////    TMALL   ///////////////////
+      if(strpos($link,"tmall")){
+        $div_product = $html->find('div.tm-clear',0);
+        foreach ($div_product->find('img') as $key => $element) {
+          array_push($images,$element);
+        }
+      }
+
+      // $tins = $html->find('div.tm-clear',0);
+      // $title = $tins->find('h1',0);
+
+      // Log::info($images);
+      // $data = [
+      //   "images"=>$images
+      // ];
+      // $images = json_encode($images);
+      $data = array(
+        "images" => $images
+      );
+      // var_dump($data); exit();
+      return view('get-link', ['data'=>$data]);
     }
 }

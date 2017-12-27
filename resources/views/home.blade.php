@@ -25,9 +25,9 @@
   <div class="row quick-order-container">
     <i class="exchange-rate-current">Tỷ giá hiện tại: <b>Trung Quốc (3,455.00)</b></i>
     <div class="quick-order-box">
-      <form action="{{route('get-link')}}" role="form" method="POST">
+      <form action="{{route('post-link')}}" role="form" method="POST">
         <input type="hidden" name="_token" value="{!! csrf_token() !!}"/>
-        <input type="text" class="input-link" name="linksanpham" placeholder="Nhập link sản phẩm">
+        <input type="text" class="input-link" name="link" placeholder="Nhập link sản phẩm">
         <div class="quick-order-btn-block">
           <button class="quick-order-btn" type="submit">Đặt hàng Trung Quốc</button>
         </div>
