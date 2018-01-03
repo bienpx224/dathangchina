@@ -1,5 +1,4 @@
 Thank for 2 boss: Pham Xuan Bien and Nguyen Van Thuong
-Hello World
 
 <p align="center"><img src="https://laravel.com/assets/img/components/logo-laravel.svg"></p>
 
