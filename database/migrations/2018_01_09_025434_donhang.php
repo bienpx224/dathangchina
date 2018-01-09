@@ -13,22 +13,23 @@ class Donhang extends Migration
      */
     public function up()
     {
-        Schema::create('donhang', function (Blueprint $table) {
+        Schema::create(/**
+         * @param Blueprint $table
+         */
+            'donhang', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('idUser');
+            $table->integer('idUser')->unsigned();
             $table->string('name');
-            $table->string('phonenumber')->unique();
-            $table->string('email')->unique();
-            $table->string('address');
-            $table->string('password');
-            $table->string('secret');
-            $table->string('bank_number')->default("");
-            $table->string('bank_name')->default("");
-            $table->string('bank_user_name')->default("");
-            $table->tinyInteger('authority')->default(1);
-            $table->tinyInteger('is_active')->default(1);
+            $table->string('description');
+            $table->string('link');
+            $table->bigInteger('cost');
+            $table->enum('status', ['pending','reject', 'error', 'approved', 'success']);
             $table->rememberToken();
             $table->timestamps();
+//            $table->foreign('idUser')->references('id')->on('users');
+        });
+        Schema::table('donhang', function ($table){
+            $table->foreign('idUser')->references('id')->on('users');
         });
     }
 
