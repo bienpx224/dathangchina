@@ -35,9 +35,13 @@ class Controller extends BaseController
       $url = "https://detail.tmall.com/item.htm?spm=a230r.1.14.13.1d76d49b9TSv9u&id=538504605056&cm_id=140105335569ed55e27b&abbucket=6";
       $linksp = $req->linksanpham;
       $html = file_get_html($url);
-      $tins = $html->find('div.tm-clear',0);
+      mb_convert_encoding($html, 'utf-8', "gb18030");
+      $tins = $html->find('div.tm-clear h1',0);
       $title = $tins->find('h1',0);
       Log::info('Title: '.$title);
       return $html;
+    }
+    public function getGetLink(){
+
     }
 }
