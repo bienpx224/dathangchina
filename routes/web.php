@@ -50,13 +50,8 @@ Route::get('/error', function () {
 
 // Route::get('translate/{link}',['as'=>'translate','uses'=>'Controller@getTranslate']);
 
-<<<<<<< HEAD
-Route::post('/get-link',['as'=>'get-link','uses'=>'Controller@postGetLink']);
-Route::get('/get-link',['as'=>'get-link','uses'=>'Controller@getGetLink']);
-=======
 Route::get('/get-link',['as'=>'get-link','uses'=>'Controller@getLink']);
 Route::post('/get-link',['as'=>'post-link','uses'=>'Controller@postLink']);
->>>>>>> 0bbe7ae33046328302d85e0a58bcdc4fe320eeaf
 
 Route::post('/translate',['as'=>'translate','uses'=>'Controller@postTranslate']);
 Route::get('/changePassword',['as'=>'changePassword','uses'=>'AuthController@changePassword']);
