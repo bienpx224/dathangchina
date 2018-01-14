@@ -53,7 +53,8 @@ class Controller extends BaseController
 
       $link = "https://detail.tmall.com/item.htm?spm=a230r.1.14.13.1d76d49b9TSv9u&id=538504605056&cm_id=140105335569ed55e27b&abbucket=6";
       require "simple_html_dom.php";
-      $html = file_get_html($link);
+
+      $html = file_get_contents($link);
       $html = mb_convert_encoding($html, 'utf-8', "gb18030");
       $html = str_get_html($html);
 
@@ -81,5 +82,17 @@ class Controller extends BaseController
       return view('get-link', ['image'=>$image, 'images'=>$images, 'title'=>$title, 'price'=>$price,
        'total_product'=>$total_product]);
       // return view('get-link');
+      // Log::info($images);
+      // $data = [
+      //   "images"=>$images
+      // ];
+      // $images = json_encode($images);
+      $data = array(
+        "images" => $images
+      );
+      // var_dump($data); exit();
+      return view('get-link', ['data'=>$data]);
+    }
+    public function getGetLink(){
     }
 }

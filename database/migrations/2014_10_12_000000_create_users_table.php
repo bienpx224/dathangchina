@@ -21,14 +21,15 @@ class CreateUsersTable extends Migration
             $table->string('address');
             $table->string('password');
             $table->string('secret');
-            $table->string('bank_number')->default("");
-            $table->string('bank_name')->default("");
-            $table->string('bank_user_name')->default("");
+            $table->string('bank_number')->nullable();
+            $table->string('bank_name')->nullable();
+            $table->string('bank_user_name')->nullable();
             $table->tinyInteger('authority')->default(1);
             $table->tinyInteger('is_active')->default(1);
             $table->rememberToken();
             $table->timestamps();
         });
+
     }
 
     /**
