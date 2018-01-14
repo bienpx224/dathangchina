@@ -46,34 +46,40 @@ class Controller extends BaseController
     }
 
     public function getLink(){
+
+      $source = 'zh-CN';
+      $target = 'vi';
+      $trans = new GoogleTranslate();
+
       $link = "https://detail.tmall.com/item.htm?spm=a230r.1.14.13.1d76d49b9TSv9u&id=538504605056&cm_id=140105335569ed55e27b&abbucket=6";
       require "simple_html_dom.php";
-      $html = file_get_contents($link);
+      $html = file_get_html($link);
       $html = mb_convert_encoding($html, 'utf-8', "gb18030");
       $html = str_get_html($html);
 
-      // DATA
-      $images = [];
-      ////////    TMALL   ///////////////////
+      // // DATA
+      $images = array();
+      $image = "";
+      $title = "";
+      $price = "15";
+      $total_product = "";
+      //////////////////    TMALL   ///////////////////
       if(strpos($link,"tmall")){
+        // lay 1 anh chinh
         $div_product = $html->find('div.tm-clear',0);
-        foreach ($div_product->find('img') as $key => $element) {
-          array_push($images,$element);
-        }
+        $image = $div_product->find('img',0)->src;
+
+        $div_detail = $html->find('div .tb-detail-hd',0);
+        $title = $div_detail->find('h1',0)->innertext;
+        $title = $trans->translate($source, $target, $title);
+
+        $div_price = $html->find('span .tm-price',0);
+        // $price = $div_price;
+
       }
 
-      // $tins = $html->find('div.tm-clear',0);
-      // $title = $tins->find('h1',0);
-
-      // Log::info($images);
-      // $data = [
-      //   "images"=>$images
-      // ];
-      // $images = json_encode($images);
-      $data = array(
-        "images" => $images
-      );
-      // var_dump($data); exit();
-      return view('get-link', ['data'=>$data]);
+      return view('get-link', ['image'=>$image, 'images'=>$images, 'title'=>$title, 'price'=>$price,
+       'total_product'=>$total_product]);
+      // return view('get-link');
     }
 }

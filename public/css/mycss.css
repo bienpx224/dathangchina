@@ -3,3 +3,9 @@
 .nh-description{margin-top: 40px;}
 .modal{z-index: 999999;}
 .blog-pages-left{background-image: url("/img/quang-cao.png");}
+.product-name{float: left; width: 100%;font-size: 20px;font-weight: 700;margin-top: -7px; margin-bottom: 10px;}
+.price-table{float: left; width: 100%;margin-top: 5px; margin-bottom: 5px; padding: 3px 10px;background-color:#f5f5f5;border-top:1px solid #e3e3e4;border-bottom:1px solid #e3e3e4;}
+.price-table-row{float: left;width: 100%;padding-top: 6px; padding-bottom: 6px;}
+.row-label{float: left;width: auto;color: #c4321e;font-weight: 500; font-size: 15px;}
+.price-table-column{float: left;padding-left: 32px;padding-right:32px;color:#333;font-weight: 500;}
+.input-table-product{float: left;width: 70px; height: 32px; padding: 3px 5px;}
