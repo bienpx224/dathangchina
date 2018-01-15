@@ -95,4 +95,5 @@ class Controller extends BaseController
     }
     public function getGetLink(){
     }
+
 }

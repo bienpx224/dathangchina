@@ -59,6 +59,8 @@ Route::get('/changePassword',['as'=>'changePassword','uses'=>'AuthController@cha
 Route::get('/user-information',['as'=>'user-information','uses'=>'UserController@getUserInformation']);
 Route::post('/user-information',['as'=>'user-information','uses'=>'UserController@updateUserInformation']);
 
+Route::get('/danhsachdonhang', 'UserController@danhsachdonhang')->name('danhsachdonhang');
+
 Route::get('/change-password',['as'=>'change-password','uses'=>'UserController@getChangePassword']);
 Route::post('/change-password',['as'=>'change-password','uses'=>'UserController@updatePassword']);
 

@@ -165,7 +165,7 @@
                                 </li>
                                 <li class="divider"></li>
                                 <li>
-                                    <a href="{{route('user-information')}}">
+                                    <a href="{{route('danhsachdonhang')}}">
                                         Danh sách đơn hàng
                                         <span class="glyphicon glyphicon-shopping-cart pull-right"></span>
                                     </a>
