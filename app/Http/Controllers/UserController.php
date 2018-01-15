@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Redirect;
 class UserController extends Controller
 {
     //
+    public function danhsachdonhang(){
+        $donhang = DB::table('donhang')->
+        where('idUser', '=', Auth::id())->get();
+        return view('personal/DanhSachDonHang', ['donhang'=>$donhang]);
+    }
   public function getUserInformation(){
     return view('personal/user-information');
   }
