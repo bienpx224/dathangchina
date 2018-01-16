@@ -27,15 +27,20 @@
         <link href="{{asset('public/assets/bb9e61ec/css/pnotify.custom.min.css?v=1474536216') }}" rel="stylesheet">
         <link href="{{asset('public/assets/account.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('public/css/mycss.css') }}" media="all" type="text/css">
+        <link rel="stylesheet" href="{{ asset('public/inspinia/css/plugins/toastr/toastr.min.css') }}" media="all" type="text/css">
 
 
 
         <script type="text/javascript" src="{{asset('public/js/jquery-3.1.1.min.js') }}"></script>
         <script type="text/javascript" src="{{asset('public/socket.io/socket.io.js') }}"></script>
-        <script type="text/javascript" src="{{asset('public/js/myjs.js"')}}"></script>
+        <script type="text/javascript" src="{{asset('public/js/myjs.js') }}"></script>
         <script type="text/javascript" src="http://cdn.howcode.org/content/static/javascript/jquery.min.js"></script>
+        <script src="{{asset('public/jqueryloading/src/loadingoverlay.js') }}"></script>
+        <script src="{{asset('public/jqueryloading/src/loadingoverlay.min.js') }}"></script>
+        <script src="{{asset('public/inspinia/js/plugins/toastr/toastr.min.js') }}"></script>
+
         <!-- Latest compiled JavaScript -->
-      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         @if(Session::has('loginfailed'))
           <script>
           $(function() {

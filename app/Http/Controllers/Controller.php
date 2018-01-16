@@ -30,8 +30,7 @@ class Controller extends BaseController
       Log::info('Result: '.$result);
       return $result;
     }
-    public function postLink($link){
-      $link = $link; return $link;
+    public function postLink(Request $req){
       $source = 'zh-CN';
       $target = 'vi';
       $trans = new GoogleTranslate();

@@ -1,0 +1,13 @@
+.users-avatar-sm img.img-circle{
+    width: 38px;
+    height: 38px;
+}
+
+.comment-middle h1 {
+    font-size: 150px;
+}
+
+.comment-middle {
+	margin-top: 30px;
+}
+

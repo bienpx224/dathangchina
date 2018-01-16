@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html>
+
+
+<!-- Mirrored from webapplayers.com/inspinia_admin-v2.3/form_basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 01 Sep 2015 13:13:40 GMT -->
+<head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>INSPINIA | Basic Form</title>
+
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="font-awesome/css/font-awesome.css" rel="stylesheet">
+    <link href="css/animate.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/manager.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+    <nav class="navbar-default navbar-static-side" role="navigation">
+        <div class="sidebar-collapse">
+            <ul class="nav metismenu" id="side-menu">
+                <li class="nav-header">
+                    <div class="dropdown profile-element"> <span>
+                            <img alt="image" class="img-circle" src="img/profile_small.jpg" />
+                             </span>
+                        <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                            <span class="clear"> <span class="block m-t-xs"> <strong class="font-bold">David Williams <b class="caret"></b></strong>
+                             </span> </a>
+                        <ul class="dropdown-menu animated fadeInRight m-t-xs">
+                            <li><a href="{{url.getBaseUri()}}users/profile">Profile</a></li>
+                            <li><a href="{{url.getBaseUri()}}admin/managerComment">Manager comment</a></li>
+                            <li><a href="{{url.getBaseUri()}}admin/managerMod">Manager moderators</a></li>
+                            <li><a href="{{url.getBaseUri()}}admin/create">Set up new site</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{{url.getBaseUri()}}logout">Logout</a></li>
+                        </ul>
+                    </div>
+                    <div class="logo-element">
+                        Comment
+                    </div>
+                </li>
+                <li>
+                    <a href="index-2.html"><i class="fa fa-th-large"></i> <span class="nav-label">Admin</span> <span class="fa arrow"></span></a>
+                    <ul class="nav nav-second-level collapse">
+                        <li><a href="index-2.html">Manager Comment</a></li>
+                        <li><a href="dashboard_2.html">Manager Moderators</a></li>
+                        <li><a href="dashboard_3.html">Set up new site</a></li>
+                        <li><a href="dashboard_4_1.html">Set VIP User</a></li>
+                        <li><a href="dashboard_5.html">Block User<span class="label label-primary pull-right">NEW</span></a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="layouts.html"><i class="fa fa-diamond"></i> <span class="nav-label">Statistic Comment</span></a>
+                </li>
+                <li>
+                    <a href="#"><i class="fa fa-bar-chart-o"></i> <span class="nav-label">Setting Website</span><span class="fa arrow"></span></a>
+                </li>
+                
+            </ul>
+
+        </div>
+    </nav>
+
+    <div id="page-wrapper" class="gray-bg">
+        <div class="row border-bottom">
+            <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
+                <div class="navbar-header">
+                    <a class="navbar-minimalize minimalize-styl-2 btn btn-primary " href="#"><i class="fa fa-bars"></i> </a>
+                </div>
+                <ul class="nav navbar-top-links navbar-right">
+                    <li>
+                        <span class="m-r-sm text-muted welcome-message">Manager Comment.</span>
+                    </li>
+                    
+                    <li class="dropdown">
+                        <a class="dropdown-toggle count-info" data-toggle="dropdown" href="#">
+                            <i class="fa fa-bell"></i>  <span class="label label-primary">8</span>
+                        </a>
+                       
+                    </li>
+
+
+                    <li class="dropdown">
+                        <a class="dropdown-toggle count-info users-avatar-sm" data-toggle="dropdown" href="#">
+                            <img alt="image" class="img-circle" src="img/a8.jpg" data-pin-nopin="true">
+                            <span></span><strong class="font-bold"><b class="caret"></b></strong></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="{{url.getBaseUri()}}users/profile">Profile</a></li>
+                            <li><a href="{{url.getBaseUri()}}admin/create">Set up new site</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{{url.getBaseUri()}}admin/managerComment">Manager comment</a></li>
+                            <li><a href="{{url.getBaseUri()}}admin/managerMod">Manager moderators</a></li>
+                            <li class="divider"></li>
+                            <li><a href="{{url.getBaseUri()}}logout">Logout</a></li>
+                        </ul>           
+                    </li>
+                </ul>
+
+            </nav>
+        </div>
+        <div class="row wrapper border-bottom white-bg page-heading">
+            <div class="col-lg-10">
+                <h2>Manager Moderators</h2>
+                <ol class="breadcrumb">
+                    <li>
+                        <a href="index-2.html">Manager</a>
+                    </li>
+                    <li>
+                        <a>Admin</a>
+                    </li>
+                    <li class="active">
+                        <strong>Moderators</strong>
+                    </li>
+                </ol>
+            </div>
+            <div class="col-lg-2">
+
+            </div>
+        </div>
+        <div class="wrapper wrapper-content animated fadeInRight">
+            <div class="row">
+                               
+                <div class="col-sm-12">
+                    <div class="ibox">
+                        <div class="ibox-content">
+                            
+                            <div class="forum-title">
+                                <div class="pull-right forum-desc">
+                                    <samll>Total posts: 320,800</samll>
+                                </div>
+                                <h3>General subjects</h3>
+                            </div>
+
+                            <div class="forum-item active">
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <div class="forum-icon">
+                                            <i class="fa fa-shield"></i>
+                                        </div>
+                                        <a href="forum_post.html" class="forum-item-title">General Discussion</a>
+                                        <div class="forum-sub-title">Talk about sports, entertainment, music, movies, your favorite color, talk about enything.</div>
+                                    </div>
+                                    
+                                    <div class="col-md-1 forum-info">
+                                        <span class="views-number">
+                                            140
+                                        </span>
+                                        <div>
+                                            <small>Posts</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="forum-item">
+                                <div class="row">
+                                    <div class="col-md-9">
+                                        <div class="forum-icon">
+                                            <i class="fa fa-bolt"></i>
+                                        </div>
+                                        <a href="forum_post.html" class="forum-item-title">Introductions</a>
+                                        <div class="forum-sub-title">New to the community? Please stop by, say hi and tell us a bit about yourself. </div>
+                                    </div>
+                                    
+                                    <div class="col-md-1 forum-info">
+                                        <span class="views-number">
+                                            154
+                                        </span>
+                                        <div>
+                                            <small>Posts</small>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>            
+        </div>
+            
+        <div class="footer">
+            <div class="pull-right">
+                10GB of <strong>250GB</strong> Free.
+            </div>
+            <div>
+                <strong>Copyright</strong> Example Company &copy; 2014-2015
+            </div>
+        </div>
+
+
+    </div>
+
+
+    <!-- Mainly scripts -->
+    <script src="js/jquery-2.1.1.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/plugins/metisMenu/jquery.metisMenu.js"></script>
+    <script src="js/plugins/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Custom and plugin javascript -->
+    <script src="js/inspinia.js"></script>
+    <script src="js/plugins/pace/pace.min.js"></script>
+
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.btn-reply').click(function() {
+                $(this).closest('.social-body').next().show();
+            });
+        });
+    </script>
+
+</body>
+
+
+<!-- Mirrored from webapplayers.com/inspinia_admin-v2.3/form_basic.html by HTTrack Website Copier/3.x [XR&CO'2014], Tue, 01 Sep 2015 13:13:41 GMT -->
+</html>
+
+
+
+
+
+
+
+
+
+
+
