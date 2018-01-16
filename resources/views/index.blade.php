@@ -251,6 +251,13 @@
         </body>
         <script type="text/javascript">
             $(document).ready( ()=>{
+
+                // window.server_url = 'http://dathangchina.com';
+                window.server_url = 'http://localhost/dathangchina';
+
+
+
+
                 var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
                 $("#btn-search").click( ()=>{
                     let text = $("#search-input").val();
