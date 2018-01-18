@@ -4,6 +4,16 @@
 @section('content-page')
 	<div class="blog-list" id="list-product">
 
+    <div class="col-lg-12" style="margin-bottom: 40px;">
+      <div class="col-md-9">
+        <input style="font-size: 12px;" type="text" name="" id="text-link" class="form-control">
+      </div>
+      <div class="col-md-3 col-xs-8">
+        <button class="form-control btn btn-info" id="redirectLink" >
+          <span class="glyphicon glyphicon-info-sign pull-left" style="padding-right: 2px;"></span>Lấy thông tin
+        </button>
+      </div>
+    </div>
 		@include('product')
 
 
@@ -12,12 +22,9 @@
 
 <script type="text/javascript">
 	$(document).ready(function(){
-		var url_string = window.location.href;
-		var url = new URL(url_string);
-		var c = url.searchParams.get("url");
-		console.log(c);
-		var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-		toastr.options = {
+
+    var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+    toastr.options = {
                         "closeButton": true,
                         "debug": false,
                         "progressBar": true,
@@ -26,120 +33,103 @@
                         "onclick": null,
                         "showDuration": "400",
                         "hideDuration": "500",
-                        "timeOut": "1500",
+                        "timeOut": "3000",
                         "extendedTimeOut": "500",
                         "showEasing": "swing",
                         "hideEasing": "linear",
                         "showMethod": "fadeIn",
                         "hideMethod": "fadeOut"
                     };
-        
-		// var list = $('#list-product');
-		// for(var i = 0; i<3; i++){
-		// 	var html = '<div class="col-md-12 col-xs-6">'
-	 //  		html+= '<div class="col-md-4">'
-		//     html+= ' <img src="image" class="c_preview">'
-		//   	html+= '</div>'
-		//   	html+= '<div class="col-md-8">'
-		//     html+= '<div class="content">'
-		//     html+= '  <h3 class="product-name">title</h3>'
-		//     html+= '  <hr>'
-		//     html+= '  <div class="price-table">'
-		//     html+= '    <div class="price-table-row">'
-		//     html+= '        <span class="row-label">Số lượng</span>'
-		//     html+= '        <span class="price-table-column">≥1</span>'
-		//     html+= '        <span class="row-label">Hàng còn trong kho</span>'
-		//     html+= '        <span class="price-table-column ">total_product</span>'
-		//     html+= '    </div>'
-		//     html+= '  </div>'
-		//     html+= '  <div class="price-table">'
-		//     html+= '    <div class="price-table-row">'
-		//     html+= '        <span class="row-label">Giá</span>'
-		//     html+= '        <span class="price-table-column ">price</span>'
-		//     html+= '    </div>'
-		//     html+= '  </div>'
-		//     html+= '  <div class="price-table">'
-		//     html+= '    <div class="price-table-row">'
-		//     html+= '        <span class="row-label">Màu :</span>'
-		//     html+= '        <span class="price-table-column">'
-		//     html+= '          <input class="input-table-product" type="text" name="" />'
-		//     html+= '        </span>'
-		//     html+= '        <span class="row-label">Số lượng</span>'
-		//     html+= '        <span class="price-table-column">'
-		//     html+= '          <input class="input-table-product" type="number" min="0" name="" value="1" />'
-		//     html+= '        </span>'
-		//     html+= '    </div>'
-		//     html+= '  </div>'
-		//     html+= '  <div class="price-table">'
-		//     html+= '    <div class="price-table-row">'
-		//     html+= '        <span class="row-label">Ghi chú :</span>'
-		//     html+= '        <span style="width: 80%;display: inline-block;" class="price-table-column">'
-		//     html+= '          <input style="width: 100%; max-width:100%;font-weight: 100; font-size: 14px;" class="input-table-product" type="text" name="" placeholder="Yêu cầu, ghi chú cho sản phẩm..." />'
-		//     html+= '        </span>'
-		//     html+= '    </div>'
-		//     html+= '  </div>'
-		//     html+= '  <div class="price-table"  style="background-color:#f3d2b0;">'
-		//     html+= '    <div class="price-table-row">'
-		//     html+= '        <span class="row-label">Tổng số :</span>'
-		//     html+= '        <span class="price-table-column ">price</span>'
-		//     html+= '        <span class="row-label">Tổng giá :</span>'
-		//     html+= '        <span class="price-table-column ">price</span>'
-		//     html+= '    </div>'
-		//     html+= '  </div>'
-		//     html+= '  <div class="col-md-4" style="float: left; padding:10px 40%;">'
-		//     html+= '    <button class="btn btn-success" type="button" name="" style="padding-right: 30px;">'
-		//     html+= '      <span class="glyphicon glyphicon-shopping-cart pull-left" style="padding-right: 10px;"></span>Thêm vào giỏ hàng'
-		//     html+= '    </button>'
-		//     html+= '  </div>'
-		//     html+= '</div>'
-		//   	html+= '</div>'
-		//   	html+= '<p style="float: left; margin:20px 10px;">'
-		//     html+= '<span class="col-md-12" style="color: #968989;"><b>(*)   </b>Mặc định chọn màu như trong ảnh, nếu có yêu cầu cụ thể màu khác, vui lòng nhập vào ô Màu bên trên</span>'
-		//   	html+= '</p>'
-		// 	html+= '</div>'
 
-		// 	list.append(html);
-		// }
-		
-		// $.ajax({
-  //           type: "POST",
-  //           url: "{!! url('postlink') !!}",
-  //           data : {
-  //               'link': 'facebook.com.vn',
-  //                _token: CSRF_TOKEN
-  //           },
-  //           beforeSend: function() {
-  //               $('#body').LoadingOverlay("show", {zIndex: 10000});
-  //               var shortCutFunction = 'info';
-		//         var title = 'Đang lấy dữ liệu, đợi tý nhé !! ';
-		        
-		//         var $toast = toastr[shortCutFunction]("hihi", title);
-  //           },
-  //           success : function(data) {
-  //               $('#body').LoadingOverlay("hide");
-  //               var shortCutFunction = 'success';
-		//         var title = 'Thành công';
-		//         var $toast = toastr[shortCutFunction]("hihi", title);
-  //           },
-  //           error : function (data) {
-  //               $('#body').LoadingOverlay("hide");
-  //               var shortCutFunction = 'error';
-		//         var title = 'Có lỗi xảy ra !!';
-		//         var $toast = toastr[shortCutFunction]("hihi", title);
-  //           },
-  //           complete: function() {
-  //               $('#body').LoadingOverlay("hide");
- 
-  //           }
 
-  //       });
+	var url_string = window.location.href;
+    var index = url_string.indexOf('url=')+4;
+    let link = url_string.slice(index, url_string.length);
+    getInfoProduct(link);
 
-		$('#btnAddProduct').click( function(){
-			var shortCutFunction = 'error';
-	        var title = 'Có lỗi xảy ra !!';
-	        var $toast = toastr[shortCutFunction]("hihi", title);
-		})
-		
+    $('#text-link').val(link);
+
+    $('#redirectLink').click( ()=>{
+      let textLink = $('#text-link').val();
+      if(ValidURL(textLink)){
+        getInfoProduct(textLink);
+      }else{
+        var shortCutFunction = 'error';
+        var title = 'Link không hợp lệ !! ';
+        var $toast = toastr[shortCutFunction]("Vui lòng nhập lại Link", title);
+      }
+    })
+
+
+    $('#btnAddProduct').click( function(){
+
+        getInfoProduct(link);
+
+	})
+
+
+    function ValidURL(str) {
+        var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+        if(!regex .test(str)) {
+          return false;
+        } else {
+          return true;
+        }
+    }
+
+    function getInfoProduct(link){
+
+        $.ajax({
+            type: "post",
+            url: '{!! url("postlink") !!}',
+            dataType: 'text',
+            data : {
+              link : link,
+              _token: CSRF_TOKEN
+            },
+            xhrFields: {
+                withCredentials: false
+            },
+            beforeSend: function() {
+                $('#body').LoadingOverlay("show", {zIndex: 10000});
+                var shortCutFunction = 'info';
+                    var title = 'Đang lấy dữ liệu, đợi tý nhé !! ';
+                    var $toast = toastr[shortCutFunction]("waiting", title);
+            },
+            success : function(data) {
+                data = JSON.parse(data); console.log(data);
+
+                if(data.signal == "1"){
+                    $('#title').text(data.title);
+                    if(data.image !== ""){
+                        $('#image').attr('src',''+data.image);
+                    }
+                    $('#total_product').text(data.total_product);
+
+                    var shortCutFunction = 'success';
+                    var title = 'Thành công';
+                    var $toast = toastr[shortCutFunction]("success", title);
+                }else{
+                    var shortCutFunction = 'warning';
+                    var title = 'Thất bại';
+                    var $toast = toastr[shortCutFunction]("Có vẻ Link bạn nhập không đúng hoặc hệ thống tạm thời không lấy được kết quả", title);
+                }
+
+                $('#body').LoadingOverlay("hide");
+
+            },
+            error : function (data) {
+                $('#body').LoadingOverlay("hide");
+                var shortCutFunction = 'error';
+                    var title = 'Có lỗi xảy ra !!';
+                    var $toast = toastr[shortCutFunction]("error", title);
+            },
+            complete: function() {
+                $('#body').LoadingOverlay("hide");
+            }
+        });
+    }
+
 	});
 </script>
 @endsection

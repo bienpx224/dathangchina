@@ -30,12 +30,14 @@ class Controller extends BaseController
       Log::info('Result: '.$result);
       return $result;
     }
+
+
     public function postLink(Request $req){
       $source = 'zh-CN';
       $target = 'vi';
       $trans = new GoogleTranslate();
-
-      $link = "https://detail.tmall.com/item.htm?spm=a230r.1.14.13.1d76d49b9TSv9u&id=538504605056&cm_id=140105335569ed55e27b&abbucket=6";
+      $link = $req->link;
+      // $link = "https://detail.tmall.com/item.htm?spm=a230r.1.14.13.1d76d49b9TSv9u&id=538504605056&cm_id=140105335569ed55e27b&abbucket=6";
       require "simple_html_dom.php";
 
       $html = file_get_contents($link);
@@ -63,12 +65,15 @@ class Controller extends BaseController
 
       }
 
-      echo json_encode([
-        'image'=>$image, 'images'=>$images, 'title'=>$title, 'price'=>$price,
-       'total_product'=>$total_product
+      $data = json_encode([
+        'signal'=> "1",
+        'image'=>$image,
+        'images'=>$images,
+        'title'=>$title,
+        'price'=>$price,
+        'total_product'=>$total_product
       ]);
-      exit;
-
+      print_r($data);
     }
 
     public function getLink(){

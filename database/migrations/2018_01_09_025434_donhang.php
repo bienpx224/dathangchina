@@ -1,4 +1,4 @@
-<?php
+w<?php
 
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -6,7 +6,7 @@ use Illuminate\Database\Migrations\Migration;
 
 class Donhang extends Migration
 {
-    /**
+    /**w
      * Run the migrations.
      *
      * @return void
