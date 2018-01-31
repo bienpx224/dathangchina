@@ -266,7 +266,7 @@
 
       $("#get-link").click(function(){
         let link = $('#link').val();
-          window.location = server_url+'/get-link?url=%'+link+'%';
+          window.location = server_url+'/get-link?url=^'+link+'^';
       })
     })
   </script>

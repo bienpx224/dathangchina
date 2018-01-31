@@ -49,7 +49,9 @@ Route::get('/error', function () {
 // Route::get('translate/{link}',['as'=>'translate','uses'=>'Controller@getTranslate']);
 
 Route::get('/get-link','Controller@getLink');
-Route::post('/postlink',['as'=>'postlink','uses'=>'Controller@postLink']);
+Route::post('/postlink',['as'=>'postlink','uses'=>'Controller@postlink']);
+
+Route::post('/getprice',['as'=>'getprice','uses'=>'Controller@getprice']);
 
 Route::post('/translate',['as'=>'translate','uses'=>'Controller@postTranslate']);
 Route::get('/changePassword',['as'=>'changePassword','uses'=>'AuthController@changePassword']);

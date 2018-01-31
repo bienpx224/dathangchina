@@ -20,6 +20,17 @@ class Controller extends BaseController
     public function indexAction(){
       return view('home');
     }
+
+    public function getprice(Request $req){
+      $link = $req->link;
+      $dirPhantom = public_path().'/../phantomjs/bin/phantomjs';
+      $file = public_path().'/js/content.js';
+      // $output = shell_exec($dirPhantom.' '.$file.' https://youtube7.download//mini.php?id='.$id);
+      $output = shell_exec($dirPhantom.' '.$file.' '.$link);
+      Log::info('GET PRICE : '.$output);
+       return $output;
+    }
+
     public function postTranslate(Request $req){
       $text = $req->text;
       Log::info('Showing user profile for user: '.$req->text);
@@ -31,12 +42,12 @@ class Controller extends BaseController
       return $result;
     }
 
-
-    public function postLink(Request $req){
+    public function postlink(Request $req){
       $source = 'zh-CN';
       $target = 'vi';
       $trans = new GoogleTranslate();
       $link = $req->link;
+      // $link = substr($link, 1, strlen($link)-1);
       // $link = "https://detail.tmall.com/item.htm?spm=a230r.1.14.13.1d76d49b9TSv9u&id=538504605056&cm_id=140105335569ed55e27b&abbucket=6";
       require "simple_html_dom.php";
 
@@ -47,9 +58,9 @@ class Controller extends BaseController
       // // DATA
       $images = array();
       $image = "";
-      $title = "";
-      $price = "15";
-      $total_product = "";
+      $title = "Không tìm thấy";
+      $price = "Không tìm thấy";
+      $total_product = "Không tìm thấy";
       //////////////////    TMALL   ///////////////////
       if(strpos($link,"tmall")){
         // lay 1 anh chinh
@@ -68,7 +79,6 @@ class Controller extends BaseController
       $data = json_encode([
         'signal'=> "1",
         'image'=>$image,
-        'images'=>$images,
         'title'=>$title,
         'price'=>$price,
         'total_product'=>$total_product

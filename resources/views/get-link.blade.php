@@ -2,7 +2,7 @@
 @section('page','Nhập link')
 @section('title','Nhập link - Nhập hàng china')
 @section('content-page')
-	<div class="blog-list" id="list-product">
+  <div class="blog-list" id="list-product">
 
     <div class="col-lg-12" style="margin-bottom: 40px;">
       <div class="col-md-9">
@@ -14,14 +14,19 @@
         </button>
       </div>
     </div>
-		@include('product')
+    @include('product')
 
 
-	</div>
+  </div>
+
+    <div id="other">
+
+    </div>
 
 
 <script type="text/javascript">
-	$(document).ready(function(){
+
+  $(document).ready(function(){
 
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
     toastr.options = {
@@ -42,10 +47,23 @@
                     };
 
 
-	var url_string = window.location.href;
+  var url_string = window.location.href;
     var index = url_string.indexOf('url=')+4;
-    let link = url_string.slice(index, url_string.length);
+
+    var link = url_string.slice(index, url_string.length);
+
+    index = link.indexOf("^");
+    if(index>=0){
+        link = link.replace("^","");
+    }
+    index = link.indexOf("^");
+    if(index>=0){
+        link = link.replace("^","");
+    }
+
     getInfoProduct(link);
+
+    getPrice(link);
 
     $('#text-link').val(link);
 
@@ -65,7 +83,7 @@
 
         getInfoProduct(link);
 
-	})
+  })
 
 
     function ValidURL(str) {
@@ -78,15 +96,20 @@
     }
 
     function getInfoProduct(link){
-
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        console.log('link: ',link);
+        console.log('CSRF: ',CSRF_TOKEN);
         $.ajax({
             type: "post",
             url: '{!! url("postlink") !!}',
             dataType: 'text',
             data : {
-              link : link,
+              link : ""+link,
               _token: CSRF_TOKEN
             },
+            // type: "POST",
+            // url: "{!! url('postlink') !!}",
+            // data: {link: ""+link, _token: CSRF_TOKEN},
             xhrFields: {
                 withCredentials: false
             },
@@ -97,7 +120,7 @@
                     var $toast = toastr[shortCutFunction]("waiting", title);
             },
             success : function(data) {
-                data = JSON.parse(data); console.log(data);
+                data = JSON.parse(data); console.log("postlink: ",data);
 
                 if(data.signal == "1"){
                     $('#title').text(data.title);
@@ -130,6 +153,31 @@
         });
     }
 
-	});
+    function getPrice(link){
+        $.ajax({
+            type: "post",
+            url: '{!! url("getprice") !!}',
+            dataType: 'text',
+            data : {
+              link : link,
+              _token: CSRF_TOKEN
+            },
+            xhrFields: {
+                withCredentials: false
+            },
+            beforeSend: function() {
+            },
+            success : function(data) {
+                console.log("getPrice: ", data);
+            },
+            error : function (data) {
+                console.log("err getprice ");
+            },
+            complete: function() {
+            }
+        });
+    }
+
+  });
 </script>
 @endsection
