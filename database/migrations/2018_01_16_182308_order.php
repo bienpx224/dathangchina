@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Donhang extends Migration
+class Order extends Migration
 {
     /**
      * Run the migrations.
@@ -13,22 +13,24 @@ class Donhang extends Migration
      */
     public function up()
     {
+        //
         Schema::create(/**
          * @param Blueprint $table
          */
-            'donhang', function (Blueprint $table) {
+            'order', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('idUser')->unsigned();
-            $table->string('name');
-            $table->string('description');
-            $table->string('link');
+            $table->string('note');
+            $table->timestamp('ordertime');
+            $table->timestamp('approvedtime');
+            $table->timestamp('transporttime');
+            $table->timestamp('finishtime');
             $table->bigInteger('cost');
             $table->enum('status', ['pending','reject', 'error', 'approved', 'success']);
             $table->rememberToken();
             $table->timestamps();
-            //$table->foreign('idUser')->references('id')->on('users');
         });
-        Schema::table('donhang', function ($table){
+        Schema::table('order', function ($table){
             $table->foreign('idUser')->references('id')->on('users');
         });
     }
