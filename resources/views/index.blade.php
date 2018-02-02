@@ -260,11 +260,19 @@
                 // window.server_url = 'http://dathangchina.com';
                 window.server_url = 'http://localhost/dathangchina';
 
-
+                $('#search-input').on('keyup', function(e){
+                    if(e.keyCode == 13){
+                        searchWithInput();
+                    }
+                });
 
 
                 var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
                 $("#btn-search").click( ()=>{
+                    searchWithInput();
+                })
+
+                function searchWithInput(){
                     let text = $("#search-input").val();
                     let option = $("#select").val();
                     $.ajax({
@@ -272,18 +280,25 @@
                         url: "{!! url('translate') !!}",
                         data: {text: text, _token: CSRF_TOKEN},
                         success: function(data) {
+                            var winpop;
                             if(option === "Tao Bao")
-                            window.open("https://world.taobao.com/search/search.htm?_input_charset=utf-8&q="+data+"");
+                            winpop = window.open("https://world.taobao.com/search/search.htm?_input_charset=utf-8&q="+data+"");
                             if(option === "1688")
-                            window.open("https://s.1688.com/selloffer/offer_search.htm?keywords="+data+"");
+                            winpop = window.open("https://s.1688.com/selloffer/offer_search.htm?keywords="+data+"");
                             if(option === "Tmall")
-                            window.open("https://list.tmall.com/search_product.htm?q="+data+"");
+                            winpop = window.open("https://list.tmall.com/search_product.htm?q="+data+"");
+
+                            if(!winpop || winpop.closed){
+                                alert("Vui lòng cho phép trình duyệt mở popup ở trên thanh công cụ");
+                            }else{
+                                console.log("ok");
+                            }
                         },
                         failure: function(data){
                             alert("fail");
                         }
                     });
-                })
+                }
             })
         </script>
     </html>

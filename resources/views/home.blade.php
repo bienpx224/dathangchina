@@ -26,7 +26,7 @@
     <i class="exchange-rate-current">Tỷ giá hiện tại: <b>Trung Quốc (3,455.00)</b></i>
     <div class="quick-order-box">
         <input type="hidden" name="_token" value="{!! csrf_token() !!}"/>
-        <input id="link" type="text" class="input-link" name="link" placeholder="Nhập link sản phẩm">
+        <input id="link" type="text" class="input-link" style="color: #000;" name="link" placeholder="Nhập link sản phẩm">
         <div class="quick-order-btn-block">
           <button class="quick-order-btn" id="get-link">Đặt hàng Trung Quốc</button>
         </div>
@@ -57,10 +57,10 @@
 
     <div class="quick-order-box" style="top:-70px;cursor: pointer;">
       <a href="https://docs.google.com/forms/d/e/1FAIpQLSdDM98Wvx3o5LWUrUh2sPEhnmCMiMY4SrO0F6bzapGWb680Sw/viewform?fbzx=-5026310265268122000" target="_blank">
-        <input type="hidden" name="_token" value="{!! csrf_token() !!}"/>
-        <input type="text" class="input-link" name="linksanpham" disabled="true" placeholder="Đặt hàng bằng Google docs -> Click ->">
-        <div class="quick-order-btn-block">
-          <button class="quick-order-btn" type="button">Đặt hàng Trung Quốc</button>
+        <!-- <input type="hidden" name="_token" value="{!! csrf_token() !!}"/>
+        <input type="text" class="input-link" name="linksanpham" disabled="true" placeholder="Đặt hàng bằng Google docs -> Click ->"> -->
+        <div class="quick-order-btn-block" style="width: 100%;">
+          <button class="quick-order-btn" style="width: 100%;" type="button">Đặt hàng Trung Quốc qua Google Docs</button>
         </div>
       </a>
   </div>
@@ -266,8 +266,14 @@
 
       $("#get-link").click(function(){
         let link = $('#link').val();
+        window.location = server_url+'/get-link?url=^'+link+'^';
+      });
+      $('#get-link').on('keyup', function(e){
+        if(e.keyCode == 13){
+          let link = $('#link').val();
           window.location = server_url+'/get-link?url=^'+link+'^';
-      })
+        }
+      });
     })
   </script>
   @endsection

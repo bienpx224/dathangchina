@@ -52,37 +52,75 @@ class Controller extends BaseController
       require "simple_html_dom.php";
 
       $html = file_get_contents($link);
-      $html = mb_convert_encoding($html, 'utf-8', "gb18030");
+      if(strpos($link,"tmall")>1) $html = mb_convert_encoding($html, 'utf-8', "gb18030");
       $html = str_get_html($html);
 
       // // DATA
+      $msg = "";
+      $signal = 0;
       $images = array();
       $image = "";
       $title = "Không tìm thấy";
       $price = "Không tìm thấy";
+      // $price2 = "";
       $total_product = "Không tìm thấy";
-      //////////////////    TMALL   ///////////////////
-      if(strpos($link,"tmall")){
-        // lay 1 anh chinh
+
+/////////////////////////    TMALL   ////////////////////////////////////////////////////////
+      if(strpos($link,"tmall")>1){
+        $signal = 1; $msg = "tmall";
+
         $div_product = $html->find('div.tm-clear',0);
-        $image = $div_product->find('img',0)->src;
+        if($div_product) $image = $div_product->find('img',0)->src;
 
         $div_detail = $html->find('div .tb-detail-hd',0);
-        $title = $div_detail->find('h1',0)->innertext;
+        if($div_detail) $title = $div_detail->find('h1',0)->innertext;
         $title = $trans->translate($source, $target, $title);
 
-        $div_price = $html->find('span .tm-price',0);
+        // $div_price = $html->find('span .tm-price',0);
         // $price = $div_price;
 
       }
+////////////////////////    TAOBAO   /////////////////////////////////////////////////////
 
+      if(strpos($link,"taobao")>1){
+        $signal = 1;  $msg = "taobao";
+
+        $div_product = $html->find('div #galleryPic',0);
+        if($div_product) $image = $div_product->find('img',0)->src;
+
+        $div_detail = $html->find('div .title',0);
+        if($div_detail) $title = $div_detail->find('h1',0)->innertext;
+        $title = $trans->translate($source, $target, $title);
+
+        $div_price = $html->find('div .price .promotionPrice',0);
+        if($div_price) $price = $div_price->innertext;
+
+      }
+////////////////////////    1688   /////////////////////////////////////////////////////
+      if(strpos($link,"1688")>1){
+        $signal = 1;  $msg = "1688";
+
+        // $div_product = $html->find('div.tm-clear',0);
+        // $image = $div_product->find('img',0)->src;
+
+        // $div_detail = $html->find('div .tb-detail-hd',0);
+        // $title = $div_detail->find('h1',0)->innertext;
+        // $title = $trans->translate($source, $target, $title);
+
+        // $div_price = $html->find('span .tm-price',0);
+        // $price = $div_price;
+
+      }
       $data = json_encode([
-        'signal'=> "1",
+        'signal'=> $signal,
+        'msg' => $msg,
         'image'=>$image,
         'title'=>$title,
         'price'=>$price,
         'total_product'=>$total_product
       ]);
+////////////////////////    KHÔNG ĐÚNG TRANG LẤY SẢN PHẨM   ////////////////////////////////      
+      
       print_r($data);
     }
 

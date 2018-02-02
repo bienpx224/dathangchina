@@ -63,7 +63,7 @@
 
     getInfoProduct(link);
 
-    getPrice(link);
+    // getPrice(link);
 
     $('#text-link').val(link);
 
@@ -128,6 +128,7 @@
                         $('#image').attr('src',''+data.image);
                     }
                     $('#total_product').text(data.total_product);
+                    $('#price').html(data.price);
 
                     var shortCutFunction = 'success';
                     var title = 'Thành công';
