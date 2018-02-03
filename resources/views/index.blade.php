@@ -33,12 +33,10 @@
 
         <script type="text/javascript" src="{{asset('public/js/jquery-3.1.1.min.js') }}"></script>
         <script type="text/javascript" src="{{asset('public/socket.io/socket.io.js') }}"></script>
-        <script type="text/javascript" src="{{asset('public/js/myjs.js') }}"></script>
         <script type="text/javascript" src="http://cdn.howcode.org/content/static/javascript/jquery.min.js"></script>
         <script src="{{asset('public/jqueryloading/src/loadingoverlay.js') }}"></script>
         <script src="{{asset('public/jqueryloading/src/loadingoverlay.min.js') }}"></script>
         <script src="{{asset('public/inspinia/js/plugins/toastr/toastr.min.js') }}"></script>
-
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         @if(Session::has('loginfailed'))
@@ -256,9 +254,44 @@
         </body>
         <script type="text/javascript">
             $(document).ready( ()=>{
-
+                var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
                 // window.server_url = 'http://dathangchina.com';
                 window.server_url = 'http://localhost/dathangchina';
+
+                $.ajax({
+                    type: "post",
+                    url: '{!! url("getAllRate") !!}',
+                    dataType: 'text',
+                    data : {
+                      _token: CSRF_TOKEN
+                    },
+                    xhrFields: {
+                        withCredentials: false
+                    },
+                    beforeSend: function() {
+                    },
+                    success : function(data) {
+                        data = JSON.parse(data);
+                        var configs = data.configs;
+                        for( var i=0; i<configs.length; i++){
+                            if(configs[i].type == 'yen'){
+                                $('#yen_rate').text(configs[i].rate + " VND");
+                                window.yen_rate = configs[i].rate;
+                            }
+                            if(configs[i].type == 'dola'){
+                                $('#dola_rate').text(configs[i].rate + " VND");
+                                window.dola_rate = configs[i].rate;
+                            }
+                        }
+                        console.log(window.yen_rate+" AND "+window.dola_rate);
+                    },
+                    error : function (data) {
+                        console.log("err getAllRate ");
+
+                    },
+                    complete: function() {
+                    }
+                });
 
                 $('#search-input').on('keyup', function(e){
                     if(e.keyCode == 13){
@@ -299,6 +332,8 @@
                         }
                     });
                 }
-            })
+            });
         </script>
+
+        <script type="text/javascript" src="{{asset('public/js/myjs.js') }}"></script>
     </html>

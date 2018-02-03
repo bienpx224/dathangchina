@@ -1,45 +1,170 @@
-$(document).ready(function(){
-  <!-- show more inf -->
-  $(".btn-readmore").click(function(){
-    $(".btn-read").hide(500);
-    $(".info-hide").show(500);
-  });
-  $(".btn-hide").click(function(){
-    $(".info-hide").hide(500);
-    $(".btn-read").show(500);
-  });
-  <!-- pick style, theme -->
-  $("#pink").click(function(){
-    $("#body").css('background-color','#f28ad4');
-    $(".tab-menu").css('background-color','#f76cd9');
-    $(".tab-menu").css('color','red');
-    $(".profile").css('background-color','#ee8cf2');      $(".profile").css('color','red');  $(".myName").css('color','red');
-    $(".icon").css('background-color','#ffd1dc');
-    $(".container").css('background-color','#f6def9');
-    $(".tab-content").css('background-color','#ffddfc');
-    $(".tab-pane").css('background-color','#f79ba4');     $(".tab-pane").css('color','red');  $(".myName").css('color','red');
+function ValidURL(str) {
+        var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
+        if(!regex .test(str)) {
+          return false;
+        } else {
+          return true;
+        }
+    }
 
-  });
-  $("#blue").click(function(){
-    $("#body").css('background-color','#e5f1ff');
-    $(".tab-menu").css('background-color','#8e3df7');
-    $(".tab-menu").css('color','white');
-    $(".profile").css('background-color','#eae5ff');      $(".profile").css('color','#232c3a'); $(".myName").css('color','#232c3a');
-    $(".icon").css('background-color','#dad1fc');
-    $(".container").css('background-color','#d6e1f9');
-    $(".tab-content").css('background-color','#d4d0f2');
-    $(".tab-pane").css('background-color','#a19bef');     $(".tab-pane").css('color','#232c3a');  $(".myName").css('color','#232c3a');
+    function getInfoProduct(link){
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        console.log('link: ',link);
+        console.log('CSRF: ',CSRF_TOKEN);
+        $.ajax({
+            type: "post",
+            url: '{!! url("postlink") !!}',
+            dataType: 'text',
+            data : {
+              link : ""+link,
+              _token: CSRF_TOKEN
+            },
+            // type: "POST",
+            // url: "{!! url('postlink') !!}",
+            // data: {link: ""+link, _token: CSRF_TOKEN},
+            xhrFields: {
+                withCredentials: false
+            },
+            beforeSend: function() {
+                $('#body').LoadingOverlay("show", {zIndex: 10000});
+                var shortCutFunction = 'info';
+                    var title = 'Đang lấy dữ liệu, đợi tý nhé !! ';
+                    var $toast = toastr[shortCutFunction]("waiting", title);
+            },
+            success : function(data) {
+                data = JSON.parse(data); console.log("postlink: ",data);
 
-  });
-  $("#dark").click(function(){
-    $("#body").css('background-color','#414851');
-    $(".tab-menu").css('background-color','#1c2533');
-    $(".tab-menu").css('color','white');
-    $(".profile").css('background-color','#4f6851');      $(".profile").css('color','white');   $(".myName").css('color','white');
-    $(".icon").css('background-color','#5a6d3e');
-    $(".container").css('background-color','#7c615b');
-    $(".tab-content").css('background-color','#526d5f');
-    $(".tab-pane").css('background-color','#424959');     $(".tab-pane").css('color','white');    $(".myName").css('color','white');
+                if(data.signal == "1"){
+                    $('#title').text(data.title);
+                    if(data.image !== ""){
+                        $('#image').attr('src',''+data.image);
+                    }
+                    $('#total_product').text(data.total_product);
+                    $('#price').html(data.price);
 
-  });
-});
+                    var shortCutFunction = 'success';
+                    var title = 'Thành công';
+                    var $toast = toastr[shortCutFunction]("success", title);
+                }else{
+                    var shortCutFunction = 'warning';
+                    var title = 'Thất bại';
+                    var $toast = toastr[shortCutFunction]("Có vẻ Link bạn nhập không đúng hoặc hệ thống tạm thời không lấy được kết quả", title);
+                }
+
+                $('#body').LoadingOverlay("hide");
+
+            },
+            error : function (data) {
+                $('#body').LoadingOverlay("hide");
+                var shortCutFunction = 'error';
+                    var title = 'Có lỗi xảy ra !!';
+                    var $toast = toastr[shortCutFunction]("error", title);
+            },
+            complete: function() {
+                $('#body').LoadingOverlay("hide");
+            }
+        });
+    }
+
+    function getPrice(link){
+        $.ajax({
+            type: "post",
+            url: '{!! url("getprice") !!}',
+            dataType: 'text',
+            data : {
+              link : link,
+              _token: CSRF_TOKEN
+            },
+            xhrFields: {
+                withCredentials: false
+            },
+            beforeSend: function() {
+            },
+            success : function(data) {
+                console.log("getPrice: ", data);
+            },
+            error : function (data) {
+                console.log("err getprice ");
+            },
+            complete: function() {
+            }
+        });
+    }
+
+    function addTypeMoney(){
+        var type = 'yen';
+        $.ajax({
+            type: "post",
+            url: '{!! url("addTypeMoney") !!}',
+            dataType: 'text',
+            data : {
+              type : 'yen',
+              rate : '3.0',
+              _token: CSRF_TOKEN
+            },
+            xhrFields: {
+                withCredentials: false
+            },
+            beforeSend: function() {
+            },
+            success : function(data) {
+                console.log("addTypeMoney: ", data);
+            },
+            error : function (data) {
+                console.log("err addTypeMoney ");
+            },
+            complete: function() {
+            }
+        });
+    }
+
+    function getRate(type){
+        $.ajax({
+            type: "post",
+            url: '{!! url("getRate") !!}',
+            dataType: 'text',
+            data : {
+              type : type,
+              _token: CSRF_TOKEN
+            },
+            xhrFields: {
+                withCredentials: false
+            },
+            beforeSend: function() {
+            },
+            success : function(data) {
+                console.log("getRate: ", data);
+            },
+            error : function (data) {
+                console.log("err getRate ");
+            },
+            complete: function() {
+            }
+        });
+    }
+
+    function editRate(){
+        $.ajax({
+            type: "post",
+            url: '{!! url("getRate") !!}',
+            dataType: 'text',
+            data : {
+              type : 'yen',
+              rate : '3.0',
+              _token: CSRF_TOKEN
+            },
+            xhrFields: {
+                withCredentials: false
+            },
+            beforeSend: function() {
+            },
+            success : function(data) {
+                console.log("getRate: ", data);
+            },
+            error : function (data) {
+                console.log("err getRate ");
+            },
+            complete: function() {
+            }
+        });
+    }

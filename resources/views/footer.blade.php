@@ -23,7 +23,8 @@
             <span class="footer-block-title">Tỷ giá hiện tại</span>
             <div class="exchange-rate" style="float: left; clear: both;">
                 <!--                        <span style="font-weight: 500;color: #4f4f4f;display: block">Tỷ giá hiện tại:</span>-->
-                <span style="display: block">Trung Quốc: <span style="color: #C44853;font-weight: 500">3,455.00</span></span>
+                <span style="display: block">Trung Quốc: <span style="color: #C44853;font-weight: 500"  id="yen_rate"></span></span>
+                <span style="display: block">Đô la : <span style="color: #C44853;font-weight: 500" id="dola_rate"></span></span>
             </div>
             <!--                <span class="footer-block-title" style="padding-top: 20px">Thông tin tài khoản</span>-->
             <!--                <div class="footer-block-content" style="margin-top: 10px">-->
@@ -74,10 +75,13 @@
             <a href="http://merchant_cert.lab.baokim.vn/chung_nhan/00000/615_NHAPHANG247_COM" target="_blank"><img src="{{ asset('public/img/cert_baokim.png') }}" /></a>
         </div>
         <div class="block-cert">
-            <a href="#" target="_blank"><img src="{{ asset('/img/dathongbao.png') }}" /></a>
+            <a href="#" target="_blank"><img src="{{ asset('public/img/bocongthuong.png') }}" /></a>
         </div>
     </div>
 </div>
 <span class="footer-line"></span>
 </div>
 </div>
+
+<script type="text/javascript">
+</script>

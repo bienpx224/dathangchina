@@ -3,7 +3,7 @@
 @section('title','Nhập link - Nhập hàng china')
 @section('content-page')
   <div class="blog-list" id="list-product">
-
+    
     <div class="col-lg-12" style="margin-bottom: 40px;">
       <div class="col-md-9">
         <input style="font-size: 12px;" type="text" name="" id="text-link" class="form-control">
@@ -30,24 +30,24 @@
 
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
     toastr.options = {
-                        "closeButton": true,
-                        "debug": false,
-                        "progressBar": true,
-                        "preventDuplicates": false,
-                        "positionClass": "toast-bottom-left",
-                        "onclick": null,
-                        "showDuration": "400",
-                        "hideDuration": "500",
-                        "timeOut": "3000",
-                        "extendedTimeOut": "500",
-                        "showEasing": "swing",
-                        "hideEasing": "linear",
-                        "showMethod": "fadeIn",
-                        "hideMethod": "fadeOut"
-                    };
+        "closeButton": true,
+        "debug": false,
+        "progressBar": true,
+        "preventDuplicates": false,
+        "positionClass": "toast-bottom-left",
+        "onclick": null,
+        "showDuration": "400",
+        "hideDuration": "500",
+        "timeOut": "3000",
+        "extendedTimeOut": "500",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    };
 
 
-  var url_string = window.location.href;
+    var url_string = window.location.href;
     var index = url_string.indexOf('url=')+4;
 
     var link = url_string.slice(index, url_string.length);
@@ -81,10 +81,9 @@
 
     $('#btnAddProduct').click( function(){
 
-        getInfoProduct(link);
+        addTypeMoney();
 
-  })
-
+    });
 
     function ValidURL(str) {
         var regex = /(http|https):\/\/(\w+:{0,1}\w*)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%!\-\/]))?/;
@@ -173,6 +172,84 @@
             },
             error : function (data) {
                 console.log("err getprice ");
+            },
+            complete: function() {
+            }
+        });
+    }
+
+    function addTypeMoney(){
+        var type = 'yen';
+        $.ajax({
+            type: "post",
+            url: '{!! url("addTypeMoney") !!}',
+            dataType: 'text',
+            data : {
+              type : 'yen',
+              rate : '3.0',
+              _token: CSRF_TOKEN
+            },
+            xhrFields: {
+                withCredentials: false
+            },
+            beforeSend: function() {
+            },
+            success : function(data) {
+                console.log("addTypeMoney: ", data);
+            },
+            error : function (data) {
+                console.log("err addTypeMoney ");
+            },
+            complete: function() {
+            }
+        });
+    }
+
+    function getRate(type){
+        $.ajax({
+            type: "post",
+            url: '{!! url("getRate") !!}',
+            dataType: 'text',
+            data : {
+              type : type,
+              _token: CSRF_TOKEN
+            },
+            xhrFields: {
+                withCredentials: false
+            },
+            beforeSend: function() {
+            },
+            success : function(data) {
+                console.log("getRate: ", data);
+            },
+            error : function (data) {
+                console.log("err getRate ");
+            },
+            complete: function() {
+            }
+        });
+    }
+
+    function editRate(){
+        $.ajax({
+            type: "post",
+            url: '{!! url("getRate") !!}',
+            dataType: 'text',
+            data : {
+              type : 'yen',
+              rate : '3.0',
+              _token: CSRF_TOKEN
+            },
+            xhrFields: {
+                withCredentials: false
+            },
+            beforeSend: function() {
+            },
+            success : function(data) {
+                console.log("getRate: ", data);
+            },
+            error : function (data) {
+                console.log("err getRate ");
             },
             complete: function() {
             }

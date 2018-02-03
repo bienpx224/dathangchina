@@ -8,7 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Product extends Model
 {
     use Notifiable;
-
+    protected $table = "products";
     /**
      * The attributes that are mass assignable.
      *
@@ -23,7 +23,5 @@ class Product extends Model
      *
      * @var array
      */
-    protected $hidden = [
-        'password', 'remember_token','secret'
-    ];
+
 }

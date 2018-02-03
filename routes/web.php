@@ -46,14 +46,22 @@ Route::get('/error', function () {
     return view('error');
 });
 
-// Route::get('translate/{link}',['as'=>'translate','uses'=>'Controller@getTranslate']);
 
+///////////////////////////////// ROUTE AJAX  //////////////////////////////////////////
 Route::get('/get-link','Controller@getLink');
 Route::post('/postlink',['as'=>'postlink','uses'=>'Controller@postlink']);
 
 Route::post('/getprice',['as'=>'getprice','uses'=>'Controller@getprice']);
 
+Route::post('/addTypeMoney',['as'=>'addTypeMoney','uses'=>'ConfigController@addTypeMoney']);
+Route::post('/editRate',['as'=>'editRate','uses'=>'ConfigController@editRate']);
+Route::post('/getRate',['as'=>'getRate','uses'=>'ConfigController@getRate']);
+Route::post('/getAllRate',['as'=>'getAllRate','uses'=>'ConfigController@getAllRate']);
+
 Route::post('/translate',['as'=>'translate','uses'=>'Controller@postTranslate']);
+
+///////////////////////////////////////////////////////////////////////////////////////////
+
 Route::get('/changePassword',['as'=>'changePassword','uses'=>'AuthController@changePassword']);
 
 Route::get('/user-information',['as'=>'user-information','uses'=>'UserController@getUserInformation']);

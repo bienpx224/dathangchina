@@ -66,7 +66,7 @@ class Controller extends BaseController
       $total_product = "Không tìm thấy";
 
 /////////////////////////    TMALL   ////////////////////////////////////////////////////////
-      if(strpos($link,"tmall")>1){
+      if(strpos($link,".tmall.")>1){
         $signal = 1; $msg = "tmall";
 
         $div_product = $html->find('div.tm-clear',0);
@@ -82,7 +82,7 @@ class Controller extends BaseController
       }
 ////////////////////////    TAOBAO   /////////////////////////////////////////////////////
 
-      if(strpos($link,"taobao")>1){
+      if(strpos($link,"world.taobao.")>1){
         $signal = 1;  $msg = "taobao";
 
         $div_product = $html->find('div #galleryPic',0);
@@ -97,7 +97,7 @@ class Controller extends BaseController
 
       }
 ////////////////////////    1688   /////////////////////////////////////////////////////
-      if(strpos($link,"1688")>1){
+      if(strpos($link,".1688.")>1){
         $signal = 1;  $msg = "1688";
 
         // $div_product = $html->find('div.tm-clear',0);
