@@ -18,6 +18,7 @@ class CreateOrdersTable extends Migration
             $table->increments('id');
             $table->integer('user_id')->unsigned();
             $table->integer('total_cost');
+            $table->integer('state')->default(1);
             $table->enum('status', ['pending','reject', 'error', 'approved', 'success']);
             $table->timestamps();
 

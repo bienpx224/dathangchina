@@ -57,6 +57,7 @@ Route::post('/addTypeMoney',['as'=>'addTypeMoney','uses'=>'ConfigController@addT
 Route::post('/editRate',['as'=>'editRate','uses'=>'ConfigController@editRate']);
 Route::post('/getRate',['as'=>'getRate','uses'=>'ConfigController@getRate']);
 Route::post('/getAllRate',['as'=>'getAllRate','uses'=>'ConfigController@getAllRate']);
+Route::post('/addProduct',['as'=>'addProduct','uses'=>'ProductController@addProduct']);
 
 Route::post('/translate',['as'=>'translate','uses'=>'Controller@postTranslate']);
 

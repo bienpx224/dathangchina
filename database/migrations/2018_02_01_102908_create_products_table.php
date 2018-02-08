@@ -20,6 +20,7 @@ class CreateProductsTable extends Migration
             $table->string('title');
             $table->string('link');
             $table->integer('price');
+            $table->integer('state')->default(1);
             $table->integer('status')->default(1);
             $table->timestamps();
 

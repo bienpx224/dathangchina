@@ -276,14 +276,13 @@
                         for( var i=0; i<configs.length; i++){
                             if(configs[i].type == 'yen'){
                                 $('#yen_rate').text(configs[i].rate + " VND");
-                                window.yen_rate = configs[i].rate;
+                                window.yen_rate = ""+configs[i].rate;
                             }
                             if(configs[i].type == 'dola'){
                                 $('#dola_rate').text(configs[i].rate + " VND");
-                                window.dola_rate = configs[i].rate;
+                                window.dola_rate = ""+configs[i].rate;
                             }
                         }
-                        console.log(window.yen_rate+" AND "+window.dola_rate);
                     },
                     error : function (data) {
                         console.log("err getAllRate ");
