@@ -19,12 +19,18 @@ class CreateProductsTable extends Migration
             $table->integer('order_id')->unsigned();
             $table->string('title');
             $table->string('link');
-            $table->integer('price');
+            $table->string('image');
+            $table->string('price');
+            $table->string('quantity');
+            $table->string('cost');
+            $table->string('color');
+            $table->string('note');
+            $table->string('size');
             $table->integer('state')->default(1);
             $table->integer('status')->default(1);
             $table->timestamps();
 
-            $table->foreign('order_id')->references('id')->on('orders')->onUpdate('cascade')->onDelete('cascade');
+            // $table->foreign('order_id')->references('id')->on('orders')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
