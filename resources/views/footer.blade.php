@@ -84,4 +84,8 @@
 </div>
 
 <script type="text/javascript">
+    $(document).ready(function(){
+        $('#dola-rate').val(window.dola_rate + " VND");
+        $('#yen-rate').val(window.yen_rate + " VND");
+    });
 </script>

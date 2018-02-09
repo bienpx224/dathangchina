@@ -252,7 +252,42 @@
         });
     }
 
-
+    function getRate(){
+        var rate_num = ""
+        $.ajax({
+            type: "post",
+            url: '{!! url("getAllRate") !!}',
+            dataType: 'text',
+            data : {
+              _token: CSRF_TOKEN
+            },
+            xhrFields: {
+                withCredentials: false
+            },
+            beforeSend: function() {
+            },
+            success : function(data) {
+                data = JSON.parse(data); 
+                data = data.configs;
+                for (var i = 0; i <= data.length-1; i++) {
+                    if(data[i].name == "yen"){ console.log(data[i].rate);
+                        window.yen_rate = data[i].rate;
+                        continue;
+                    }
+                    if(data[i].name == "dollar"){
+                        window.dola_rate = data[i].rate;
+                         continue;
+                    }
+                }
+                return rate_num;
+            },
+            error : function (data) {
+                console.log("err getRate ");
+            },
+            complete: function() {
+            }
+        });
+    }
 
     function getPrice(link){
         $.ajax({
@@ -279,86 +314,7 @@
         });
     }
 
-    function addTypeMoney(){
-        var type = 'yen';
-        $.ajax({
-            type: "post",
-            url: '{!! url("addTypeMoney") !!}',
-            dataType: 'text',
-            data : {
-              type : 'yen',
-              rate : '3.0',
-              _token: CSRF_TOKEN
-            },
-            xhrFields: {
-                withCredentials: false
-            },
-            beforeSend: function() {
-            },
-            success : function(data) {
-                console.log("addTypeMoney: ", data);
-            },
-            error : function (data) {
-                console.log("err addTypeMoney ");
-            },
-            complete: function() {
-            }
-        });
-    }
-
-    function getRate(type){
-        var rate_num = ""
-        $.ajax({
-            type: "post",
-            url: '{!! url("getRate") !!}',
-            dataType: 'text',
-            data : {
-              type : type,
-              _token: CSRF_TOKEN
-            },
-            xhrFields: {
-                withCredentials: false
-            },
-            beforeSend: function() {
-            },
-            success : function(data) {
-                data = JSON.parse(data);
-                window.yen_rate = data.config.rate;
-                $('#yen-rate').val(data.config.rate + " VND");
-                return rate_num;
-            },
-            error : function (data) {
-                console.log("err getRate ");
-            },
-            complete: function() {
-            }
-        });
-    }
-
-    function editRate(){
-        $.ajax({
-            type: "post",
-            url: '{!! url("getRate") !!}',
-            dataType: 'text',
-            data : {
-              type : 'yen',
-              rate : '3.0',
-              _token: CSRF_TOKEN
-            },
-            xhrFields: {
-                withCredentials: false
-            },
-            beforeSend: function() {
-            },
-            success : function(data) {
-                
-            },
-            error : function (data) {
-                console.log("err getRate ");
-            },
-            complete: function() {
-            }
-        }); }
+    
 
   });
 </script>

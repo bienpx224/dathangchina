@@ -17,6 +17,7 @@ class CreateConfigTable extends Migration
         Schema::create('config', function (Blueprint $table) {
             //
             $table->increments('id');
+            $table->string('name')->unique();
             $table->string('rate');
             $table->string('type');
             $table->timestamps();

@@ -53,10 +53,9 @@ Route::post('/postlink',['as'=>'postlink','uses'=>'Controller@postlink']);
 
 Route::post('/getprice',['as'=>'getprice','uses'=>'Controller@getprice']);
 
-Route::post('/addTypeMoney',['as'=>'addTypeMoney','uses'=>'ConfigController@addTypeMoney']);
-Route::post('/editRate',['as'=>'editRate','uses'=>'ConfigController@editRate']);
 Route::post('/getRate',['as'=>'getRate','uses'=>'ConfigController@getRate']);
 Route::post('/getAllRate',['as'=>'getAllRate','uses'=>'ConfigController@getAllRate']);
+
 Route::post('/addProduct',['as'=>'addProduct','uses'=>'ProductController@addProduct']);
 
 Route::post('/translate',['as'=>'translate','uses'=>'Controller@postTranslate']);
@@ -84,20 +83,30 @@ Route::post('signup', 'AuthController@signup')->name('signup');
 //BIEN
 Route::get('/',['as'=>'getHome','uses'=>'Controller@indexAction']);
 
-// ADMIN
+// Managerment
 
 Route::group(['prefix'=>'admin', 'middleware'=>'staff'], function(){
     Route::get('/index',['as'=>'admin.index','uses'=>'AdminController@indexAction']);
     Route::group(['prefix'=>'user', 'middleware'=>'admin'],function(){
-      // Route::get('add',['as'=>'admin.user.getAdd','uses'=>'AdminController@getAdd']);
-      // Route::post('add',['as'=>'admin.user.postAdd','uses'=>'AdminController@postAdd']);
+
+///////////////////////////////// ROUTE LIST USER  //////////////////////////////////////////      
       Route::get('edit/{id}',['as'=>'admin.user.getEdit','uses'=>'UserController@getEdit']);
       Route::post('edit',['as'=>'admin.user.postEdit','uses'=>'UserController@postEdit']);
       Route::get('list',['as'=>'admin.user.list','uses'=>'UserController@getListUser']);
       Route::get('delete/{id}',['as'=>'admin.user.delete','uses'=>'UserController@getDelete']);
       Route::post('active',['as'=>'admin.user.active','uses'=>'UserController@active']);
-
-        Route::any('{all?}',function(){
+      Route::any('{all?}',function(){
+              return view('error');
+      });
+    });
+///////////////////////////////// ROUTE CONFIG  ////////////////////////////////////////// 
+    Route::group(['prefix'=>'config', 'middleware'=>'admin'],function(){  
+      Route::get('/list-rate', 'ConfigController@getRateView')->name('admin.config.rate');
+      Route::post('getAllRate',['as'=>'getAllRate','uses'=>'ConfigController@getAllRate']);
+      Route::post('addRate',['as'=>'addRate','uses'=>'ConfigController@addRate']);
+      Route::post('editRate',['as'=>'editRate','uses'=>'ConfigController@editRate']);
+      Route::post('deleteRate',['as'=>'deleteRate','uses'=>'ConfigController@deleteRate']);
+      Route::any('{all?}',function(){
                 return view('error');
         });
     });

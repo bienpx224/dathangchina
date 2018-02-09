@@ -55,6 +55,3 @@
         </div>
 @endsection
 
-<script src="{{url('public/js/jquery-3.2.0.min.js')}}"></script>
-
-<script type="text/javascript" src="{{url('public/js/mycript.js')}}"></script>

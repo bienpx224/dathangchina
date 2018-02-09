@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Dat hang China">
     <meta name="author" content="Pham Xuan Bien - Bach khoa">
+    <meta name="csrf-token" content="{{ csrf_token() }}" />
     <title>@yield('title')</title>
      <link rel="icon" type="image/png" href="{{ asset('public/img/logo.png') }}">
 
@@ -26,18 +27,10 @@
 
     <!-- DataTables Responsive CSS -->
     <link href="{{url('public/admin_css/bower_components/datatables-responsive/css/dataTables.responsive.css') }}" rel="stylesheet">
-</head>
 
-<body>
+    <script src="{{url('public/js/jquery-3.2.0.min.js')}}"></script>
 
-    <div id="wrapper">
-
-        @include('admin.layout.header')
-
-
-        @yield('content')
-
-    </div>
+    <script type="text/javascript" src="{{url('public/js/mycript.js')}}"></script>
     <!-- /#wrapper -->
 
     <!-- jQuery -->
@@ -55,7 +48,9 @@
     <!-- DataTables JavaScript -->
     <script src="{{url('public/admin_css/bower_components/DataTables/media/js/jquery.dataTables.min.js') }}"></script>
     <script src="{{url('public/admin_css/bower_components/datatables-plugins/integration/bootstrap/3/dataTables.bootstrap.min.js') }}"></script>
-
+    <!-- TOAST -->
+    <link rel="stylesheet" href="{{ asset('public/inspinia/css/plugins/toastr/toastr.min.css') }}" media="all" type="text/css">
+    <script src="{{asset('public/inspinia/js/plugins/toastr/toastr.min.js') }}"></script>
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
     $(document).ready(function() {
@@ -64,6 +59,19 @@
         });
     });
     </script>
+</head>
+
+<body>
+
+    <div id="wrapper">
+
+        @include('admin.layout.header')
+
+
+        @yield('content')
+
+    </div>
+    
 
     @yield('script')
 
