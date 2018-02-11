@@ -33,7 +33,7 @@
 	        	<div class="col-lg-12 col-md-12 col-xs-12">
 	        		<div class="col-lg-6 col-md-6 col-xs-12">
 			            <span class="row-label">Tỷ giá Yên/VNĐ : </span>
-			            <input id="yen-rate" readonly class="price-table-column form form-control input-getL" >
+			            <input id="yen-rate" readonly class="input-getL price-table-column form form-control " >
 	        		</div>
 	        		<div class="col-lg-6 col-md-6 col-xs-12">
 	        			<span class="row-label">Giá VND :</span>
@@ -89,4 +89,3 @@
 	  </p>
 	</div>
 
-	
