@@ -5,8 +5,10 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Order;
 use Hash;
 use Illuminate\Support\Facades\Redirect;
+use Illuminate\Support\Facades\Log;
 class AuthController extends Controller
 {
     public function changePassword(){
@@ -60,6 +62,16 @@ class AuthController extends Controller
         $user->secret = $secret;
         $user->password=Hash::make($request->password);
         $user->save();
+
+        Log::info("id: ".$user->id);
+        $order = new Order();
+        $order->user_id = $user->id;
+        $order->status = "chưa gửi";
+        $order->state = 1;
+        $order->note = "";
+        $order->total_cost = 0;
+        $order->save();
+
         return redirect()->back()->with('signupsuccess','Đã tạo tài khoản thành công');
     }
 }

@@ -3,7 +3,7 @@
 @section('title','Nhập link - Nhập hàng china')
 @section('content-page')
   <div class="blog-list" id="list-product">
-    
+
     <div class="col-lg-12" style="margin-bottom: 40px;">
       <div class="col-md-9">
         <input style="font-size: 12px;" type="text" name="" id="text-link" class="form-control">
@@ -30,9 +30,9 @@
 //////////////////////////////////  SCRIPTs  //////////////////////////////////////////////
   $(document).ready(function(){
     var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-    
+
     getRate('yen');
-    
+
     toastr.options = {
         "closeButton": true,
         "debug": false,
@@ -74,18 +74,20 @@
       if(ValidURL(textLink)){
         getInfoProduct(textLink);
       }else{
-        var shortCutFunction = 'error';
-        var title = 'Link không hợp lệ !! ';
-        var $toast = toastr[shortCutFunction]("Vui lòng nhập lại Link", title);
+        swal({
+          title: "Link không hợp lệ",
+          text: "Vui lòng kiểm tra lại link sản phẩm",
+          icon: "warning",
+        });
       }
     })
 
     $('#btnAddProduct').click( function(){
         addProduct();
     });
-    
+
     $('#quantity').on('change keyup', function(e){
-        
+
         if($('#quantity').val()<0){
             var shortCutFunction = 'warning';
             var title = 'Số lượng không hợp lê !! ';
@@ -114,6 +116,44 @@
         var size = $('#size').val();
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
         var data = {link, image, title, price, quantity, cost, color, note, size , _token: CSRF_TOKEN};
+        console.log(data);
+        var args = {
+                    type : "post",
+                    url: '{!! url("addProduct") !!}',
+                    dataType : 'text',
+                    data : data,
+                    beforeSend: function() {
+                        $('#body').LoadingOverlay("show", {zIndex: 10000});
+                    },
+                    success : function(data) {
+                        data = JSON.parse(data);
+
+                        if(data.signal == "1"){
+
+                        swal({
+                          title: "Đã thêm hàng!",
+                          text: "Vui lòng kiểm tra đơn hàng!",
+                          icon: "success",
+                        });
+                        }else{
+                            var shortCutFunction = 'error';
+                            var title = 'Thất bại';
+                            var $toast = toastr[shortCutFunction]("Lỗi hệ thống !!", title);
+                        }
+
+                        $('#body').LoadingOverlay("hide");
+
+                    },
+                    error : function (data) {
+                        $('#body').LoadingOverlay("hide");
+                        var shortCutFunction = 'error';
+                            var title = 'Có lỗi xảy ra, không gửi được request !!';
+                            var $toast = toastr[shortCutFunction]("error", title);
+                    },
+                    complete: function() {
+                        $('#body').LoadingOverlay("hide");
+                    }
+                };
         if(quantity >= 0){
         }else{
             arrErr.push("Số lượng sản phẩm không phù hợp !!");
@@ -129,51 +169,46 @@
                 msg += "  "+i+": "+arrErr[i]+"  .<hr> ";
             }
             var $toast = toastr[shortCutFunction](msg, title);
-        }else{
-            $.ajax({
-                type : "post", 
-                url: '{!! url("addProduct") !!}',
-                dataType : 'text',
-                data : data,
-                beforeSend: function() {
-                    $('#body').LoadingOverlay("show", {zIndex: 10000});
-                },
-                success : function(data) {
-                    data = JSON.parse(data);
-
-                    if(data.signal == "1"){
-
-                        var shortCutFunction = 'success';
-                        var title = 'Thành công';
-                        var $toast = toastr[shortCutFunction]("Đã thêm sản phẩm vào giỏ hàng ! <hr> Thanh toán kiếm hàng thôi bạn ;)", title);
-                    }else{
-                        var shortCutFunction = 'error';
-                        var title = 'Thất bại';
-                        var $toast = toastr[shortCutFunction]("Lỗi hệ thống !!", title);
-                    }
-
-                    $('#body').LoadingOverlay("hide");
-
-                },
-                error : function (data) {
-                    $('#body').LoadingOverlay("hide");
-                    var shortCutFunction = 'error';
-                        var title = 'Có lỗi xảy ra, không gửi được request !!';
-                        var $toast = toastr[shortCutFunction]("error", title);
-                },
-                complete: function() {
-                    $('#body').LoadingOverlay("hide");
-                }
+        }else if(image=="" || title=="" || link==""  || quantity==""){
+            swal({
+              title: "Không có thông tin sản phẩm",
+              text: "Vui lòng kiểm tra lại sản phẩm",
+              icon: "error",
             });
+        }else {
+
+            @if(Auth::check())
+                if(price == "" || cost == ""){
+                    swal({
+                      title: "Tiếp tục đặt hàng",
+                      text: "Có vẻ chưa cập nhật được giá sản phẩm, Chúng tôi sẽ kiểm tra đơn hàng rồi báo lại với bạn để chốt đơn hàng.!",
+                      icon: "info",
+                      buttons: true,
+                      dangerMode: false,
+                    })
+                    .then((willDelete) => {
+                      if (willDelete) {
+                        $.ajax(args);
+                      } else {
+
+                      }
+                    });
+                }else{
+                        $.ajax(args);
+                }
+            @else
+                 $('#LogInModal').modal('show');
+            @endif
         }
+
     }
 
     function calculatePrice(){
         var vnd2 = $('#vnd2').val();
         var quantity = $('#quantity').val();
         var total_cost = vnd2*quantity;
-        $('#total_cost2').val(total_cost);        
-        total_cost = formatVND(total_cost); 
+        $('#total_cost2').val(total_cost);
+        total_cost = formatVND(total_cost);
         $('#total_cost').val(total_cost+ "  VND");
 
     }
@@ -222,7 +257,7 @@
                     rate = parseFloat(rate);  price2 = parseFloat(price2);
                     var priceVnd = price2*rate;
                     $('#vnd2').val(priceVnd);           $('#total_cost2').val(priceVnd);
-                    priceVnd = formatVND(priceVnd); 
+                    priceVnd = formatVND(priceVnd);
                     $('#vnd').val(priceVnd + "  VND");  $('#total_cost').val(priceVnd + "  VND");
 
                     $('#link2').val(link);
@@ -232,9 +267,11 @@
 
 
                 }else{
-                    var shortCutFunction = 'warning';
-                    var title = 'Thất bại';
-                    var $toast = toastr[shortCutFunction]("Có vẻ Link bạn nhập không đúng hoặc hệ thống tạm thời không lấy được kết quả", title);
+                    swal({
+                      title: "Không tìm thấy thông tin sản phẩm",
+                      text: "Vui lòng kiểm tra lại link sản phẩm",
+                      icon: "warning",
+                    });
                 }
 
                 $('#body').LoadingOverlay("hide");
@@ -242,9 +279,11 @@
             },
             error : function (data) {
                 $('#body').LoadingOverlay("hide");
-                var shortCutFunction = 'error';
-                    var title = 'Có lỗi xảy ra !!';
-                    var $toast = toastr[shortCutFunction]("error", title);
+                swal({
+                  title: "Có lỗi xảy ra",
+                  text: "Vui lòng kiểm tra lại link sản phẩm",
+                  icon: "error",
+                });
             },
             complete: function() {
                 $('#body').LoadingOverlay("hide");
@@ -267,10 +306,11 @@
             beforeSend: function() {
             },
             success : function(data) {
-                data = JSON.parse(data); 
+                data = JSON.parse(data);
                 data = data.configs;
                 for (var i = 0; i <= data.length-1; i++) {
-                    if(data[i].name == "yen"){ console.log(data[i].rate);
+                    if(data[i].name == "yen"){
+                        $('#yen-rate').val(data[i].rate + " VND");
                         window.yen_rate = data[i].rate;
                         continue;
                     }
@@ -304,7 +344,7 @@
             beforeSend: function() {
             },
             success : function(data) {
-                
+
             },
             error : function (data) {
                 console.log("err getprice ");
@@ -314,7 +354,7 @@
         });
     }
 
-    
+
 
   });
 </script>

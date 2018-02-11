@@ -37,6 +37,7 @@
         <script src="{{asset('public/jqueryloading/src/loadingoverlay.js') }}"></script>
         <script src="{{asset('public/jqueryloading/src/loadingoverlay.min.js') }}"></script>
         <script src="{{asset('public/inspinia/js/plugins/toastr/toastr.min.js') }}"></script>
+        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
         <!-- Latest compiled JavaScript -->
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
         @if(Session::has('loginfailed'))
@@ -276,11 +277,9 @@
                         for( var i=0; i<configs.length; i++){
                             if(configs[i].type == 'yen'){
                                 $('#yen_rate').text(configs[i].rate + " VND");
-                                window.yen_rate = ""+configs[i].rate;
                             }
                             if(configs[i].type == 'dola'){
                                 $('#dola_rate').text(configs[i].rate + " VND");
-                                window.dola_rate = ""+configs[i].rate;
                             }
                         }
                     },

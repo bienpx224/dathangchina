@@ -60,10 +60,10 @@ class Controller extends BaseController
       $signal = 0;
       $images = array();
       $image = "";
-      $title = "Không tìm thấy";
-      $price = "Không tìm thấy";
+      $title = "";
+      $price = "";
       // $price2 = "";
-      $total_product = "Không tìm thấy";
+      $total_product = "";
 
 /////////////////////////    TMALL   ////////////////////////////////////////////////////////
       if(strpos($link,".tmall.")>1){
@@ -119,8 +119,8 @@ class Controller extends BaseController
         'price'=>$price,
         'total_product'=>$total_product
       ]);
-////////////////////////    KHÔNG ĐÚNG TRANG LẤY SẢN PHẨM   ////////////////////////////////      
-      
+////////////////////////    KHÔNG ĐÚNG TRANG LẤY SẢN PHẨM   ////////////////////////////////
+
       print_r($data);
     }
 

@@ -15,7 +15,7 @@ class Order extends Model
      * @var array
      */
     protected $fillable = [
-        'id','name', 'phonenumber', 'email', 'address','password','secret','bank_number','bank_name','bank_user_name','authority','is_active'
+        'id','user_id','total_cost','note','state','status'
     ];
 
     /**
