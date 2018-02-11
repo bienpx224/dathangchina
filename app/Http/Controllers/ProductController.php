@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Product;
 use App\Order;
+use Hash;
 
 class ProductController extends Controller
 {
@@ -25,5 +26,12 @@ class ProductController extends Controller
 	     ]);    
       
       	print_r($data);
+    }
+    public function danhsachsanpham($order_id){
+
+        $sanpham = DB::table('products')->
+        where('order_id', '=', $order_id)->get();
+
+        return view('personal/DanhSachSanPham', ['sanpham'=>$sanpham]);
     }
 }
