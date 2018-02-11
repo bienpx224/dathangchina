@@ -5,9 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Config;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Log;
+
 
 class ConfigController extends Controller
 {
+    public function getRateView(){
+        $configs = DB::table('config')->get();
+        return view('admin.config.index', compact('configs'));
+    }
+
     public function getRate(Request $req){
     	$type  = $req->type;
     	$config = DB::table('config')->where('type',$type)->first();
@@ -18,10 +25,11 @@ class ConfigController extends Controller
       
       	print_r($data);
     }
-    public function addTypeMoney(Request $req){
+    public function addRate(Request $req){
     	$config = new Config;
     	$config->type = $req->type;
     	$config->rate = $req->rate;
+        $config->name = $req->name;
     	$rs = $config->save();
 
     	$data = json_encode([
@@ -31,25 +39,24 @@ class ConfigController extends Controller
       	print_r($data);
     }
     public function editRate(Request $req){
-    	$type = $req->type;
+    	$id = $req->id;Log::info('id edit: '.$id);
     	$rate = $req->rate;
-    	$config = DB::table('config')->where('type',$type)->first();
-    	$config->rate = $rate;
-    	$rs = $config->update();
-    	
-    	$data = json_encode([
-	        'result' => $rs,
-	        'config' => $config
-	     ]);    
-      
-      	print_r($data);
+    	$rs = DB::table('config')->where('id',$id)->update(['rate'=>$rate]);
+    	$configs = DB::table('config')->get();
+        return view('admin.config.index', compact('configs'));
+    }
+    public function deleteRate(Request $req){
+        $id = $req->id;
+        $rs = DB::table('config')->where('id',$id)->delete();
+        $configs = DB::table('config')->where('type','money')->get();
+        return view('admin.config.index', compact('configs'));
     }
     public function getAllRate(Request $req){
-        $configs = DB::table('config')->get();
+        $configs = DB::table('config')->where('type','money')->get();
         $data = json_encode([
             'configs' => $configs
-         ]);    
-      
+        ]);    
+        
         print_r($data);
     }
 

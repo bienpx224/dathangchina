@@ -74,7 +74,7 @@
                         </li>
 
                         <li>
-                            <a href="#"><i class="fa fa-cube fa-fw"></i> Feedback <span class="fa arrow"></span></a>
+                            <a href="#"><i class="fa fa-paper-plane fa-fw"></i> Feedback <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 <li>
                                     <a href="{{URL::route('admin.index')}}">List feedback </a>
@@ -83,6 +83,17 @@
                             <!-- /.nav-second-level -->
                         </li>
 
+                        @if(Auth::user()->authority > 2)
+                        <li>
+                            <a href="#"><i class="fa fa-cogs fa-fw"></i> Config <span class="fa arrow"></span></a>
+                            <ul class="nav nav-second-level">
+                                <li>
+                                    <a href="{{URL::route('admin.config.rate')}}">Rate Money</a>
+                                </li>
+                            </ul>
+                            <!-- /.nav-second-level -->
+                        </li>
+                        @endif
 
                     </ul>
                 </div>
