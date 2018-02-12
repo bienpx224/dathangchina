@@ -2,11 +2,16 @@
 	<div class="col-md-12 col-xs-6">
 	  <div class="col-md-4">
 	     <img id="image" src="https://cdn.browshot.com/static/images/not-found.png" class="c_preview">
+	     <div style="margin: 30px 10px; position: center;">
+		     <button class="btn btn-success" type="button" name="" id="btnAddProduct" style="width: 100%;height: 50px; font-size: 18px;">
+	        <span class="glyphicon glyphicon-shopping-cart pull-left" style="padding:0px 10px;"></span>Thêm vào giỏ hàng
+	      </button>
+	     </div>
 	  </div>
 	  <div class="col-md-8">
 	    <div class="content">
 	    	<input id="link2" hidden >
-	      <h3 id="title" class="product-name">title</h3>
+	      <h3 id="title" class="product-name"></h3>
 	      <hr>
 
 	      <div class="price-table">
@@ -49,11 +54,11 @@
 	        	<div class="col-lg-12 col-md-12 col-xs-12">
 		        	<div class="col-lg-6 col-md-6 col-xs-12">
 			            <span class="row-label">Màu :</span>
-			            <input id="color" placeholder="nếu có" class="price-table-column input-getL form-control form" type="text" />
+			            <input id="color" placeholder="nếu có" class="input-getL price-table-column form form-control " />
 			        </div>
 			        <div class="col-lg-6 col-md-6 col-xs-12">
-			            <span class="row-label">Kích thước</span>
-		            	<input id="size" class="price-table-column form form-control input-getL" type="text" placeholder="nếu có" />
+			            <span class="row-label">Kích thước :</span>
+		            	<input id="size" class="input-getL price-table-column form form-control" placeholder="nếu có" />
 			        </div>
 			    </div>
 	        </div>
@@ -61,10 +66,10 @@
 
 	      <div class="price-table">
 	        <div class="price-table-row">
+	        	<div class="col-lg-12 col-md-12 col-xs-12">
 	            <span class="row-label">Ghi chú :</span>
-	            <span style="width: 80%;display: inline-block;" class="price-table-column">
-	              <input id="note" style="width: 100%; max-width:100%;font-weight: 100; font-size: 14px;" class="input-table-product input-getL form form-control" type="text" name="" placeholder="Yêu cầu, ghi chú cho sản phẩm..." />
-	            </span>
+	            <input id="note" class="input-getL price-table-column form form-control" placeholder="Yêu cầu, ghi chú cho sản phẩm..." />
+	          </div>
 	        </div>
 	      </div>
 
@@ -76,16 +81,11 @@
 	        </div>
 	      </div>
 
-	      <div class="col-md-4" style="float: left; padding:10px 40%;">
-	        <button class="btn btn-success" type="button" name="" id="btnAddProduct" style="padding-right: 30px;">
-	          <span class="glyphicon glyphicon-shopping-cart pull-left" style="padding-right: 10px;"></span>Thêm vào giỏ hàng
-	        </button>
-	      </div>
 
 	    </div>
 	  </div>
 	  <p style="float: left; margin:20px 10px;">
-	    <span class="col-md-12" style="color: #968989;"><b>(*)   </b>Mặc định chọn màu như trong ảnh, nếu có yêu cầu cụ thể màu khác, vui lòng nhập vào ô Màu bên trên</span>
+	    <span class="col-md-12" style="color: #968989;"><b> Mặc định chọn màu như trong ảnh, nếu có yêu cầu cụ thể màu khác, vui lòng nhập vào ô Màu bên trên<br>Nếu hệ thống lấy được thông tin sản phẩm nhưng chưa lấy được giá sản phẩm, chúng tôi sẽ liên lạc với bạn để báo giá sớm nhất.</b></span>
 	  </p>
 	</div>
 

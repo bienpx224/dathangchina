@@ -9,4 +9,4 @@
 .row-label{float: left;width: auto;color: #c4321e;font-weight: 500; font-size: 15px;}
 .price-table-column{float: left;padding-left: 32px;padding-right:32px;color:#333;font-weight: 500;}
 .input-table-product{float: left;width: 50px; height: 32px; padding: 3px 5px;}
-.input-getL{float: left; width: 60%; margin: 0px 20px;}
+.input-getL{float: left; width: 100%; margin: 0px 20px;}

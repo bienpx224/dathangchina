@@ -57,7 +57,7 @@ margin-top: 5px;
     <span class="more-option-text">Hoặc</span>
     <a href="javascript:;" class="install-extension-btn" title="Cài đặt công cụ đặt hàng">Cài đặt công cụ đặt hàng</a>
     <div class="create-order-quick">TỶ GIÁ HIỆN TẠI:</div>
-    <span style="display: block">Trung Quốc: <span style="color: #C44853;font-weight: 500">3,455.00</span></span>
+    <span style="display: block">Trung Quốc: <span id="yen_rate_quick" style="color: #C44853;font-weight: 500"></span></span>
     <div class="create-order-quick">BÀI VIẾT</div>
     <div class="footer-block-blog">
       <div class="footer-block-content">
@@ -98,5 +98,40 @@ margin-top: 5px;
         // console.log("vi-tri-hien-tai: "+h);
         // console.log("height: "+height);
       });
+
+var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        $.ajax({
+            type: "post",
+            url: '{!! url("getAllRate") !!}',
+            dataType: 'text',
+            data : {
+              _token: CSRF_TOKEN
+            },
+            xhrFields: {
+                withCredentials: false
+            },
+            beforeSend: function() {
+            },
+            success : function(data) {
+                data = JSON.parse(data);
+                data = data.configs;
+                for (var i = 0; i <= data.length-1; i++) {
+                    if(data[i].name == "yen"){
+                    $('#yen_rate_quick').text(data[i].rate+" VND");
+                        continue;
+                    }
+                    if(data[i].name == "dollar"){
+                        $('#dola_rate').text(data[i].rate + " VND");
+                         continue;
+                    }
+                }
+            },
+            error : function (data) {
+                console.log("err getRate ");
+            },
+            complete: function() {
+            }
+        });
+
     });
 </script>

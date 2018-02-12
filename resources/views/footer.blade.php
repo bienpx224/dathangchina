@@ -85,7 +85,38 @@
 
 <script type="text/javascript">
     $(document).ready(function(){
-        $('#dola-rate').val(window.dola_rate + " VND");
-        $('#yen-rate').val(window.yen_rate + " VND");
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
+        $.ajax({
+            type: "post",
+            url: '{!! url("getAllRate") !!}',
+            dataType: 'text',
+            data : {
+              _token: CSRF_TOKEN
+            },
+            xhrFields: {
+                withCredentials: false
+            },
+            beforeSend: function() {
+            },
+            success : function(data) {
+                data = JSON.parse(data);
+                data = data.configs;
+                for (var i = 0; i <= data.length-1; i++) {
+                    if(data[i].name == "yen"){
+                    $('#yen_rate').text(data[i].rate+" VND");
+                        continue;
+                    }
+                    if(data[i].name == "dollar"){
+                        $('#dola_rate').text(data[i].rate + " VND");
+                         continue;
+                    }
+                }
+            },
+            error : function (data) {
+                console.log("err getRate ");
+            },
+            complete: function() {
+            }
+        });
     });
 </script>

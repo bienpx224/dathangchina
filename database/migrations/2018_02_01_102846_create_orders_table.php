@@ -17,10 +17,10 @@ class CreateOrdersTable extends Migration
             //
             $table->increments('id');
             $table->integer('user_id')->unsigned();
-            $table->integer('total_cost');
-            $table->string('note');
+            $table->integer('total_cost')->default(0);
+            $table->string('note')->nullable();
             $table->integer('state')->default(1);
-            $table->enum('status', ['pending','reject', 'error', 'approved', 'success']);
+            $table->enum('status', ['chưa gửi','đang xử lý', 'đã báo giá', 'đang đặt hàng', 'thành công', 'đã hủy']);
             $table->timestamps();
 
             // $table->foreign('user_id')->references('id')->on('users')->onUpdate('cascade')->onDelete('cascade');
