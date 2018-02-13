@@ -48,6 +48,7 @@
                         </li>
                         <li>
                             <a href="{{route('admin.index')}}"><i class="fa fa-dashboard fa-fw"></i>Trang Quản lý</a>
+                            <a href="{{route('admin.order')}}"><i class="fa fa-dashboard fa-fw"></i>Quản lý đơn hàng</a>
                         </li>
                         @if(Auth::user()->authority > 2)
                         <li>
