@@ -33,6 +33,11 @@ class AdminController extends Controller
         where('order_id', '=', $order_id)->get();
         return view('admin/orderDetail', ['sanpham'=>$sanpham]);
     }
+    public function orderActionEdit($order_id){
+        $sanpham = DB::table('products')->
+        where('order_id', '=', $order_id)->get();
+        return view('admin/orderDetail', ['sanpham'=>$sanpham]);
+    }
 
 
 }

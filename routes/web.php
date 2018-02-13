@@ -91,6 +91,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>'staff'], function(){
     Route::get('/order',['as'=>'admin.order','uses'=>'AdminController@orderAction']);
     Route::get('/order/detail/{order_id}',['as'=>'admin.order.detail','uses'=>'AdminController@orderActionDetail']);
     Route::get('/order/delete/{order_id}',['as'=>'admin.order.delete','uses'=>'AdminController@orderActionDelete']);
+    Route::get('/order/edit/{order_id}',['as'=>'admin.order.edit','uses'=>'AdminController@orderActionEdit']);
     Route::group(['prefix'=>'user', 'middleware'=>'admin'],function(){
 
 ///////////////////////////////// ROUTE LIST USER  //////////////////////////////////////////      

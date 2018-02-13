@@ -5,6 +5,7 @@
         <div class="container-fluid">
             <div class="container">
                 <h2>Quản lý đơn hàng</h2>
+                <form 
                 <table class="table table-hover" style="max-width: 80%">
                     <thead>
                     <tr>
@@ -14,6 +15,7 @@
                         <th>Tổng gía</th>
                         <th>Ghi chú</th>
                         <th>Trạng thái</th>
+                        <th></th>
                         <th></th>
                         <th></th>
                     </tr>
@@ -40,6 +42,11 @@
                             </td>
                             <td>
                                 <a type="button" href='/admin/order/delete/{{$dh->id}}' class="btn btn-danger">Xóa</a>
+                            </td>
+                            <td>
+                                @if ($dh->status == 'đang xử lý')
+                                    <a type="button" href='/admin/order/edit/{{$dh->id}}' class="btn btn-warning">Chỉnh sửa</a>
+                                @endif
                             </td>
                         </tr>
                     @endforeach
