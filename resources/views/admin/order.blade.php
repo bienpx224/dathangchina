@@ -36,7 +36,7 @@
                             </td>
                             <td> {{$dh->status}}</td>
                             <td>
-                                <a type="button" href='danhsachsanpham/{{$dh->id}}' class="btn btn-info">Xem chi tiết</a>
+                                <a type="button" href='/admin/order/detail/{{$dh->id}}' class="btn btn-info">Xem chi tiết</a>
                             </td>
                             <td>
                                 <a type="button" href='/admin/order/delete/{{$dh->id}}' class="btn btn-danger">Xóa</a>

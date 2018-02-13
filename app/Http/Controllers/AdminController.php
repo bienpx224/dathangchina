@@ -28,6 +28,11 @@ class AdminController extends Controller
       //return view('admin.order', ['donhang'=>$donhang]);
       //return view('admin.order');
   }
+    public function orderActionDetail($order_id){
+        $sanpham = DB::table('products')->
+        where('order_id', '=', $order_id)->get();
+        return view('admin/orderDetail', ['sanpham'=>$sanpham]);
+    }
 
 
 }
