@@ -51,13 +51,29 @@
     <!-- TOAST -->
     <link rel="stylesheet" href="{{ asset('public/inspinia/css/plugins/toastr/toastr.min.css') }}" media="all" type="text/css">
     <script src="{{asset('public/inspinia/js/plugins/toastr/toastr.min.js') }}"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
     $(document).ready(function() {
-        $('#dataTables-example').DataTable({
-                responsive: true
+        $("#update").click(function(){
+            var prices = $("input[name='price']").map(function () {
+                return $(this).val();
+            }).get();
+            var quantities = $("td[name='quantity']").map(function () {
+                return $(this).html();
+            }).get();
+            var size = prices.length;
+            var count = 0;
+            var total = 0;
+            $("td[name='cost']").map(function () {
+                total+=prices[count]*quantities[count];
+                $(this).html(prices[count]*quantities[count]);
+                count++;
+            });
+            $("#total_cost").html(total);
         });
     });
+
     </script>
 </head>
 

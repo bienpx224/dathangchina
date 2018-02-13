@@ -5,7 +5,36 @@
         <div class="container-fluid">
             <div class="container">
                 <h2>Quản lý đơn hàng</h2>
-                <form 
+                <form action="{{route('admin.order.search')}}" method="get">
+                    <div class="row">
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label for="phonenumber">Phone Number:</label>
+                                <input type="tel" class="form-control" name="phonenumber">
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <label for="status">Trạng thái:</label>
+                                <select class="form-control" name="status">
+                                    <option value="">Tất cả</option>
+                                    <option value="chưa gửi">Chưa gửi</option>
+                                    <option value="đang xử lý">Đang xử lý</option>
+                                    <option value="đã báo giá">Đã báo giá</option>
+                                    <option value="đang đặt hàng">Đang đặt hàng</option>
+                                    <option value="thành công">Thành công</option>
+                                    <option value="đã hủy">Đã hủy</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-2">
+                            <div class="form-group">
+                                <br>
+                                <input type="submit" class="btn btn-info" name="search" value="Search">
+                            </div>
+                        </div>
+                    </div>
+                </form>
                 <table class="table table-hover" style="max-width: 80%">
                     <thead>
                     <tr>

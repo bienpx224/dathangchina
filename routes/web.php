@@ -89,6 +89,7 @@ Route::get('/',['as'=>'getHome','uses'=>'Controller@indexAction']);
 Route::group(['prefix'=>'admin', 'middleware'=>'staff'], function(){
     Route::get('/index',['as'=>'admin.index','uses'=>'AdminController@indexAction']);
     Route::get('/order',['as'=>'admin.order','uses'=>'AdminController@orderAction']);
+    Route::get('/order/search',['as'=>'admin.order.search','uses'=>'AdminController@orderActionSearch']);
     Route::get('/order/detail/{order_id}',['as'=>'admin.order.detail','uses'=>'AdminController@orderActionDetail']);
     Route::get('/order/delete/{order_id}',['as'=>'admin.order.delete','uses'=>'AdminController@orderActionDelete']);
     Route::get('/order/edit/{order_id}',['as'=>'admin.order.edit','uses'=>'AdminController@orderActionEdit']);
