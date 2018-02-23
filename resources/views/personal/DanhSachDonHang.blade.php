@@ -11,8 +11,8 @@
                 <th>Tổng gía</th>
                 <th>Ghi chú</th>
                 <th>Trạng thái</th>
-                <th></th>
-                <th></th>
+                <th>Quá trình</th>
+                <th>Thao tác</th>
             </tr>
             </thead>
             <tbody>
@@ -22,18 +22,17 @@
                     <td> {{$dh->total_cost}}</td>
                     <td> {{$dh->note}}</td>
                     <td> @if ($dh->state == 0)
-                            Đã Hủy
-                             @elseif ($dh->state == 1)
-                             Chưa đặt hàng
-                             @else
-                             Đã đặt hàng
+                                Đã Hủy
+                            @elseif ($dh->state == 1)
+                                Chưa đặt hàng
+                            @else
+                                Đã đặt hàng
                         @endif
                     </td>
                     <td> {{$dh->status}}</td>
                     <td>
                         <a type="button" href='danhsachsanpham/{{$dh->id}}' class="btn btn-danger">Xem chi tiết</a>
-                    </td>
-                    <td>
+
                         @if ($dh->state == 1)
                             <a type="button" href='#' class="btn btn-info">Đặt hàng</a>
                         @endif

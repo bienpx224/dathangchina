@@ -28,6 +28,8 @@
         <link href="{{asset('public/assets/account.css') }}" rel="stylesheet">
         <link rel="stylesheet" href="{{ asset('public/css/mycss.css') }}" media="all" type="text/css">
         <link rel="stylesheet" href="{{ asset('public/inspinia/css/plugins/toastr/toastr.min.css') }}" media="all" type="text/css">
+        <!-- Custom Fonts -->
+        <link href="{{asset('public/admin_css/bower_components/font-awesome/css/font-awesome.min.css') }}" rel="stylesheet" type="text/css">
 
 
 

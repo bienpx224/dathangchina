@@ -87,8 +87,7 @@
     });
 
     $('#quantity').on('change keyup', function(e){
-
-        if($('#quantity').val()<0){
+        if($('#quantity').val()<1){
             var shortCutFunction = 'warning';
             var title = 'Số lượng không hợp lê !! ';
             var $toast = toastr[shortCutFunction]("Mua ít nhất 1 cái đi bạn, ủng hộ chúng mình nhé ;)", title);

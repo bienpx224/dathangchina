@@ -27,7 +27,7 @@ class CreateProductsTable extends Migration
             $table->string('note')->nullable();
             $table->string('size')->nullable();
             $table->integer('state')->default(1);
-            $table->integer('status')->default(1);
+            $table->integer('status')->default(1);  //  1 là đang chờ, 2 là đã chốt, 3 là hết hàng, 0 là đã hủy
             $table->timestamps();
 
             // $table->foreign('order_id')->references('id')->on('orders')->onUpdate('cascade')->onDelete('cascade');

@@ -131,7 +131,7 @@
 		        });
     			}
     		});
-
+    		
 		    function getAllRate(){
 		        $.ajax({
 		            type: "post",
