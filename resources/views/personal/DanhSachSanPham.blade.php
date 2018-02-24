@@ -75,7 +75,7 @@
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <input type="hidden" name="id" value="{{$sp->id}}">
                         @if($sp->status != 2)
-                            <button class="btn btn-success" type="submit" id="deleteRate" style="width: 90px;" >
+                            <button class="btn btn-success" type="submit"  style="width: 90px;" >
                                 <span class="glyphicon glyphicon-shopping-cart" style="padding-right: 2px;"></span>Mua SP
                             </button>
                         @endif
@@ -87,7 +87,7 @@
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <input type="hidden" name="id" value="{{$sp->id}}">
                         @if($sp->status != 2)
-                            <button class="btn btn-warning" type="submit" id="deleteRate" style="width: 90px;" >
+                            <button class="btn btn-warning" type="submit"  style="width: 90px;" >
                                 <span class="fa fa-warning" style="padding-right: 2px;"></span>Xóa
                             </button>
                         @endif
@@ -96,7 +96,7 @@
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <input type="hidden" name="id" value="{{$sp->id}}">
                         @if($sp->status == 1)
-                            <button class="btn btn-success" type="submit" id="deleteRate" style="width: 90px;" >
+                            <button class="btn btn-success" type="submit"  style="width: 90px;" >
                                 <span class="glyphicon glyphicon-shopping-cart" style="padding-right: 2px;"></span>Chốt SP
                             </button>
                         @endif
