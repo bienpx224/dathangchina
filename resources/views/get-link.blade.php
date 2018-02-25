@@ -108,13 +108,15 @@
         var image = $('#image').attr('src');
         var title = $('#title').text();
         var price = $('#price2').val();
+        var rate = $('#yen-rate').val();    rate = parseInt(rate);
+        var vnd = $('#vnd2').val();
         var quantity = $('#quantity').val();  quantity = parseInt(quantity);
         var cost = $('#total_cost2').val();
         var color = $('#color').val();
         var note = $('#note').val();
         var size = $('#size').val();
         var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-        var data = {link, image, title, price, quantity, cost, color, note, size , _token: CSRF_TOKEN};
+        var data = {link, image, title, price, rate,vnd, quantity, cost, color, note, size , _token: CSRF_TOKEN};
         console.log(data);
         var args = {
                     type : "post",
@@ -153,6 +155,7 @@
                         $('#body').LoadingOverlay("hide");
                     }
                 };
+
         if(quantity >= 0){
         }else{
             arrErr.push("Số lượng sản phẩm không phù hợp !!");

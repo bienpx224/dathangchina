@@ -24,6 +24,8 @@ class ProductController extends Controller
     	$product->image = $req->image;
     	$product->title = $req->title;
     	$product->price = $req->price;
+        $product->rate = $req->rate;
+        $product->vnd = $req->vnd;
     	$product->quantity = $req->quantity;
     	$product->cost = $req->cost;
     	$product->color = $req->color;
@@ -48,10 +50,60 @@ class ProductController extends Controller
         print_r($data);
     }
     public function danhsachsanpham($order_id){
+        $user_id = Auth::user()->id;
+        $user_id_order = DB::table('orders')->where('id','=',$order_id)->first()->user_id;
 
-        $sanpham = DB::table('products')->
-        where('order_id', '=', $order_id)->get();
+        if($user_id_order == $user_id){
+            $sanpham = DB::table('products')->
+            where(['order_id'=>$order_id, 'state'=>1])->get();
+            return view('personal/DanhSachSanPham', ['sanpham'=>$sanpham]);
+        }else{
+            return view('error');
+        }
 
-        return view('personal/DanhSachSanPham', ['sanpham'=>$sanpham]);
+    }
+
+    public function updateProductUser(Request $req){
+        $id_sp = $req->id_sp;
+        $new_quantity = $req->quantity;
+
+        $product = DB::table('products')->where('id','=',$id_sp)->first();
+        $order_id = $product->order_id;
+        $vnd = $product->vnd;
+        if($vnd != "" && $vnd > 0){
+            $cost = $vnd*$new_quantity;
+            $rs = DB::table('products')->where('id','=',$id_sp)->update(['quantity'=>$new_quantity, 'cost'=>$cost]);
+        }else{
+            $rs = DB::table('products')->where('id','=',$id_sp)->update(['quantity'=>$new_quantity]);
+        }
+        return redirect('/danhsachsanpham/'.$order_id);
+    }
+
+    public function updateProductStaff(Request $req){
+
+    }
+
+    public function cancelProductUser(Request $req){
+        $id_sp = $req->id_sp;
+        $rs = DB::table('products')->where('id','=',$id_sp)->update(['status'=>0]);
+        $product = DB::table('products')->where('id','=',$id_sp)->first();
+        $order_id = $product->order_id;
+        return redirect('/danhsachsanpham/'.$order_id);
+    }
+
+    public function buyProductUser(Request $req){
+        $id_sp = $req->id_sp;
+        $rs = DB::table('products')->where('id','=',$id_sp)->update(['status'=>1]);
+        $product = DB::table('products')->where('id','=',$id_sp)->first();
+        $order_id = $product->order_id;
+        return redirect('/danhsachsanpham/'.$order_id);
+    }
+
+    public function deleteProductUser(Request $req){
+        $id_sp = $req->id_sp;
+        $rs = DB::table('products')->where('id','=',$id_sp)->update(['state'=>0]);
+        $product = DB::table('products')->where('id','=',$id_sp)->first();
+        $order_id = $product->order_id;
+        return redirect('/danhsachsanpham/'.$order_id);
     }
 }

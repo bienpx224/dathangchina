@@ -62,16 +62,23 @@ Route::post('/translate',['as'=>'translate','uses'=>'Controller@postTranslate'])
 
 ///////////////////////////////////////////////////////////////////////////////////////////
 
-Route::get('/changePassword',['as'=>'changePassword','uses'=>'AuthController@changePassword']);
+Route::get('/changePassword',['middleware'=>'user','as'=>'changePassword','uses'=>'AuthController@changePassword']);
 
-Route::get('/user-information',['as'=>'user-information','uses'=>'UserController@getUserInformation']);
-Route::post('/user-information',['as'=>'user-information','uses'=>'UserController@updateUserInformation']);
+Route::get('/user-information',['middleware'=>'user','as'=>'user-information','uses'=>'UserController@getUserInformation']);
+Route::post('/user-information',['middleware'=>'user','as'=>'user-information','uses'=>'UserController@updateUserInformation']);
 
-Route::get('/danhsachdonhang', 'OrderController@danhsachdonhang')->name('danhsachdonhang');
-Route::get('/danhsachsanpham/{order_id}', 'ProductController@danhsachsanpham')->name('danhsachsanpham');
+// Route::get('/danhsachdonhang', 'OrderController@danhsachdonhang')->name('danhsachdonhang');
+// Route::get('/danhsachsanpham/{order_id}', 'ProductController@danhsachsanpham')->name('danhsachsanpham');
+Route::get('/danhsachdonhang',['middleware'=>'user','as'=>'danhsachdonhang','uses'=>'OrderController@danhsachdonhang']);
+Route::get('/danhsachsanpham/{order_id}',['middleware'=>'user','as'=>'danhsachsanpham','uses'=>'ProductController@danhsachsanpham']);
 
-Route::get('/change-password',['as'=>'change-password','uses'=>'UserController@getChangePassword']);
-Route::post('/change-password',['as'=>'change-password','uses'=>'UserController@updatePassword']);
+Route::post('/updateProductUser',['middleware'=>'user','as'=>'updateProductUser','uses'=>'ProductController@updateProductUser']);
+Route::post('/cancelProductUser',['middleware'=>'user','as'=>'cancelProductUser','uses'=>'ProductController@cancelProductUser']);
+Route::post('/deleteProductUser',['middleware'=>'user','as'=>'deleteProductUser','uses'=>'ProductController@deleteProductUser']);
+Route::post('/buyProductUser',['middleware'=>'user','as'=>'buyProductUser','uses'=>'ProductController@buyProductUser']);
+
+Route::get('/change-password',['middleware'=>'user','as'=>'change-password','uses'=>'UserController@getChangePassword']);
+Route::post('/change-password',['middleware'=>'user','as'=>'change-password','uses'=>'UserController@updatePassword']);
 
 //THUONG
 
@@ -95,7 +102,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>'staff'], function(){
     Route::get('/order/edit/{order_id}',['as'=>'admin.order.edit','uses'=>'AdminController@orderActionEdit']);
     Route::group(['prefix'=>'user', 'middleware'=>'admin'],function(){
 
-///////////////////////////////// ROUTE LIST USER  //////////////////////////////////////////      
+///////////////////////////////// ROUTE LIST USER  //////////////////////////////////////////
       Route::get('edit/{id}',['as'=>'admin.user.getEdit','uses'=>'UserController@getEdit']);
       Route::post('edit',['as'=>'admin.user.postEdit','uses'=>'UserController@postEdit']);
       Route::get('list',['as'=>'admin.user.list','uses'=>'UserController@getListUser']);
@@ -105,8 +112,8 @@ Route::group(['prefix'=>'admin', 'middleware'=>'staff'], function(){
               return view('error');
       });
     });
-///////////////////////////////// ROUTE CONFIG  ////////////////////////////////////////// 
-    Route::group(['prefix'=>'config', 'middleware'=>'admin'],function(){  
+///////////////////////////////// ROUTE CONFIG  //////////////////////////////////////////
+    Route::group(['prefix'=>'config', 'middleware'=>'admin'],function(){
       Route::get('/list-rate', 'ConfigController@getRateView')->name('admin.config.rate');
       Route::post('getAllRate',['as'=>'getAllRate','uses'=>'ConfigController@getAllRate']);
       Route::post('addRate',['as'=>'addRate','uses'=>'ConfigController@addRate']);
