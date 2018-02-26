@@ -28,7 +28,7 @@
                             <td> {{$sp->link}}</td>
                             <td> {{$sp->image}}</td>
                             <td>
-                                <input type="number" name="price" value="{{$sp->price}}">
+                                <input type="text" name="price" value="{{$sp->price}}">
                             </td>
                             <td name="quantity"> {{$sp->quantity}}</td>
                             <td name="cost"> {{$sp->cost}}</td>
@@ -37,25 +37,6 @@
                             <td> {{$sp->note}}</td>
                             <td> {{$sp->state}}</td>
                             <td> {{$sp->status}}</td>
-                            {{--
-                            <td> @if ($sp->state == 0)
-                                    Đã Hủy
-                                @elseif ($sp->state == 1)
-                                    Chưa đặt hàng
-                                @else
-                                    Đã đặt hàng
-                                @endif
-                            </td>
-                            <td> {{$sp->status}}</td>
-                            <td>
-                                <a type="button" href='danhsachsanpham.{{$sp->user_id}}' class="btn btn-danger">Xem chi tiết</a>
-                            </td>
-                            <td>
-                                @if ($sp->state == 1)
-                                    <a type="button" href='#' class="btn btn-info">Đặt hàng</a>
-                                @endif
-                            </td>
-                            --}}
                         </tr>
                     @endforeach
                         <tr>

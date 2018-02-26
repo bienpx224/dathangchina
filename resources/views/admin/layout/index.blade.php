@@ -55,7 +55,7 @@
     <!-- Page-Level Demo Scripts - Tables - Use for reference -->
     <script>
     $(document).ready(function() {
-        $("#update").click(function(){
+        $("input[name='price']").keyup(function () {
             var prices = $("input[name='price']").map(function () {
                 return $(this).val();
             }).get();
