@@ -76,6 +76,10 @@ Route::post('/updateProductUser',['middleware'=>'user','as'=>'updateProductUser'
 Route::post('/cancelProductUser',['middleware'=>'user','as'=>'cancelProductUser','uses'=>'ProductController@cancelProductUser']);
 Route::post('/deleteProductUser',['middleware'=>'user','as'=>'deleteProductUser','uses'=>'ProductController@deleteProductUser']);
 Route::post('/buyProductUser',['middleware'=>'user','as'=>'buyProductUser','uses'=>'ProductController@buyProductUser']);
+Route::post('/adminUpdateProductUser',['middleware'=>'user','as'=>'adminUpdateProductUser','uses'=>'ProductController@adminUpdateProductUser']);
+Route::post('/adminOkProductUser',['middleware'=>'user','as'=>'adminOkProductUser','uses'=>'ProductController@adminOkProductUser']);
+Route::post('/adminOutOfStockProductUser',['middleware'=>'user','as'=>'adminOutOfStockProductUser','uses'=>'ProductController@adminOutOfStockProductUser']);
+
 
 Route::get('/change-password',['middleware'=>'user','as'=>'change-password','uses'=>'UserController@getChangePassword']);
 Route::post('/change-password',['middleware'=>'user','as'=>'change-password','uses'=>'UserController@updatePassword']);

@@ -106,4 +106,36 @@ class ProductController extends Controller
         $order_id = $product->order_id;
         return redirect('/danhsachsanpham/'.$order_id);
     }
+
+    public function adminUpdateProductUser(Request $req){
+        $id_sp = $req->id_sp;
+        $new_price = $req->price;
+        $product = DB::table('products')->where('id','=',$id_sp)->first();
+        $order_id = $product->order_id;
+        $vnd = $product->vnd;
+        if($vnd != "" && $vnd > 0){
+            $vnd = $new_price * $product->rate;
+            $cost = $vnd * $product->quantity;
+            $rs = DB::table('products')->where('id','=',$id_sp)->update(['vnd'=>$vnd, 'cost'=>$cost, 'price'=>$new_price]);
+        }else{
+            $rs = DB::table('products')->where('id','=',$id_sp)->update(['price'=>$new_price]);
+        }
+        return redirect('/admin/order/detail/'.$order_id);
+    }
+
+    public function adminOkProductUser(Request $req){
+        $id_sp = $req->id_sp;
+        $product = DB::table('products')->where('id','=',$id_sp)->first();
+        $order_id = $product->order_id;
+        DB::table('products')->where('id','=',$id_sp)->update(['status'=>2]);
+        return redirect('/admin/order/detail/'.$order_id);
+    }
+    public function adminOutOfStockProductUser(Request $req){
+        $id_sp = $req->id_sp;
+        $product = DB::table('products')->where('id','=',$id_sp)->first();
+        $order_id = $product->order_id;
+        DB::table('products')->where('id','=',$id_sp)->update(['status'=>3]);
+        return redirect('/admin/order/detail/'.$order_id);
+    }
+
 }
