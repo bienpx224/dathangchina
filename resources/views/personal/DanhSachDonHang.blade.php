@@ -3,39 +3,102 @@
 @section('title','Danh Sách Đơn Hàng - Nhập hàng china')
 @section('content-page')
     <div class="container">
-        <h2>Danh sách đơn hàng</h2>
+        <h2>Đơn hàng hiện tại</h2>
         <table class="table table-hover" style="max-width: 80%">
             <thead>
             <tr>
-                <th>Mã đơn hàng</th>
+                <th>Người mua</th>
                 <th>Tổng gía</th>
                 <th>Ghi chú</th>
-                <th>Trạng thái</th>
                 <th>Quá trình</th>
+                <th>Ngày tạo</th>
+                <th>Cập nhật</th>
                 <th>Thao tác</th>
             </tr>
             </thead>
             <tbody>
             @foreach ($donhang as $dh)
-                <tr>
+                @if ($dh->status == 0)
+                    <tr class="danger">
+                @elseif ( $dh->status == 1)
+                    <tr class="info">
+                @elseif ( $dh->status >= 2)
+                    <tr class="success">
+                @endif
                     <td> {{$dh->id}}</td>
                     <td> {{$dh->total_cost}}</td>
                     <td> {{$dh->note}}</td>
-                    <td> @if ($dh->state == 0)
+                    <td> @if ($dh->status == 0)
                                 Đã Hủy
-                            @elseif ($dh->state == 1)
-                                Chưa đặt hàng
-                            @else
-                                Đã đặt hàng
+                            @elseif ($dh->status == 1)
+                                Đang chờ 
+                            @elseif ($dh->status == 2)
+                                Người dùng đã chốt
+                            @elseif ($dh->status == 3)
+                                Đơn hàng đã chốt
+                            @elseif ($dh->status == 4)
+                                Đang chuyển hàng
+                            @elseif ($dh->status == 5)
+                                Thành công
                         @endif
                     </td>
-                    <td> {{$dh->status}}</td>
+                    <td> {{$dh->created_at}}</td>
+                    <td> {{$dh->updated_at}}</td>
                     <td>
                         <a type="button" href='danhsachsanpham/{{$dh->id}}' class="btn btn-danger">Xem chi tiết</a>
 
                         @if ($dh->state == 1)
                             <a type="button" href='#' class="btn btn-info">Đặt hàng</a>
                         @endif
+                    </td>
+                </tr>
+            @endforeach
+            </tbody>
+        </table>
+
+        <h2>Danh sách các đơn hàng</h2>
+        <table class="table table-hover" style="max-width: 80%">
+            <thead>
+            <tr>
+                <th>Người mua</th>
+                <th>Tổng gía</th>
+                <th>Ghi chú</th>
+                <th>Quá trình</th>
+                <th>Ngày tạo</th>
+                <th>Cập nhật</th>
+                <th>Thao tác</th>
+            </tr>
+            </thead>
+            <tbody>
+            @foreach ($donhang as $dh)
+                @if ($dh->status == 0)
+                    <tr class="danger">
+                @elseif ( $dh->status == 1)
+                    <tr class="info">
+                @elseif ( $dh->status >= 2)
+                    <tr class="success">
+                @endif
+                    <td> {{$dh->id}}</td>
+                    <td> {{$dh->total_cost}}</td>
+                    <td> {{$dh->note}}</td>
+                    <td> @if ($dh->status == 0)
+                                Đã Hủy
+                            @elseif ($dh->status == 1)
+                                Đang chờ 
+                            @elseif ($dh->status == 2)
+                                Người dùng đã chốt
+                            @elseif ($dh->status == 3)
+                                Đơn hàng đã chốt
+                            @elseif ($dh->status == 4)
+                                Đang chuyển hàng
+                            @elseif ($dh->status == 5)
+                                Thành công
+                        @endif
+                    </td>
+                    <td> {{$dh->created_at}}</td>
+                    <td> {{$dh->updated_at}}</td>
+                    <td>
+                        <a type="button" href='danhsachsanpham/{{$dh->id}}' class="btn btn-danger">Xem chi tiết</a>
                     </td>
                 </tr>
             @endforeach
