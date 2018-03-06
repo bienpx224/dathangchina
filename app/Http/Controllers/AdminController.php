@@ -16,7 +16,7 @@ class AdminController extends Controller
   public function orderAction(){
       $donhang = DB::table('users')->join('orders', 'users.id', '=', 'orders.user_id')->get();
 
-      return view('admin.order', ['donhang'=>$donhang]);
+      return view('admin.order.list', ['donhang'=>$donhang]);
   }
 
   public function orderActionDelete($order_id){
@@ -29,7 +29,7 @@ class AdminController extends Controller
         $sanpham = DB::table('products')->
         where('order_id', '=', $order_id)->get();
 
-        return view('admin/orderDetail', ['sanpham'=>$sanpham]);
+        return view('admin.order.detail', ['sanpham'=>$sanpham]);
     }
 
     public function orderActionEdit($order_id){
@@ -38,7 +38,7 @@ class AdminController extends Controller
         $sanpham = DB::table('products')->
         where('order_id', '=', $order_id)->get();
 
-        return view('admin/orderEdit', ['sanpham'=>$sanpham, 'donhang'=>$donhang]);
+        return view('admin.order.edit', ['sanpham'=>$sanpham, 'donhang'=>$donhang]);
     }
 
     public function orderActionSearch(){
@@ -51,7 +51,7 @@ class AdminController extends Controller
             where('phonenumber','like', '%'.$phonenumber.'%')->
             where('status', 'like', '%'.$status.'%')->get();
 
-      return view('admin.order', ['donhang'=>$donhang]);
+      return view('admin.order.list', ['donhang'=>$donhang]);
     }
 
 }

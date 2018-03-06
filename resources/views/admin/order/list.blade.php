@@ -50,6 +50,7 @@
                     </tr>
                     </thead>
                     <tbody>
+                    @if($donhang)
                     @foreach ($donhang as $dh)
                         <tr>
                             <td> {{$dh->id}}</td>
@@ -67,18 +68,21 @@
                             </td>
                             <td> {{$dh->status}}</td>
                             <td>
-                                <a type="button" href='/admin/order/detail/{{$dh->id}}' class="btn btn-info">Xem chi tiết</a>
+                                <a type="button" href="{{ route('admin.order.detail', $dh->id) }}" class="btn btn-info">Xem chi tiết</a>
                             </td>
                             <td>
-                                <a type="button" href='/admin/order/delete/{{$dh->id}}' class="btn btn-danger">Xóa</a>
+                                <a type="button" href="{{ route('admin.order.delete', $dh->id) }}" class="btn btn-danger">Xóa</a>
                             </td>
                             <td>
                                 @if ($dh->status == 'đang xử lý')
-                                    <a type="button" href='/admin/order/edit/{{$dh->id}}' class="btn btn-warning">Chỉnh sửa</a>
+                                    <a type="button" href="{{ route('admin.order.edit', $dh->id) }}" class="btn btn-warning">Chỉnh sửa</a>
                                 @endif
                             </td>
                         </tr>
                     @endforeach
+                    @else
+                        Khong co
+                    @endif
                     </tbody>
                 </table>
             </div>

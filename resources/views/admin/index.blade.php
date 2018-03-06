@@ -55,7 +55,7 @@
                             </div>
                             <br>
                             <div>
-                                <label>Ngày bat đầu :</label>
+                                <label>Ngày bắt đầu :</label>
                                 <input type="text" disabled class="form-control" placeholder="địa chỉ" name="address" aria-describedby="basic-addon1" value="{!! Auth::user()->created_at!!}" >
                             </div>
                             <br>

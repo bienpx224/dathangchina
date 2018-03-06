@@ -76,6 +76,7 @@ Route::post('/updateProductUser',['middleware'=>'user','as'=>'updateProductUser'
 Route::post('/cancelProductUser',['middleware'=>'user','as'=>'cancelProductUser','uses'=>'ProductController@cancelProductUser']);
 Route::post('/deleteProductUser',['middleware'=>'user','as'=>'deleteProductUser','uses'=>'ProductController@deleteProductUser']);
 Route::post('/buyProductUser',['middleware'=>'user','as'=>'buyProductUser','uses'=>'ProductController@buyProductUser']);
+
 Route::post('/adminUpdateProductUser',['middleware'=>'user','as'=>'adminUpdateProductUser','uses'=>'ProductController@adminUpdateProductUser']);
 Route::post('/adminOkProductUser',['middleware'=>'user','as'=>'adminOkProductUser','uses'=>'ProductController@adminOkProductUser']);
 Route::post('/adminOutOfStockProductUser',['middleware'=>'user','as'=>'adminOutOfStockProductUser','uses'=>'ProductController@adminOutOfStockProductUser']);
@@ -99,14 +100,20 @@ Route::get('/',['as'=>'getHome','uses'=>'Controller@indexAction']);
 
 Route::group(['prefix'=>'admin', 'middleware'=>'staff'], function(){
     Route::get('/index',['as'=>'admin.index','uses'=>'AdminController@indexAction']);
-    Route::get('/order',['as'=>'admin.order','uses'=>'AdminController@orderAction']);
-    Route::get('/order/search',['as'=>'admin.order.search','uses'=>'AdminController@orderActionSearch']);
-    Route::get('/order/detail/{order_id}',['as'=>'admin.order.detail','uses'=>'AdminController@orderActionDetail']);
-    Route::get('/order/delete/{order_id}',['as'=>'admin.order.delete','uses'=>'AdminController@orderActionDelete']);
-    Route::get('/order/edit/{order_id}',['as'=>'admin.order.edit','uses'=>'AdminController@orderActionEdit']);
-    Route::group(['prefix'=>'user', 'middleware'=>'admin'],function(){
 
+///////////////////////////////// ROUTE ORDER  //////////////////////////////////////////
+    Route::group(['prefix'=>'order', 'middleware'=>'staff'],function(){
+      Route::get('list',['as'=>'admin.order.list','uses'=>'AdminController@orderAction']);
+      Route::get('search',['as'=>'admin.order.search','uses'=>'AdminController@orderActionSearch']);
+      Route::get('detail/{order_id}',['as'=>'admin.order.detail','uses'=>'AdminController@orderActionDetail']);
+      Route::get('delete/{order_id}',['as'=>'admin.order.delete','uses'=>'AdminController@orderActionDelete']);
+      Route::get('edit/{order_id}',['as'=>'admin.order.edit','uses'=>'AdminController@orderActionEdit']);
+      Route::any('{all?}',function(){
+              return view('error');
+      });
+    });
 ///////////////////////////////// ROUTE LIST USER  //////////////////////////////////////////
+    Route::group(['prefix'=>'user', 'middleware'=>'admin'],function(){
       Route::get('edit/{id}',['as'=>'admin.user.getEdit','uses'=>'UserController@getEdit']);
       Route::post('edit',['as'=>'admin.user.postEdit','uses'=>'UserController@postEdit']);
       Route::get('list',['as'=>'admin.user.list','uses'=>'UserController@getListUser']);
@@ -118,7 +125,7 @@ Route::group(['prefix'=>'admin', 'middleware'=>'staff'], function(){
     });
 ///////////////////////////////// ROUTE CONFIG  //////////////////////////////////////////
     Route::group(['prefix'=>'config', 'middleware'=>'admin'],function(){
-      Route::get('/list-rate', 'ConfigController@getRateView')->name('admin.config.rate');
+      Route::get('list-rate', 'ConfigController@getRateView')->name('admin.config.rate');
       Route::post('getAllRate',['as'=>'getAllRate','uses'=>'ConfigController@getAllRate']);
       Route::post('addRate',['as'=>'addRate','uses'=>'ConfigController@addRate']);
       Route::post('editRate',['as'=>'editRate','uses'=>'ConfigController@editRate']);
