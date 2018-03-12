@@ -29,17 +29,17 @@
                     <td> {{$dh->total_cost}}</td>
                     <td> {{$dh->note}}</td>
                     <td> @if ($dh->status == 0)
-                                Đã Hủy
+                                Đã Hủy X
                             @elseif ($dh->status == 1)
-                                Đang chờ 
+                                Đang chờ... 
                             @elseif ($dh->status == 2)
                                 Người dùng đã chốt
                             @elseif ($dh->status == 3)
                                 Đơn hàng đã chốt
                             @elseif ($dh->status == 4)
-                                Đang chuyển hàng
+                                Đang chuyển hàng...
                             @elseif ($dh->status == 5)
-                                Thành công
+                                Thành công !!!
                         @endif
                     </td>
                     <td> {{$dh->created_at}}</td>
@@ -82,17 +82,17 @@
                     <td> {{$dh->total_cost}}</td>
                     <td> {{$dh->note}}</td>
                     <td> @if ($dh->status == 0)
-                                Đã Hủy
+                                Đã Hủy X
                             @elseif ($dh->status == 1)
-                                Đang chờ 
+                                Đang chờ... 
                             @elseif ($dh->status == 2)
                                 Người dùng đã chốt
                             @elseif ($dh->status == 3)
                                 Đơn hàng đã chốt
                             @elseif ($dh->status == 4)
-                                Đang chuyển hàng
+                                Đang chuyển hàng...
                             @elseif ($dh->status == 5)
-                                Thành công
+                                Thành công !!!
                         @endif
                     </td>
                     <td> {{$dh->created_at}}</td>
