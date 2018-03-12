@@ -6,13 +6,14 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Hash;
 use Illuminate\Support\Facades\DB;
+use App\Order;
 
 class OrderController extends Controller
 {
     //
     public function danhsachdonhang(){
         $donhang = DB::table('orders')->
-        where('user_id', '=', Auth::id())->get();
+        where('user_id', '=', Auth::id())->orderby('status', 'DESC')->get();
         return view('personal/DanhSachDonHang', ['donhang'=>$donhang]);
     }
 
@@ -32,7 +33,15 @@ class OrderController extends Controller
           }
         }
 
-        DB::table('orders')->where('id','=',$dh_sp)->update(['total_cost'=>$total_cost]);
+        DB::table('orders')->where('id','=',$dh_sp)->update(['total_cost'=>$total_cost, 'state'=>0]);
+
+        $order = new Order();
+        $order->user_id = Auth::id();
+        $order->status = 1;
+        $order->state = 1;
+        $order->note = "";
+        $order->total_cost = "chưa xác định";
+        $order->save();
         // $data = json_encode([
         //         'list_product' => $list_product,
         //         'total_cost' => $total_cost,
@@ -45,7 +54,16 @@ class OrderController extends Controller
 
     public function cancelOrderUser(Request $req){
         $dh_sp = $req->dh_sp;
-        $rs = DB::table('products')->where('id','=',$dh_sp)->update(['status'=>0]);
+        $rs = DB::table('orders')->where('id','=',$dh_sp)->update(['status'=>0,'state'=>0]);
+
+        $order = new Order();
+        $order->user_id = Auth::id();
+        $order->status = 1;
+        $order->state = 1;
+        $order->note = "";
+        $order->total_cost = "chưa xác định";
+        $order->save();
+
         return redirect('/danhsachdonhang');
     }
 

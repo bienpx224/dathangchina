@@ -320,7 +320,7 @@
                             winpop = window.open("https://s.1688.com/selloffer/offer_search.htm?keywords="+data+"");
                             if(option === "Tmall")
                             winpop = window.open("https://list.tmall.com/search_product.htm?q="+data+"");
-
+                        
                             if(!winpop || winpop.closed){
                                 alert("Vui lòng cho phép trình duyệt mở popup ở trên thanh công cụ");
                             }else{

@@ -69,36 +69,39 @@
                             </button>
                         @endif
             </form>
-            @if($sp->status == 0 && $sp->state == 1)
-                <form action="{!! route('buyProductUser') !!}" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="_token" value="{{csrf_token()}}">
-                            <input type="hidden" name="id_sp" value="{{$sp->id}}">
-                            <button class="btn btn-success" type="submit"  style="width: 90px;" >
-                                <span class="glyphicon glyphicon-shopping-cart" style="padding-right: 2px;"></span>Mua SP
-                            </button>
 
-                </form>
-            @endif
-            @if($sp->status == 1 && $sp->state == 1)
+            @if($donhang->status == 1)
+                @if($sp->status == 0 && $sp->state == 1)
+                    <form action="{!! route('buyProductUser') !!}" method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                <input type="hidden" name="id_sp" value="{{$sp->id}}">
+                                <button class="btn btn-success" type="submit"  style="width: 90px;" >
+                                    <span class="glyphicon glyphicon-shopping-cart" style="padding-right: 2px;"></span>Mua SP
+                                </button>
 
-                <form  action="{!! route('cancelProductUser') !!}" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="_token" value="{{csrf_token()}}">
-                            <input type="hidden" name="id_sp" value="{{$sp->id}}">
-                            <button class="btn btn-warning" type="submit"  style="width: 90px;" >
-                                <span class="fa fa-warning" style="padding-right: 2px;"></span>Hủy mua
-                            </button>
-                </form>
-            @endif
+                    </form>
+                @endif
+                @if($sp->status == 1 && $sp->state == 1)
 
-            @if($sp->state <= 1 && $sp->status != 2)
-                <form  action="{!! route('deleteProductUser') !!}" method="post" enctype="multipart/form-data">
-                            <input type="hidden" name="_token" value="{{csrf_token()}}">
-                            <input type="hidden" name="id_sp" value="{{$sp->id}}">
-                            <button class="btn btn-danger" type="submit" data-id="{{$sp->id}}""  style="width: 90px;" >
-                                <span class="fa fa-trash-o" style="padding-right: 2px;"></span>Xóa SP
-                            </button>
+                    <form  action="{!! route('cancelProductUser') !!}" method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                <input type="hidden" name="id_sp" value="{{$sp->id}}">
+                                <button class="btn btn-warning" type="submit"  style="width: 90px;" >
+                                    <span class="fa fa-warning" style="padding-right: 2px;"></span>Hủy mua
+                                </button>
+                    </form>
+                @endif
 
-                </form>
+                @if($sp->state <= 1 && $sp->status != 2)
+                    <form  action="{!! route('deleteProductUser') !!}" method="post" enctype="multipart/form-data">
+                                <input type="hidden" name="_token" value="{{csrf_token()}}">
+                                <input type="hidden" name="id_sp" value="{{$sp->id}}">
+                                <button class="btn btn-danger" type="submit" data-id="{{$sp->id}}""  style="width: 90px;" >
+                                    <span class="fa fa-trash-o" style="padding-right: 2px;"></span>Xóa SP
+                                </button>
+
+                    </form>
+                @endif
             @endif
                     </td>
                 </tr>

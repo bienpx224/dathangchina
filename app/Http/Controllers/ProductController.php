@@ -55,7 +55,8 @@ class ProductController extends Controller
         if($user_id_order == $user_id){
             $sanpham = DB::table('products')->
             where(['order_id'=>$order_id, 'state'=>1])->get();
-            return view('personal/DanhSachSanPham', ['sanpham'=>$sanpham]);
+            $donhang = DB::table('orders')->where('id','=',$order_id)->first();
+            return view('personal/DanhSachSanPham', ['sanpham'=>$sanpham, 'donhang'=>$donhang]);
         }else{
             return view('error');
         }

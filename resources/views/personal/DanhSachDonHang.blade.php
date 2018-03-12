@@ -7,7 +7,7 @@
         <table class="table table-hover" style="max-width: 80%">
             <thead>
             <tr>
-                <th>Người mua</th>
+                <th>Mã đơn hàng</th>
                 <th>Tổng gía</th>
                 <th>Ghi chú</th>
                 <th>Quá trình</th>
@@ -50,7 +50,7 @@
                             <span class="glyphicon glyphicon-pencil" style="padding: 0px 5px;"></span>Chi tiết
                         </a>
 
-                        @if ($dh->state == 1)
+                        @if ($dh->status == 1)
                         <form action="{!! route('buyOrderUser') !!}" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <input type="hidden" name="dh_sp" value="{{$dh->id}}">
@@ -59,7 +59,7 @@
                             </button>
                         </form>
 
-                        <form action="{!! route('updateProductUser') !!}" method="post" enctype="multipart/form-data">
+                        <form action="{!! route('cancelOrderUser') !!}" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <input type="hidden" name="dh_sp" value="{{$dh->id}}">
                             <button type="submit" class="btn btn-danger" style="width: 100px;">
