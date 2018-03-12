@@ -72,6 +72,9 @@ Route::post('/user-information',['middleware'=>'user','as'=>'user-information','
 Route::get('/danhsachdonhang',['middleware'=>'user','as'=>'danhsachdonhang','uses'=>'OrderController@danhsachdonhang']);
 Route::get('/danhsachsanpham/{order_id}',['middleware'=>'user','as'=>'danhsachsanpham','uses'=>'ProductController@danhsachsanpham']);
 
+Route::post('/buyOrderUser',['middleware'=>'user','as'=>'buyOrderUser','uses'=>'OrderController@buyOrderUser']);
+Route::post('/cancelOrderUser',['middleware'=>'user','as'=>'cancelOrderUser','uses'=>'OrderController@cancelOrderUser']);
+
 Route::post('/updateProductUser',['middleware'=>'user','as'=>'updateProductUser','uses'=>'ProductController@updateProductUser']);
 Route::post('/cancelProductUser',['middleware'=>'user','as'=>'cancelProductUser','uses'=>'ProductController@cancelProductUser']);
 Route::post('/deleteProductUser',['middleware'=>'user','as'=>'deleteProductUser','uses'=>'ProductController@deleteProductUser']);

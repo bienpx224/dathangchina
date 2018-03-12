@@ -6,7 +6,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Product;
 use App\Order;
-
 use Hash;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
