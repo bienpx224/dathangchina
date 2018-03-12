@@ -66,10 +66,10 @@ class AuthController extends Controller
         Log::info("id: ".$user->id);
         $order = new Order();
         $order->user_id = $user->id;
-        $order->status = "chưa gửi";
+        $order->status = 1;
         $order->state = 1;
         $order->note = "";
-        $order->total_cost = 0;
+        $order->total_cost = "chưa xác định";
         $order->save();
 
         return redirect()->back()->with('signupsuccess','Đã tạo tài khoản thành công');
