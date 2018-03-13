@@ -14,13 +14,13 @@ class AdminController extends Controller
     return view('admin.index');
   }
   public function orderAction(){
-      $donhang = DB::table('users')->join('orders', 'users.id', '=', 'orders.user_id')->get();
-
-      return view('admin.order.list', ['donhang'=>$donhang]);
+      $donhang = DB::table('users')->join('orders', 'users.id', '=', 'orders.user_id')->whereIn('status',[0,1,2,3,4,5])->orderby('status', 'DESC')->get();
+      $count = count($donhang);
+      return view('admin.order.list', ['donhang'=>$donhang, 'count'=>$count]);
   }
 
   public function orderActionDelete($order_id){
-      DB::table('orders')->where('id', '=', $order_id)->delete();
+      DB::table('orders')->where('id', '=', $order_id)->update(['status'=>0]);
 
       return redirect('admin/order');
   }

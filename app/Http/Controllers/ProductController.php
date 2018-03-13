@@ -116,6 +116,22 @@ class ProductController extends Controller
             $vnd = $new_price * $product->rate;
             $cost = $vnd * $product->quantity;
             $rs = DB::table('products')->where('id','=',$id_sp)->update(['vnd'=>$vnd, 'cost'=>$cost, 'price'=>$new_price]);
+
+        ////////////////////  Cập nhật lại total_cost mỗi khi Nhân viên cập nhật giá sản phẩm  //////////////////////    
+        $list_product = DB::table('products')->where(['order_id'=>$order_id])->get();
+        $total_cost = 0;
+        foreach ($list_product as $product) {
+          if( ($product->cost > 0)){
+            print_r($product->cost);
+            $total_cost += $product->cost;
+          }else{
+            $total_cost = "Chưa xác định";
+            break;
+          }
+        }
+        DB::table('orders')->where('id','=',$order_id)->update(['total_cost'=>$total_cost]);
+        ///////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
             return redirect('/admin/order/detail/'.$order_id);
     }
 

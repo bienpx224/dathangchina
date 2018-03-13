@@ -14,7 +14,11 @@ class OrderController extends Controller
     public function danhsachdonhang(){
         $donhang = DB::table('orders')->
         where('user_id', '=', Auth::id())->orderby('status', 'DESC')->get();
-        return view('personal/DanhSachDonHang', ['donhang'=>$donhang]);
+
+        $current_dh = DB::table('orders')->where(['user_id'=>Auth::id(), 'state'=>1])->first();
+        $list_product = DB::table('products')->where('order_id','=',$current_dh->id)->get();
+        $count = count($list_product);
+        return view('personal/DanhSachDonHang', ['donhang'=>$donhang, 'count'=>$count]);
     }
 
     public function buyOrderUser(Request $req){
@@ -67,8 +71,11 @@ class OrderController extends Controller
         return redirect('/danhsachdonhang');
     }
 
-    public function totalCost(){
+    public function buyOrderAdmin(Request $req){
+        $order_id = $req->dh_sp;
+        $rs = DB::table('orders')->where('id','=',$order_id)->update(['status'=>4]);
 
+        return redirect()->back();
     }
 
 }

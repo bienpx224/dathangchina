@@ -51,6 +51,7 @@
                         </a>
 
                         @if ($dh->status == 1)
+                            @if($count > 0)
                         <form action="{!! route('buyOrderUser') !!}" method="post" enctype="multipart/form-data">
                             <input type="hidden" name="_token" value="{{csrf_token()}}">
                             <input type="hidden" name="dh_sp" value="{{$dh->id}}">
@@ -66,6 +67,7 @@
                                 <span class="glyphicon glyphicon-trash" style="padding: 0px 5px;"></span>Hủy đơn
                             </button>
                         </form>
+                            @endif
                         @endif
                     </td>
                 </tr>
